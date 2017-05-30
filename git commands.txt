@@ -1,0 +1,7 @@
+git add .
+git checkout master  		-	checkout
+git commit -m "Comment"		-	commit
+git push			-	upload latest
+git pull origin master		-  	get latest
+
+dfgb
