@@ -30,3 +30,11 @@ var drugsSchema = mongoose.Schema({
 });
 
 var Drug = module.exports = mongoose.model('Drug',booksSchema);
+
+module.exports.getDrugs = function (callback,limit) {
+	Drug.find(callback).limit(limit);
+}
+
+module.exports.addDrugs = function (drug,callback) {
+	Drug.create(drug,callback);
+}
