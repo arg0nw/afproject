@@ -7,6 +7,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname+'/../client'));
 var Gener= require('./models/geners.js');
 var Book= require('./models/books.js');
+var Drug= require('./models/drugs.js');
 mongoose.connect('mongodb://samitha071:asd123pharmdeus-shard-00-00-qmi26.mongodb.net:27017,pharmdeus-shard-00-01-qmi26.mongodb.net:27017,pharmdeus-shard-00-02-qmi26.mongodb.net:27017/pharmdeus?ssl=true&replicaSet=pharmdeus-shard-0&authSource=admin');
 var db = mongoose.connection;
 
@@ -103,6 +104,16 @@ app.delete('/api/books/:_id', function(req,res){
 		}
 		res.json(book);
 	})
+});
+
+app.get('/api/drugs',function(req,res){
+    Drug.getDrugs(function(err,drugs)
+    {
+        if(err)
+            throw err;
+
+        res.json(drugs)    
+    });
 });
 app.listen(3000);
 console.log("Listing to port 3000");

@@ -1,35 +1,47 @@
 var mongoose=require('mongoose');
 
 var drugsSchema = mongoose.Schema({
-	drugName:{
-		type:String
+	
+	drugname:{
+		type:String,
+		required:true
 	},
-	drugCategory:{
-		type:String
+	drugcategory:{
+		type:String,
+		required:true
 	},
-	qty:{
-		type:Number
-	},
-	unitPrice:{
-		type:Number
-	},
-	supplierName:{
-		type:String
-	},
-	supplierEmail:{
-		type:String
-	},
-	minimumQty:{
-		type:Number
-	},
-	createDate:{
-		type:Date,
-		default:Date.now
-	}
+	quentity:{
+    	type:String,
+    	required:true
+    },
+    unitprice:{
+    	type:Number,
+    	required:true
+    	},
+    supliername:{
+        type:String,
+        required:true
+    },
+    supplieremail:{
+    	type:String
+    },
+    status:{
+        type:String,
+        required:true  //the drug is active or not
+    },
+    minorder:{
+        type:Number,
+        required:true
+    },
+    drugcreateddate:{
+        type:Date,
+        default:Date.now
+    }
+
 
 });
 
-var Drug = module.exports = mongoose.model('Drug',booksSchema);
+var Drug = module.exports = mongoose.model('Drug',drugsSchema);
 
 module.exports.getDrugs = function (callback,limit) {
 	Drug.find(callback).limit(limit);
