@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09b8b16d-8b46-4c31-97f1-fc7fcdc8cafd" name="Default" comment="" />
+    <list default="true" id="09b8b16d-8b46-4c31-97f1-fc7fcdc8cafd" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doctorbackend/app.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doctorbackend/package.json" afterPath="$PROJECT_DIR$/doctorbackend/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongoDBModel.txt" afterPath="$PROJECT_DIR$/mongoDBModel.txt" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -18,6 +23,28 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="doctorapp.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/doctorbackend/doctorapp.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="24" column="46" lean-forward="false" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#56#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mongoDBModel.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mongoDBModel.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1632">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/doctorbackend/package.json">
           <provider selected="true" editor-type-id="text-editor">
@@ -28,27 +55,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/doctorbackend/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Backend/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="4" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="14" selection-end-column="4" />
+              <caret line="14" column="4" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="14" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,7 +81,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/mongoDBModel" />
+        <option value="$PROJECT_DIR$/doctorbackend/app.js" />
         <option value="$PROJECT_DIR$/doctorbackend/package.json" />
+        <option value="$PROJECT_DIR$/doctorbackend/doctorapp.js" />
       </list>
     </option>
   </component>
@@ -70,6 +96,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/Backend/client/node_modules" />
     <handled-path value="$PROJECT_DIR$/Backend/node_modules" />
+    <handled-path value="$PROJECT_DIR$/doctorbackend/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
@@ -218,15 +245,15 @@
       <option name="presentableId" value="Default" />
       <updated>1498586029357</updated>
       <workItem from="1498586032603" duration="3520000" />
-      <workItem from="1498609775025" duration="1568000" />
+      <workItem from="1498609775025" duration="3298000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5088000" />
+    <option name="totallyTimeSpent" value="6818000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -315,10 +342,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/doctorbackend/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Backend/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="4" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="14" selection-end-column="4" />
+          <caret line="14" column="4" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="14" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -331,9 +366,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doctorbackend/app.js">
+    <entry file="file://$PROJECT_DIR$/doctorbackend/doctorapp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="374">
+          <caret line="24" column="46" lean-forward="false" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#56#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongoDBModel.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1632">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>

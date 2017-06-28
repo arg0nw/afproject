@@ -120,7 +120,7 @@ userSchema{
 
 
 //This is the model for the doctor document
-docSchema{
+doctorSchema{
 	doctorname:{
 		username:String,
 		required:true
