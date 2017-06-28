@@ -32,11 +32,11 @@ var drugsSchema = mongoose.Schema({
     minorder:{
         type:Number,
         required:true
-    },
-    drugcreateddate:{
+    }
+   /* drugcreateddate:{
         type:Date,
         default:Date.now
-    }
+    }*/
 
 
 });
