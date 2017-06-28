@@ -1,16 +1,25 @@
-<div class="panel panel-default">
+<div class="panel panel-default" ng-init="getDrugs()">
 	<div class="panel-heading">
 		<h3>Drugs</h3>
 	</div>
 	<div class="pane-body">
-		<table class="table-stripped">
+		<table class="table table-striped">
 			<thead>
 				<th>Drug Name</th>
 				<th>Drug Category</th>
 				<th>Unit Price</th>
 				<th>Quantity</th>
-				
+
 			</thead>
+			<tbody>
+				<tr ng-repeat="drug in drugs">
+				<td>{{drug.drugname}}</td>
+				<td>{{drug.drugcategory}}</td>
+				<td>{{drug.quentity}}</td>
+				<td>{{drug.unitprice}}</td>
+				<td><a href="" class="btn btn-primary">Send E-mail</a></td>
+				</tr>
+			</tbody>
 		</table>
 	</div>
 </div>
