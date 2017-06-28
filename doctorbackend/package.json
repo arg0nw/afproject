@@ -1,0 +1,17 @@
+{
+  "name": "doctorbackend",
+  "version": "1.0.0",
+  "description": "This contain the prescription managment from the doctorside\u001b[D\u001b[D\u001b[D\u001b[D \u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dbackend from the doctor side",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies":{
+    "express":"*",
+    "body-parser":"*",
+    "mongoose":"*"
+
+  },
+  "author": "Samitha Heanthenna",
+  "license": "ISC"
+}
