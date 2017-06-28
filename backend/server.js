@@ -110,7 +110,9 @@ app.get('/api/drugs',function(req,res){
     Drug.getDrugs(function(err,drugs)
     {
         if(err)
+        {
             throw err;
+        }
 
         res.json(drugs)    
     });
