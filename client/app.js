@@ -27,6 +27,9 @@ myApp.config(function ($routeProvider) {
 	.when('/books/edit/:id',{
 		controller:'BooksController',
 		templateUrl:'views/edit_book.html'
+	}).with('/drugs',{
+		controller:'DrugsController',
+		templateUrl:'views/drugs_home.html'
 	})
 	
 	.otherwise({

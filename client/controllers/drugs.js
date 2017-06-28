@@ -3,3 +3,9 @@
  */
 
 //Testing
+var myApp= angular.module('myApp');
+myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParams',function($scope, $http, $location, $routeParams) {
+	console.log('DrugsController');
+
+	
+}]);
