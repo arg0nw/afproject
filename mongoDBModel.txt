@@ -67,7 +67,7 @@ prescriptionSchema{
 
 //This is the model for the prescription document
 patientSchema{
-	patent:{
+	patientnic:{
 		type:String,
 		required:true
 	},
