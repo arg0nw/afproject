@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname+'/../client'));
 var Gener= require('./models/geners.js');
 var Book= require('./models/books.js');
-mongoose.connect('mongodb://samitha071:asd123pharmdeus-shard-00-00-qmi26.mongodb.net:27017,pharmdeus-shard-00-01-qmi26.mongodb.net:27017,pharmdeus-shard-00-02-qmi26.mongodb.net:27017/test?ssl=true&replicaSet=pharmdeus-shard-0&authSource=admin');
+mongoose.connect('mongodb://samitha071:asd123pharmdeus-shard-00-00-qmi26.mongodb.net:27017,pharmdeus-shard-00-01-qmi26.mongodb.net:27017,pharmdeus-shard-00-02-qmi26.mongodb.net:27017/pharmdeus?ssl=true&replicaSet=pharmdeus-shard-0&authSource=admin');
 var db = mongoose.connection;
 
 app.get('/',function (req,res) {
