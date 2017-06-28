@@ -76,6 +76,6 @@ module.exports.getPrescriptionByID = function (id,callback) {
     Prescription.findById(id, callback);
 }
 
-module.exports.addBooks = function (book,callback) {
+module.exports.addPrescriptions = function (prescription,callback) {
     Prescription.create(prescription,callback);
 }
