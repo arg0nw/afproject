@@ -61,6 +61,7 @@ prescriptionSchema{
     }
     isissued:{
         type:String
+		default:'notissued'
     }
 }
 
