@@ -117,5 +117,16 @@ app.get('/api/drugs',function(req,res){
         res.json(drugs)    
     });
 });
+
+app.get('/api/prescriptions', function(req,res){
+    Prescription.getPrescriptions(function(err,prescriptions){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(prescriptions);
+    })
+});
+
 app.listen(3000);
 console.log("Listing to port 3000");
