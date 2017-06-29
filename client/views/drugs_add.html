@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="dropdown">
-                            <select class="form-control" name="singleSelect" ng-model="addNewDrugs.drgCategory">
+                            <select class="form-control" name="singleSelect" ng-model="drgCategory">
                             <option value={{drug.drugcategory}} ng-repeat="drug in drugs">{{drug.drugcategory}}</option>
                         </select>
                         </div>
@@ -21,7 +21,7 @@
                         <h5>Select the Drug Name</h5>
                     </div>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" name="singleSelect" ng-model="addNewDrugs.drgName">
+                        <input type="text" class="form-control" name="singleSelect" ng-model="drgName">
                     </div>
                 </div>
                 <section>
@@ -31,7 +31,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="dropdown">
-                                <select class="form-control" name="singleSelect" ng-model="addNewDrugs.Type">
+                                <select class="form-control" name="singleSelect" ng-model="Type">
                                     <option value="" disabled selected>Select your option</option>
                                     <option value="Caroons">Cartoons</option>
                                     <option value="Bottles">Bottles</option>
@@ -47,7 +47,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="dropdown">
-                                <select class="form-control" name="singleSelect" ng-model="addNewDrugs.Content">
+                                <select class="form-control" name="singleSelect" ng-model="Content">
                                     <option value="" disabled selected>Select your option</option>
                                     <option value='Tablets'>Tablets</option>
                                     <option value='Liquid'>Liquid</option>
@@ -57,13 +57,13 @@
                     </div>
                 </section>
                 
-                <div class="row" ng-show="addNewDrugs.Type=='Caroons' &&  addNewDrugs.Content=='Tablets'">
+                <div class="row" ng-show="Type=='Caroons' &&  Content=='Tablets'">
                     <div class="col-md-4">
                         <h5>Content Type</h5>
                     </div>
                     <div class="col-md-8">
                         <div class="dropdown">
-                            <select class="form-control" name="singleSelect" ng-model="addNewDrugs.ContentType">
+                            <select class="form-control" name="singleSelect" ng-model="ContentType">
                             <option value="" disabled selected>Select your option</option>
                             <option value='Cards'>Cards</option>
                             <option value='Bottles'>Bottles</option>
@@ -72,87 +72,87 @@
                     </div>
                 </div>
 
-                <div class="row" ng-show="addNewDrugs.Type=='Caroons' &&  addNewDrugs.Content=='Tablets'">
+                <div class="row" ng-show="Type=='Caroons' &&  Content=='Tablets'">
                     <div class="col-md-4">
                         <h5>No of Cartoons</h5>
                     </div>
                     <div class="col-md-8">
                         <div class="dropdown">
-                            <input type="number" ng-model="addNewDrugs.noOfCaroons">
+                            <input type="number" ng-model="noOfCaroons">
                         </div>
                     </div>
                 </div>
-                <div class="row" ng-show="addNewDrugs.Type=='Caroons' &&  addNewDrugs.Content=='Liquid'">
+                <div class="row" ng-show="Type=='Caroons' &&  Content=='Liquid'">
                     <div class="col-md-4">
                         <h5>No of Cartoons</h5>
                     </div>
                     <div class="col-md-8">
                         <div class="dropdown">
-                            <input type="number" ng-model="addNewDrugs.noOfCaroons1">
+                            <input type="number" ng-model="noOfCaroons1">
                         </div>
                     </div>
                 </div>
 
-                <div class="row" ng-show="addNewDrugs.Type=='Bottles' && addNewDrugs.Content=='Tablets'">
+                <div class="row" ng-show="Type=='Bottles' && Content=='Tablets'">
                     <div class="col-md-4">
                         <h5>Number of Bottles</h5>
                     </div>
                     <div class="col-md-8">
-                        <input type="number" ng-model="addNewDrugs.noOfBottles">
+                        <input type="number" ng-model="noOfBottles">
                     </div>
                 </div>
-                <div class="row" ng-show="addNewDrugs.Type=='Bottles' && addNewDrugs.Content=='Tablets'">
+                <div class="row" ng-show="Type=='Bottles' && Content=='Tablets'">
                     <div class="col-md-4">
                         <h5>Number of Tablets per Bottle</h5>
                     </div>
                     <div class="col-md-8">
-                        <input type="number" ng-model="addNewDrugs.noOfTabletsPerBottles">
-                        <button ng-click="addNewDrugs.cal2()">Calculate</button>
+                        <input type="number" ng-model="noOfTabletsPerBottles">
+                        <button ng-click=".cal2()">Calculate</button>
                     </div>
                 </div>
 
-                <div class="row" ng-show="addNewDrugs.Type=='Caroons' &&  addNewDrugs.Content=='Liquid'">
+                <div class="row" ng-show="Type=='Caroons' &&  Content=='Liquid'">
                     <div class="col-md-4">
                         <h5>No of Bottles per Cartoon</h5>
                     </div>
                     <div class="col-md-8">
                         <div class="dropdown">
-                            <input type="number" ng-model="addNewDrugs.noOfBottlesPerCartoon">
-                            <button ng-click="addNewDrugs.cal1()">Calculate</button>
+                            <input type="number" ng-model="noOfBottlesPerCartoon">
+                            <button ng-click="cal1()">Calculate</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="row" ng-show="addNewDrugs.Type=='Caroons' &&  addNewDrugs.Content=='Tablets' && addNewDrugs.ContentType=='Cards'">
+                <div class="row" ng-show="Type=='Caroons' &&  Content=='Tablets' && ContentType=='Cards'">
                     <div class="col-md-4">
                         <h5>No of Cards per Cartoon</h5>
                     </div>
                     <div class="col-md-8">
                         <div class="dropdown">
-                            <input type="number" ng-model="addNewDrugs.noOfCardsPerCartoon">
+                            <input type="number" ng-model="noOfCardsPerCartoon">
                         </div>
                     </div>
                 </div>
-                <div class="row" ng-show="addNewDrugs.Type=='Caroons' &&  addNewDrugs.Content=='Tablets' && addNewDrugs.ContentType=='Cards'">
+                <div class="row" ng-show="Type=='Caroons' &&  Content=='Tablets' && ContentType=='Cards'">
                     <div class="col-md-4">
                         <h5>No of Tablets per Card</h5>
                     </div>
                     <div class="col-md-8">
                         <div class="dropdown">
-                            <input type="number" ng-model="addNewDrugs.noOfTabletsPerCard">
-                            <button ng-click="addNewDrugs.cal()">Calculate</button>
+                            <input type="number" ng-model="noOfTabletsPerCard">
+                            <button ng-click="cal()">Calculate</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="row" ng-show="addNewDrugs.Type=='Bottles' &&  addNewDrugs.Content=='Liquid'">
+                <div class="row" ng-show="Type=='Bottles' &&  Content=='Liquid'">
                     <div class="col-md-4">
                         <h5>No of Bottles</h5>
                     </div>
                     <div class="col-md-8">
                         
-                            <input type="number" ng-model="addNewDrugs.noOfBottles2">
-                            <button ng-click="addNewDrugs.cal3()">Calculate</button>
+                            <input type="number" ng-model="noOfBottles2">
+                            <button ng-click="cal3()">Calculate</button>
                        
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                         <h5>Quantity</h5>
                     </div>
                     <div class="col-md-8">
-                        <input type="number" id="totQty" class="form-control custom-control" rows="1" style="resize:none" ng-model="addNewDrugs.totQuantity" disabled>
+                        <input type="number" id="totQty" class="form-control custom-control" rows="1" style="resize:none" ng-model="totQuantity" disabled>
                         
                     </div>
                 </div>
@@ -171,8 +171,8 @@
                         <h5>Unit Price</h5>
                     </div>
                     <div class="col-md-8">
-                        <input type="number" id="unitPrice" class="form-control custom-control" rows="1" style="resize:none" ng-model="addNewDrugs.unitPrice">
-                        <span class="input-group-addon btn btn-primary" ng-click="addNewDrugs.addNewDrugs()">POST</span>
+                        <input type="number" id="unitPrice" class="form-control custom-control" rows="1" style="resize:none" ng-model="unitPrice">
+                        <span class="input-group-addon btn btn-primary" ng-click="addNewDrugs()">POST</span>
                     </div>
                 </div>
             </div>
