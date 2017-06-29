@@ -13,7 +13,7 @@
                                 <div class="well well-sm">
                                     <div class="row">
                                         <div class="col-sm-6 col-md-4">
-                                            <img src="" alt="" class="img-rounded img-responsive" />
+                                            <img src="{{patient.url}}" alt="" class="img-rounded img-responsive" />
                                         </div>
                                         <div class="col-sm-6 col-md-8">
                                             <h4>{{patient.name}}</h4>
@@ -22,22 +22,14 @@
                                                 <br />
                                                 <i class="glyphicon glyphicon-tint"></i>{{patient.bloodgroup}}</a>
                                                 <br />
-                                                <i class="glyphicon glyphicon-gift"></i>{{patient.gender}}</p>
-                                            <!-- Split button -->
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-primary">
-                                                    Social</button>
-                                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                                    <span class="caret"></span><span class="sr-only">Social</span>
-                                                </button>
-                                                <ul class="dropdown-menu" role="menu">
-                                                    <li><a href="#">Twitter</a></li>
-                                                    <li><a href="https://plus.google.com/+Jquery2dotnet/posts">Google +</a></li>
-                                                    <li><a href="https://www.facebook.com/jquery2dotnet">Facebook</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">Github</a></li>
-                                                </ul>
-                                            </div>
+                                                <i class="glyphicon glyphicon-triangle-right"></i>{{patient.gender}}
+                                                <br />
+                                                <i class="glyphicon glyphicon-credit-card"></i>{{patient.patientnic}}
+                                                <br />
+                                                <i class="glyphicon glyphicon-phone-alt"></i>{{patient.contactnumber}}
+                                                <br />
+                                                <i class="glyphicon glyphicon-envelope"></i>{{patient.email}}
+
                                         </div>
                                     </div>
                                 </div>

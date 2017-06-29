@@ -35,6 +35,9 @@ var patientsSchema = mongoose.Schema({
     email:{
         type:String,
     },
+    url:{
+        type:String,
+    },
     patientdate:{
         type:Date,
         default:Date.now
