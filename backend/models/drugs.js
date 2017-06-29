@@ -53,3 +53,7 @@ module.exports.getDrug = function (id,callback) {
 module.exports.addDrugs = function (drug,callback) {
 	Drug.create(drug,callback);
 }
+
+module.exports.getCategory = function (callback) {
+    Drug.distinct("drugcategory",callback);
+}

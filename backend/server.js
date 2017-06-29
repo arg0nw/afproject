@@ -238,5 +238,15 @@ app.get('/api/notIssuedPrescriptions', function(req,res){
         res.json(notIssuedPrescriptions);
     })
 });
+
+app.get('/api/drugs/category', function(req,res){
+    Drug.getCategory(function(err,drugs){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(drugs);
+    })
+});
 app.listen(3000);
 console.log("Listing to port 3000");
