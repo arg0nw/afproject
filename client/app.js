@@ -45,6 +45,10 @@ myApp.config(function ($routeProvider) {
         controller:'DrugsController',
         templateUrl:'views/drugs_email.html'
     })
+    .when('/mail',{
+        controller:'EmailsController',
+        templateUrl:'views/emails.html'
+    })
 	.otherwise({
 		redirectTo:'/'
 	})
