@@ -69,13 +69,26 @@ var prescriptionsSchema = mongoose.Schema({
 
 var Prescription = module.exports = mongoose.model('Prescription',prescriptionsSchema);
 
+//get all prescriptions
 module.exports.getPrescriptions = function (callback,limit) {
     Prescription.find(callback).limit(limit);
 }
+
+//get prescriptions by id
 module.exports.getPrescriptionByID = function (id,callback) {
     Prescription.findById(id, callback);
 }
 
-module.exports.addBooks = function (book,callback) {
+//post prescriptions
+module.exports.addPrescriptions = function (prescription,callback) {
     Prescription.create(prescription,callback);
+}
+
+//put/update prescriptions status
+module.exports.updatePrescriptions = function (id,prescription,options,callback) {
+    var query = {_id:id};
+    var update = {
+        isissued: prescription.title
+    };
+    Prescription.findOneAndUpdate(query,update,options,callback);
 }
