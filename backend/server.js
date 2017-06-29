@@ -28,7 +28,7 @@ app.get('/',function (req,res) {
 	res.send('Helloooo');
 });
 
-let transporter = nodemailer.createTransport({
+var transporter = nodemailer.createTransport({
 	service:'gmail',
 	secure:false,
 	port:25,

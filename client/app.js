@@ -67,10 +67,12 @@ myApp.config(function ($routeProvider) {
 			controller: 'IssueDrugController',
 			templateUrl: 'views/issueDrugs.html'
 		})
-		.when('/drugs/add', {
-			controller: 'DrugsController',
-			templateUrl: 'views/drugs_add.html'
-		})
+
+        .when('/notIssuedPrescriptions', {
+            controller: 'notIssuedPrescriptionsController',
+            templateUrl: 'views/viewNotIssuedPrescriptions.html'
+        })
+
 		.otherwise({
 			redirectTo: '/'
 		})
