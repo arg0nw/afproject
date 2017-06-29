@@ -4,7 +4,11 @@
 	</div>
 	<div class="panel-body">
 		<div class="row" ng-repeat="mail in mails">
-			<a href=""><h4>{{mail.subject}}</h4></a>
+			
+			<a href=""><h4><i class="glyphicon glyphicon-chevron-right"></i> {{mail.subject}}</h4></a>
+			<p>{{mail.text.substring(0, 50)}}....</p>
+			<hr>
 		</div>
+
 	</div>
 </div>

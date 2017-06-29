@@ -31,7 +31,7 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
 		$http.get('/api/drugs/'+id).then(successCallback, errorCallback);
 		function successCallback(response){
    			$scope.drug=response.data;
-   			$scope.subject="Drug Reorder Request For"+$scope.drug.drugname;
+   			$scope.subject="Drug Reorder Request For "+$scope.drug.drugname;
    			$scope.message="Dear Officer,\nThe Quantities of the below Drugs are Low.\nName     : "+$scope.drug.drugname+"\nCategory : "+$scope.drug.drugcategory+" \nPrice(Rs)    :"+$scope.drug.unitprice+"\nQuantity in Hand :"+$scope.drug.quentity+"\nPlease be kind enough to send us new stocks \n\nBest Regards, \nChief Pharmasist";
    			console.log($scope.subject);
 		}
