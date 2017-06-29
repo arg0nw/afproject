@@ -41,7 +41,7 @@ myApp.config(function ($routeProvider) {
 			controller: 'PrescriptionsController',
 			templateUrl: 'views/viewprescription.html'
 		})
-        .when('/prescriptions/edit/:id', {
+        .when('/prescriptions/details/:id', {
             controller: 'PrescriptionsController',
             templateUrl: 'views/prescription_details.html'
         })
