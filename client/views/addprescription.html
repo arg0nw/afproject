@@ -1,0 +1,20 @@
+<div class="panel panel-default" ng-init="getPrescriptions()">
+    <div class="panel-heading">
+        <h3 class="panel-title">Recetly issued prescriptions</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div ng-repeat="prescription in prescriptions">
+                <div class="col-md-6 row-eq-height">
+                    <div class="col-md-12">
+                        <h3>{{prescription.name}}</h3>
+                        <p><b>Now Showing at:{{prescription.cinemaName}}</b></p>
+                        <p>Category: {{prescription.category}}</p>
+                        <p>Description: {{prescription.description}}</p>
+                        <a class="btn btn-primary" href="#!/prescriptions">More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
