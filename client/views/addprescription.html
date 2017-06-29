@@ -7,9 +7,9 @@
             <div ng-repeat="prescription in prescriptions">
                 <div class="col-md-6 row-eq-height">
                     <div class="col-md-12">
-                        <h3>{{prescription.name}}</h3>
-                        <p><b>Now Showing at:{{prescription.cinemaName}}</b></p>
-                        <p>Category: {{prescription.category}}</p>
+                        <h3>{{prescription.patientnic}}:{{prescription.name}}</h3>
+                        <p><b>Date prescribed:{{prescription.date}}</b></p>
+                        <p>Doctor prescribed: {{prescription.doctorid}}:{{prescription.doctorname}}</p>
                         <p>Description: {{prescription.description}}</p>
                         <a class="btn btn-primary" href="#!/prescriptions">More</a>
                     </div>
