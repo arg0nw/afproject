@@ -1,19 +1,30 @@
-<div id="mySidenav" class="sidenav">
+<!--<div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
   <a href="#/inventry">Home</a>
   <a href="#/addNewDrugs">Add a new drug</a>
   <a href="#/drugs">View</a>
   <a href="#">Contact</a>
 </div>
-<span style="font-size:30px;cursor:pointer" ng-click="openNav()">&#9776;</span>
-<a href='#!/mail'><span class="pull-right"><i class="glyphicon glyphicon-envelope"> Mail</i></span></a>
+<span style="font-size:30px;cursor:pointer" ng-click="openNav()">&#9776;</span>-->
+<div class="row ">
+<div class="col-md-3 pull-right">
+<a href='#!/mail'><span class=""><i class="glyphicon glyphicon-envelope"> Mail</i></span></a>|
+<a href='#!/drugs/add'><span class=""><i class="glyphicon glyphicon-plus"> Add New Drug</i></span></a></div>
+
+</div>
+
+<div class="col-md-3 ">
+<p><font color="red">Less than ReOrder Level</font></p>
+</div>
+</div>
 <div class="panel panel-default" ng-init="getDrugs()">
 	<div class="panel-heading">
 		<h3>Drugs</h3>
 	</div>
-	<div class="pane-body">
+	<div class="panel-body">
 		<table class="table table-striped">
 			<thead>
+				<tr>
 				<th>Drug Name</th>
 				<th>Drug Category</th>
 				<th>Unit Price</th>
@@ -24,8 +35,10 @@
 				<tr ng-repeat="drug in drugs">
 				<td>{{drug.drugname}}</td>
 				<td>{{drug.drugcategory}}</td>
-				<td>{{drug.unitprice}}</td>
-				<td>{{drug.quentity}}</td>
+			 	<td>{{drug.unitprice}}</td>
+				<td ng-show="drug.quentity <= drug.minorder" ><font color="red">{{drug.quentity}}</font></td>
+				<td ng-show="drug.quentity > drug.minorder">{{drug.quentity}}</td>
+			<!--<div ng-show="drug.quentity > drug.minorder">	<td>{{drug.quentity}}</td> </div> -->
 				<td><a href="#!/drugs/mail/{{drug._id}}" class="btn btn-primary">Place Order</a></td>
 				</tr>
 			</tbody>
