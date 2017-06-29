@@ -92,3 +92,8 @@ module.exports.updatePrescriptions = function (id,prescription,options,callback)
     };
     Prescription.findOneAndUpdate(query,update,options,callback);
 }
+
+//get not Issued prescriptions
+module.exports.getNotIssuedPrescriptions = function (callback,limit) {
+    Prescription.find({'isissued':'notissued'},callback).limit(limit);
+}

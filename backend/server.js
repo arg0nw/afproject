@@ -11,7 +11,8 @@ var Book= require('./models/books.js');
 var Drug= require('./models/drugs.js');
 var Prescription= require('./models/prescriptions.js');
 var Email= require('./models/emails.js');
-var Patient = require('./models/patients');
+var Patient = require('./models/patients.js');
+
 
 //Connection
 // mongoose.connect("mongodb://localhost:27017/test", function (err, db) {
@@ -215,6 +216,16 @@ app.get('/api/patients/:_id', function(req,res){
             throw err;
         }
         res.json(patient);
+    })
+});
+
+app.get('/api/notIssuedPrescriptions', function(req,res){
+    Prescription.getNotIssuedPrescriptions(function(err,notIssuedPrescriptions){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(notIssuedPrescriptions);
     })
 });
 app.listen(3000);

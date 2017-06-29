@@ -1,4 +1,4 @@
-<div class="container" ng-app="sortApp" ng-init="getPrescriptions()">
+<div class="container" ng-app="sortApp" ng-init="getNotIssuedPrescriptions()">
     <!--
       <div class="alert alert-info">
         <p>Sort Type: {{ sortType }}</p>
@@ -23,36 +23,14 @@
         <table class="table table-bordered table-striped">
 
             <thead>
-            <tr>
-                <th>
-                    <a  ng-click="sortType = 'name'; sortReverse = !sortReverse">
-                        Header 1
-                        <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
-                        <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
-                    </a>
-                </th>
-                <th>
-                    <a  ng-click="sortType = 'fish'; sortReverse = !sortReverse">
-                        Header 2
-                        <span ng-show="sortType == 'fish' && !sortReverse" class="fa fa-caret-down"></span>
-                        <span ng-show="sortType == 'fish' && sortReverse" class="fa fa-caret-up"></span>
-                    </a>
-                </th>
-                <th>
-                    <a  ng-click="sortType = 'tastiness'; sortReverse = !sortReverse">
-                        Header 3
-                        <span ng-show="sortType == 'tastiness' && !sortReverse" class="fa fa-caret-down"></span>
-                        <span ng-show="sortType == 'tastiness' && sortReverse" class="fa fa-caret-up"></span>
-                    </a>
-                </th>
-            </tr>
             </thead>
 
             <tbody>
             <tbody>
             <tr ng-repeat="b in issuedPrescriptions | orderBy:sortType:sortReverse | filter:searchFish"  >
                 <td>{{b.name}}</td>
-                <td>{{b.gender}}</td>
+                <td>{{b.doctorid}}</td>
+                <td>{{b.isissued}}</td>
             </tr>
             </tbody>
             </tbody>

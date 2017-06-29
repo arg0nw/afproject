@@ -20,8 +20,8 @@ myApp.controller('notIssuedPrescriptionsController',['$scope', '$http', '$locati
         ];
 
 
-    $scope.getPrescriptions = function(){
-        $http.get('/api/prescriptions').then(successCallback, errorCallback);
+    $scope.getNotIssuedPrescriptions = function(){
+        $http.get('/api/notIssuedPrescriptions').then(successCallback, errorCallback);
         function successCallback(response){
             $scope.issuedPrescriptions=response.data;
             console.log($scope.issuedPrescriptions)
