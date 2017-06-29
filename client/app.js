@@ -16,6 +16,10 @@ myApp.config(function ($routeProvider) {
 		controller:'DashController',
 		templateUrl:'views/dash.html'
 	})
+	.when('/newuser',{
+		controller:'NewUController',
+		templateUrl:'views/new_user.html'
+	})
 	.when('/books/details/:id',{
 		controller:'BooksController',
 		templateUrl:'views/books_details.html'
