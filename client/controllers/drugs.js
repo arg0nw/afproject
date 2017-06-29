@@ -36,12 +36,34 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
 		$http.get('/api/drugs/'+id).then(successCallback, errorCallback);
 		function successCallback(response){
    			$scope.drug=response.data;
-   			console.log($scope.drug.supplieremail);
+   			$scope.subject="Drug Reorder Request For"+$scope.drug.drugname;
+   			$scope.message="Dear Officer,\nThe Quantities of the below Drugs are Low.\nName     : "+$scope.drug.drugname+"\nCategory : "+$scope.drug.drugcategory+" \nPrice(Rs)    :"+$scope.drug.unitprice+"\nQuantity in Hand :"+$scope.drug.quentity+"\nPlease be kind enough to send us new stocks \n\nBest Regards, \nChief Pharmasist";
+   			console.log($scope.subject);
 		}
 		function errorCallback(error){
    		
    		
 		}
+	}
+
+	$scope.sendEmail=function(supplieremail,subject,message){
+		let mailOptions = {
+    	'from': '"Cheif Pharmacist" <chiefpharmacist01@gmail.com>', // sender address
+    	'to':supplieremail , // list of receivers
+    	'subject': subject, // Subject line
+    	'text': message 
+     	
+		};
+		$http.post('/api/mail',mailOptions).then(successCallback, errorCallback);
+		function successCallback(response){
+   			console.log('done');
+   			window.location.href='#!/drugs';
+		}
+		function errorCallback(error){
+   		
+   		 
+		}
+		console.log(mailOptions);
 	}
 
 }]);

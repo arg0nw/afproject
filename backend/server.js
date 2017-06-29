@@ -20,6 +20,19 @@ app.get('/',function (req,res) {
 	res.send('Helloooo');
 });
 
+let transporter = nodemailer.createTransport({
+	service:'gmail',
+	secure:false,
+	port:25,
+	auth:{
+		user:'chiefpharmacist01@gmail.com',
+		pass:'adminuser$'
+	},
+	tls:{
+		rejectUnauthorized:false
+	}
+});
+
 console.log(__dirname);
 app.get('/api/geners', function(req,res){
 	Gener.getGeners(function(err,geners){
@@ -142,5 +155,14 @@ app.get('/api/prescriptions', function(req,res){
     })
 });
 
+app.post('/api/mail' ,function (req,res) {
+	var mail=req.body;
+	transporter.sendMail(mail, function(error, info){
+    if (error) {
+        return console.log(error);
+    }
+    res.json(info);
+});
+})
 app.listen(3000);
 console.log("Listing to port 3000");

@@ -13,26 +13,16 @@
 		</div><br>
 		<div class="row">
 			<div class="col-md-3">Subject</div>
-			<div class="col-md-8"><input type="text" name="" class="form-control" value="Drug Reorder Request For {{drug.drugname}}" readonly="true"></div>
+			<div class="col-md-8"><input ng-model='subject' type="text" name="" class="form-control" value="Drug Reorder Request For {{drug.drugname}}" readonly="true" ></div>
 		</div><br>
 		<div class="row">
 			<div class="col-md-3">Message</div>
 			<div class="col-md-8">
-				<textarea rows="15" cols="50" class="form-control">
-Dear Officer,
-The Quantities of the below Drugs are Low.
-Name     : {{drug.drugname}}
-Category :{{drug.drugcategory}}
-Price(Rs)    :{{drug.unitprice}}
-Quantity in Hand :{{drug.quentity}}
-Please be kind enough to send us new stocks
+				<textarea rows="15" cols="50" class="form-control" ng-model='message'>
 
-
-Best Regards,
-Chief Pharmasist
 				</textarea>
 			</div>
 		</div>
-		<button class="btn btn-primary">Send</button>
+		<button class="btn btn-primary" ng-click="sendEmail(drug.supplieremail,subject,message)">Send</button>
 	</div>
 </div>
