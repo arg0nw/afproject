@@ -49,9 +49,9 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form ng-submit="addBooking()">
+                                    <form ng-submit="addBooking()" ng-init="getPrescriptionByID()">
                                         <div class="form-group" >
-                                            <label>Booking ID</label>
+                                            <label>Prescription ID</label>
                                             <input type="text" class="form-control" ng-model="booking.bookingID" placeholder="Booking ID">
                                         </div>
                                         <div class="form-group">

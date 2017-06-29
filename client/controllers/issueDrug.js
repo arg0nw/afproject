@@ -19,8 +19,8 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
     }
 
     $scope.getPrescriptionByID = function(){
-        var id=$routeParams.id;
-
+        //var id=$routeParams.id;
+        var id = '5954e8fef36d28458af63a6f' ;
         $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
         function successCallback(response){
             $scope.prescriptions=response.data;
