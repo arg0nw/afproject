@@ -57,8 +57,8 @@ myApp.config(function ($routeProvider) {
         templateUrl:'views/drugs_add.html'
     })
 
-        .when('/issuedPrescriptions',{
-            controller:'IssuedPrescriptionsController',
+        .when('/issueDrugs',{
+            controller:'IssueDrugController',
             templateUrl:'views/issueDrugs.html'
         })
 })
