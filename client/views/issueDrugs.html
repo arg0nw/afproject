@@ -7,25 +7,22 @@
 
                 <div class="col-md-6">
                     <div class="col-md-12">
-                    <div class="container">
+                    <div class="container" ng-init="getPatientsByID()">
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <div class="well well-sm">
                                     <div class="row">
                                         <div class="col-sm-6 col-md-4">
-                                            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTI2NTY0NzA4MF5BMl5BanBnXkFtZTYwMjE1MDE0._V1_UX214_CR0,0,214,317_AL_.jpg" alt="" class="img-rounded img-responsive" />
+                                            <img src="" alt="" class="img-rounded img-responsive" />
                                         </div>
                                         <div class="col-sm-6 col-md-8">
-                                            <h4>
-                                                Bhaumik Patel</h4>
-                                            <small><cite title="San Francisco, USA">San Francisco, USA <i class="glyphicon glyphicon-map-marker">
-                                            </i></cite></small>
+                                            <h4>{{patient.name}}</h4>
                                             <p>
-                                                <i class="glyphicon glyphicon-envelope"></i>email@example.com
+                                                <i class="glyphicon glyphicon-user"></i>{{patient.age}}
                                                 <br />
-                                                <i class="glyphicon glyphicon-globe"></i><a href="http://www.jquery2dotnet.com">www.jquery2dotnet.com</a>
+                                                <i class="glyphicon glyphicon-tint"></i>{{patient.bloodgroup}}</a>
                                                 <br />
-                                                <i class="glyphicon glyphicon-gift"></i>June 02, 1988</p>
+                                                <i class="glyphicon glyphicon-gift"></i>{{patient.gender}}</p>
                                             <!-- Split button -->
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-primary">

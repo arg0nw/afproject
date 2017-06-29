@@ -7,11 +7,11 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
 
     $scope.getPatientsByID = function(){
         //var id=$routeParams.id;
-            var id =
+            var id = '5954fe15f36d28458af644a6' ;
         $http.get('/api/patients/'+id).then(successCallback, errorCallback);
         function successCallback(response){
-            $scope.patients=response.data;
-            console.log($scope.patients)
+            $scope.patient=response.data;
+            console.log($scope.patient)
         }
         function errorCallback(error){
             console.log("Error");
