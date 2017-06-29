@@ -1,0 +1,110 @@
+<div class="container">
+    <div class="row">
+        <div class="page-header">
+            <h5>Pharm Deus - Dashboard</h5>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading text-center">Total Number of Drugs</div>
+                        <div class="panel-body text-center">
+                            <h3>123</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading text-center">Total Number of Prescriptions</div>
+                        <div class="panel-body text-center">
+                            <h3>456</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading text-center">Total Number of Patient</div>
+                        <div class="panel-body text-center">
+                            <h3>789</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">Out of Stock Drugs</div>
+                <div class="panel-body">
+                    <canvas id="out_drug_stock_stat"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8"></div>
+        <script>
+            let out_drug_stock_stat = document.getElementById('drug_stock_stat').getContext('2d');
+
+            let sPopChart = new Chart(drug_stock_stat, {
+                type: 'bar',
+                data: {
+                    labels: ['drug1', 'drug2', 'drug3'],
+                    datasets: [{
+                        label: 'drugs',
+                        data: [
+                            131,
+                            423,
+                            254
+                        ],
+                        backgroundColor:[
+                            '#67a0fc',
+                            '#41fc98',
+                            '#911e1e'
+                        ]
+                    }]
+                },
+                options: {}
+            })
+        </script>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">Drug Stock Stat</div>
+                <div class="panel-body">
+                    <canvas id="drug_stock_stat"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8"></div>
+        <script>
+            let drug_stock_stat = document.getElementById('drug_stock_stat').getContext('2d');
+
+            let massPopChart = new Chart(drug_stock_stat, {
+                type: 'bar',
+                data: {
+                    labels: ['drug1', 'drug2', 'drug3'],
+                    datasets: [{
+                        label: 'drugs',
+                        data: [
+                            131,
+                            423,
+                            254
+                        ],
+                        backgroundColor:[
+                            '#67a0fc',
+                            '#41fc98',
+                            '#911e1e'
+                        ]
+                    }]
+                },
+                options: {}
+            })
+        </script>
+    </div>
+</div>

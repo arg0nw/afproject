@@ -12,6 +12,10 @@ myApp.config(function ($routeProvider) {
 		controller:'AuthController',
 		templateUrl:'views/auth.html'
 	})
+	.when('/dash',{
+		controller:'DashController',
+		templateUrl:'views/dash.html'
+	})
 	.when('/books/details/:id',{
 		controller:'BooksController',
 		templateUrl:'views/books_details.html'
