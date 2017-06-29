@@ -11,6 +11,7 @@ var Book= require('./models/books.js');
 var Drug= require('./models/drugs.js');
 var Prescription= require('./models/prescriptions.js');
 var Email= require('./models/emails.js');
+var Patient = require('./models/patients');
 
 mongoose.connect('mongodb://danika:qwerty@ds139242.mlab.com:39242/pharmdeus')
 //mongoose.connect('mongodb://samitha071:asd123pharmdeus-shard-00-00-qmi26.mongodb.net:27017,pharmdeus-shard-00-01-qmi26.mongodb.net:27017,pharmdeus-shard-00-02-qmi26.mongodb.net:27017/pharmdeus?ssl=true&replicaSet=pharmdeus-shard-0&authSource=admin');
@@ -187,6 +188,26 @@ app.get('/api/mail/:_id', function(req,res){
             throw err;
         }
         res.json(mail);
+    })
+});
+
+app.get('/api/patirnts', function(req,res){
+    Patient.getEmails(function(err,patients){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(patients);
+    })
+});
+
+app.get('/api/patirnts/:_id', function(req,res){
+    Patient.getEmail(req.params._id, function(err,patient){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(patient);
     })
 });
 app.listen(3000);
