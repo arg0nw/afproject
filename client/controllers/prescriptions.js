@@ -18,4 +18,17 @@ myApp.controller('PrescriptionsController',['$scope', '$http','$location','$rout
             console.log("Error in prescription controller");
         }
     }
+
+    $scope.getPrescription = function(){
+        var id=$routeParams.id;
+
+        $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
+        function successCallback(response){
+            $scope.prescription=response.data;
+            console.log($scope.prescription)
+        }
+        function errorCallback(error){
+            console.log("Error");
+        }
+    }
 }]);

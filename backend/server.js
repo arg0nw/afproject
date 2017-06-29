@@ -164,6 +164,16 @@ app.get('/api/prescriptions', function(req,res){
     })
 });
 
+app.get('/api/prescriptions/:_id', function(req,res){
+    Prescription.getPrescriptionByID(req.params._id,function(err,prescriptions){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(prescriptions);
+    })
+});
+
 app.post('/api/mail' ,function (req,res) {
 	var mail=req.body;
 	transporter.sendMail(mail, function(error, info){
