@@ -121,6 +121,15 @@ app.get('/api/drugs',function(req,res){
         res.json(drugs)    
     });
 });
+app.get('/api/drugs/:_id', function(req,res){
+	Drug.getDrug(req.params._id,function(err,drug){
+		if(err)
+		{
+			throw err;
+		}
+		res.json(drug);
+	})
+});
 
 app.get('/api/prescriptions', function(req,res){
     Prescription.getPrescriptions(function(err,prescriptions){

@@ -23,9 +23,9 @@
 				<tr ng-repeat="drug in drugs">
 				<td>{{drug.drugname}}</td>
 				<td>{{drug.drugcategory}}</td>
-				<td>{{drug.quentity}}</td>
 				<td>{{drug.unitprice}}</td>
-				<td><a href="" class="btn btn-primary">Send E-mail</a></td>
+				<td>{{drug.quentity}}</td>
+				<td><a href="#!/drugs/mail/{{drug._id}}" class="btn btn-primary">Place Order</a></td>
 				</tr>
 			</tbody>
 		</table>

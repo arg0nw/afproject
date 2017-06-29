@@ -1,0 +1,38 @@
+<div class="panel panel-default" ng-init="getDrug()">
+	<div class="panel-heading">
+		<h3>E-mail</h3>
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-3">From</div>
+			<div class="col-md-8"><input type="text" name="" class="form-control" value="chiefpharmacist01@gmail.com" readonly="true"></div>
+		</div><br>
+		<div class="row">
+			<div class="col-md-3">To</div>
+			<div class="col-md-8"><input type="text" name="" class="form-control" value="{{drug.supplieremail}}" readonly="true"></div>
+		</div><br>
+		<div class="row">
+			<div class="col-md-3">Subject</div>
+			<div class="col-md-8"><input type="text" name="" class="form-control" value="Drug Reorder Request For {{drug.drugname}}" readonly="true"></div>
+		</div><br>
+		<div class="row">
+			<div class="col-md-3">Message</div>
+			<div class="col-md-8">
+				<textarea rows="15" cols="50" class="form-control">
+Dear Officer,
+The Quantities of the below Drugs are Low.
+Name     : {{drug.drugname}}
+Category :{{drug.drugcategory}}
+Price(Rs)    :{{drug.unitprice}}
+Quantity in Hand :{{drug.quentity}}
+Please be kind enough to send us new stocks
+
+
+Best Regards,
+Chief Pharmasist
+				</textarea>
+			</div>
+		</div>
+		<button class="btn btn-primary">Send</button>
+	</div>
+</div>

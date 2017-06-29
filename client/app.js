@@ -37,11 +37,14 @@ myApp.config(function ($routeProvider) {
         templateUrl:'views/drugs_home.html'
     })
 
-		.when('/prescriptions',{
-            controller:'PrescriptionsController',
-            templateUrl:'views/viewprescription.html'
-        })
-
+	.when('/prescriptions',{
+        controller:'PrescriptionsController',
+        templateUrl:'views/viewprescription.html'
+    })
+    .when('/drugs/mail/:id',{
+        controller:'DrugsController',
+        templateUrl:'views/drugs_email.html'
+    })
 	.otherwise({
 		redirectTo:'/'
 	})

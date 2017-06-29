@@ -29,4 +29,19 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
 	}
+
+	$scope.getDrug = function(){
+		console.log('drug');
+		var id=$routeParams.id;
+		$http.get('/api/drugs/'+id).then(successCallback, errorCallback);
+		function successCallback(response){
+   			$scope.drug=response.data;
+   			console.log($scope.drug.supplieremail);
+		}
+		function errorCallback(error){
+   		
+   		
+		}
+	}
+
 }]);

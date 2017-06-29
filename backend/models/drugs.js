@@ -47,6 +47,9 @@ module.exports.getDrugs = function (callback,limit) {
 	Drug.find(callback).limit(limit);
 }
 
+module.exports.getDrug = function (id,callback) {
+    Drug.findById(id, callback);
+}
 module.exports.addDrugs = function (drug,callback) {
 	Drug.create(drug,callback);
 }
