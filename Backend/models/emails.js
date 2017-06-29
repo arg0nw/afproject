@@ -36,3 +36,7 @@ module.exports.addEmails = function (email,callback) {
 module.exports.getEmails = function (callback,limit) {
     Email.find(callback).limit(limit);
 }
+
+module.exports.getEmail = function (id,callback) {
+    Email.findById(id,callback);
+}

@@ -14,5 +14,19 @@ myApp.controller('EmailsController',['$scope', '$http', '$location', '$routePara
    		
 		}
 	}
+	$scope.showData = function(id)
+	{
+		$http.get('/api/mail/'+id).then(successCallback, errorCallback);
+		function successCallback(response){
+   			$scope.m=response.data;
+   			console.log($scope.m);
+   		
+		}
+		function errorCallback(error){
+   		
+   		
+		}
+
+	}
 	
 }]);

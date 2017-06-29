@@ -179,5 +179,15 @@ app.get('/api/mail', function(req,res){
         res.json(mails);
     })
 });
+
+app.get('/api/mail/:_id', function(req,res){
+    Email.getEmail(req.params._id, function(err,mail){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(mail);
+    })
+});
 app.listen(3000);
 console.log("Listing to port 3000");
