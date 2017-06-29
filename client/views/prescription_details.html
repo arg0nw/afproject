@@ -1,14 +1,26 @@
-<a href="#/books">Go Back</a>
+<a href="#!/prescriptions">Go Back</a>
 <div class="panel panel-default" ng-init="getPrescription()">
     <div class="panel-heading">
-        <h3 class="panel-title">{{prescription.patientnic}}:{{prescription.patientname}}</h3>
+        <h3 class="panel-title"> <b> {{prescription.name}} : {{prescription.patientnic}}</b> </h3>
     </div>
     <div class="panel-body">
         <div class="row">
             <div class="col-md-6">
-                <b>Prescribed doctor : {{prescription.doctorname}}({{prescription.doctorid}})</b><br>
-                Hospital ID :{{prescription.hospitalid}}<br>
-                {{prescription.drug1}}<br>
+                <div class="form-group">
+                    <b class="form-control">Prescribed doctor : {{prescription.doctorname}}<b class="pull-right">({{prescription.doctorid}})</b></b>
+                </div>
+                <div class="form-group">
+                    <b class="form-control">Description :{{prescription.detail}}</b>
+                </div>
+                <div class="col-md-6">
+                    <b>Drugs Prescribed : </b><br>
+                    {{prescription.drug1}}<br>{{prescription.drug2}}<br>{{prescription.drug3}}<br>{{prescription.drug4}}<br>{{prescription.drug5}}<br>{{prescription.drug6}}<br>{{prescription.drug7}}<br>{{prescription.drug8}}<br>{{prescription.drug9}}<br>{{prescription.drug10}}<br>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <b class="form-control pull-right">Hospital ID :{{prescription.hospitalid}}</b>
+                </div>
             </div>
         </div>
     </div>
