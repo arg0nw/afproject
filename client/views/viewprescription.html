@@ -1,17 +1,18 @@
 <div class="panel panel-default" ng-init="getPrescriptions()">
     <div class="panel-heading">
-        <h3 class="panel-title">Recetly issued prescriptions</h3>
+        <h3 class="panel-title">Recently issued prescriptions</h3>
     </div>
     <div class="panel-body">
         <div class="row">
             <div ng-repeat="prescription in prescriptions">
-                <div class="col-md-6 row-eq-height">
+                <div class="col-md-4 row-eq-height">
                     <div class="col-md-12">
-                        <h3>{{prescription.patientnic}}:{{prescription.name}}</h3>
-                        <p><b>Date prescribed:{{prescription.date}}</b></p>
-                        <p>Doctor prescribed: {{prescription.doctorid}}:{{prescription.doctorname}}</p>
-                        <p>Description: {{prescription.detail}}</p>
-                        <a class="btn btn-primary" href="#!/prescriptions">More </a>
+                        <h3>{{prescription.patientnic}}</h3>
+                        <h4>Name:{{prescription.name}}</h4>
+                        <p><b>Date:{{prescription.date}}</b></p>
+                        <p>Doctor:{{prescription.doctorname}}:<b>{{prescription.doctorid}}</b></p>
+
+                        <a class="btn btn-primary" href="#!/prescriptions/details/{{prescription._id}}">More</a>
                     </div>
                 </div>
             </div>
