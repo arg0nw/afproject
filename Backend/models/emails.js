@@ -2,19 +2,19 @@ var mongoose=require('mongoose');
 
 var emailsSchema = mongoose.Schema({
 	
-	emailto:{
+	from:{
         type:String,
         required:true
     },
-    emailfrom:{
+    to:{
         type:String,
         required:true
     },
-    emailsubject:{
+    subject:{
         type:String,
         required:true
     },
-    emailbody:{
+    text:{
         type:String,
         required:true
     },
@@ -31,4 +31,8 @@ var Email = module.exports = mongoose.model('Email',emailsSchema);
 module.exports.addEmails = function (email,callback) {
     
     Email.create(email,callback);
+}
+
+module.exports.getEmails = function (callback,limit) {
+    Email.find(callback).limit(limit);
 }
