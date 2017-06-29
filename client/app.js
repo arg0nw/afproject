@@ -41,6 +41,12 @@ myApp.config(function ($routeProvider) {
         controller:'PrescriptionsController',
         templateUrl:'views/viewprescription.html'
     })
+
+    when('/prescriptions/add',{
+        controller:'PrescriptionsController',
+        templateUrl:'views/addprescription.html'
+    })
+
     .when('/drugs/mail/:id',{
         controller:'DrugsController',
         templateUrl:'views/drugs_email.html'
