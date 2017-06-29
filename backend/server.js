@@ -192,7 +192,7 @@ app.get('/api/mail/:_id', function(req,res){
 });
 
 app.get('/api/patirnts', function(req,res){
-    Patient.getEmails(function(err,patients){
+    Patient.getPatients(function(err,patients){
         if(err)
         {
             throw err;
@@ -202,7 +202,7 @@ app.get('/api/patirnts', function(req,res){
 });
 
 app.get('/api/patirnts/:_id', function(req,res){
-    Patient.getEmail(req.params._id, function(err,patient){
+    Patient.getPatientByID(req.params._id, function(err,patient){
         if(err)
         {
             throw err;
