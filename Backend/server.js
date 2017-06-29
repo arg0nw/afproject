@@ -4,7 +4,7 @@ var bodyParser=require('body-parser');
 var mongoose=require('mongoose');
 
 app.use(bodyParser.json());
-app.use(express.static(__dirname+'/client'));
+app.use(express.static(__dirname+'/../client'));
 var Gener= require('./models/geners.js');
 var Book= require('./models/books.js');
 mongoose.connect('mongodb://localhost/bookstore');
@@ -13,6 +13,8 @@ var db = mongoose.connection;
 app.get('/',function (req,res) {
 	res.send('Helloooo');
 });
+
+console.log(__dirname);
 app.get('/api/geners', function(req,res){
 	Gener.getGeners(function(err,geners){
 		if(err)
@@ -53,7 +55,6 @@ app.delete('/api/geners/:_id', function(req,res){
 		res.json(gener);
 	})
 });
-
 app.get('/api/books', function(req,res){
 	Book.getBooks(function(err,books){
 		if(err)
@@ -72,7 +73,6 @@ app.get('/api/books/:_id', function(req,res){
 		res.json(book);
 	})
 });
-
 app.post('/api/books', function(req,res){
 	var book=req.body;
 	Book.addBooks(book, function(err,book){
