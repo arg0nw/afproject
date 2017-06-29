@@ -38,7 +38,7 @@ myApp.config(function ($routeProvider) {
     })
 		.when('/prescriptions',{
             controller:'PrescriptionsController',
-            templateUrl:'views/addprescription.html'
+            templateUrl:'views/viewprescription.html'
         })
 	.otherwise({
 		redirectTo:'/'
