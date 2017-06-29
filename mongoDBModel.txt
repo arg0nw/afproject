@@ -96,6 +96,9 @@ patientSchema{
     email:{
          type:String,
     },
+    picUrl:{
+             type:String,
+        },
 	patientdate:{
 		type:Date,
 		default:Date.now
