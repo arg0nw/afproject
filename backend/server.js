@@ -10,7 +10,7 @@ var Gener= require('./models/geners.js');
 var Book= require('./models/books.js');
 var Drug= require('./models/drugs.js');
 var Prescription= require('./models/prescriptions.js');
-
+var Email= require('./models/emails.js');
 
 mongoose.connect('mongodb://danika:qwerty@ds139242.mlab.com:39242/pharmdeus')
 //mongoose.connect('mongodb://samitha071:asd123pharmdeus-shard-00-00-qmi26.mongodb.net:27017,pharmdeus-shard-00-01-qmi26.mongodb.net:27017,pharmdeus-shard-00-02-qmi26.mongodb.net:27017/pharmdeus?ssl=true&replicaSet=pharmdeus-shard-0&authSource=admin');
@@ -161,7 +161,12 @@ app.post('/api/mail' ,function (req,res) {
     if (error) {
         return console.log(error);
     }
-    res.json(info);
+    Email.addEmails(mail,function (err,mail) {
+    	if(err)
+    		throw err;
+    	res.json(mail);
+    })
+    
 });
 })
 app.listen(3000);
