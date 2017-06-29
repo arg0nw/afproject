@@ -41,6 +41,12 @@ myApp.config(function ($routeProvider) {
         controller:'PrescriptionsController',
         templateUrl:'views/viewprescription.html'
     })
+
+    .when('/prescriptions/add',{
+        controller:'PrescriptionsController',
+        templateUrl:'views/addprescription.html'
+    })
+
     .when('/drugs/mail/:id',{
         controller:'DrugsController',
         templateUrl:'views/drugs_email.html'
@@ -49,16 +55,17 @@ myApp.config(function ($routeProvider) {
         controller:'EmailsController',
         templateUrl:'views/emails.html'
     })
-	.otherwise({
-		redirectTo:'/'
-	})
+    .when('/issueDrugs',{
+            controller:'IssueDrugController',
+            templateUrl:'views/issueDrugs.html'
+        })
 	.when('/drugs/add',{
         controller:'DrugsController',
         templateUrl:'views/drugs_add.html'
     })
+	.otherwise({
+		redirectTo:'/'
+	})
 
-        .when('/issueDrugs',{
-            controller:'IssueDrugController',
-            templateUrl:'views/issueDrugs.html'
-        })
+        
 })
