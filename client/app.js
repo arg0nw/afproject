@@ -41,6 +41,10 @@ myApp.config(function ($routeProvider) {
 			controller: 'PrescriptionsController',
 			templateUrl: 'views/viewprescription.html'
 		})
+        .when('/prescriptions/edit/:id', {
+            controller: 'PrescriptionsController',
+            templateUrl: 'views/prescription_details.html'
+        })
 		.when('/forget', {
 			controller: 'ForgetController',
 			templateUrl: 'views/forget.html'
