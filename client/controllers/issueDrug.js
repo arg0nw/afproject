@@ -60,24 +60,26 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
 
             var name = $scope.drug1;
 
-
-                $http.get('/api/drugQty/'+name).then(successCallback, errorCallback);
-                function successCallback(response){
-                    $scope.drugDetails=response.data;
+            if(name != null) {
+                $http.get('/api/drugQty/' + name).then(successCallback, errorCallback);
+                function successCallback(response) {
+                    $scope.drugDetails = response.data;
                     console.log($scope.drugDetails)
                     $scope.drug1Qty = $scope.drugDetails[0].quentity;
-                    console.log( $scope.drugDetails[0].quentity);
+                    console.log($scope.drugDetails[0].quentity);
 
                     $("#drug1").attr({
-                        "max" : $scope.drug1Qty,
-                        "min" : 0
+                        "max": $scope.drug1Qty,
+                        "min": 0
                     });
 
 
                 }
-                function errorCallback(error){
+
+                function errorCallback(error) {
                     console.log("Error");
                 }
+            }
         }
         function errorCallback(error){
             console.log("Error");
@@ -102,23 +104,25 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
 
             var name = $scope.drug2;
 
+            if(name != null) {
+                $http.get('/api/drugQty/' + name).then(successCallback, errorCallback);
+                function successCallback(response) {
+                    $scope.drugDetails = response.data;
+                    console.log($scope.drugDetails)
+                    $scope.drug2Qty = $scope.drugDetails[0].quentity;
+                    console.log($scope.drugDetails[0].quentity);
 
-            $http.get('/api/drugQty/'+name).then(successCallback, errorCallback);
-            function successCallback(response){
-                $scope.drugDetails=response.data;
-                console.log($scope.drugDetails)
-                $scope.drug2Qty = $scope.drugDetails[0].quentity;
-                console.log( $scope.drugDetails[0].quentity);
-
-                $("#drug2").attr({
-                    "max" : $scope.drug2Qty,
-                    "min" : 0
-                });
+                    $("#drug2").attr({
+                        "max": $scope.drug2Qty,
+                        "min": 0
+                    });
 
 
-            }
-            function errorCallback(error){
-                console.log("Error");
+                }
+
+                function errorCallback(error) {
+                    console.log("Error");
+                }
             }
         }
         function errorCallback(error){
@@ -142,23 +146,25 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
 
             var name = $scope.drug3;
 
+            if(name != null) {
+                $http.get('/api/drugQty/' + name).then(successCallback, errorCallback);
+                function successCallback(response) {
+                    $scope.drugDetails = response.data;
+                    console.log($scope.drugDetails)
+                    $scope.drug3Qty = $scope.drugDetails[0].quentity;
+                    console.log($scope.drugDetails[0].quentity);
 
-            $http.get('/api/drugQty/'+name).then(successCallback, errorCallback);
-            function successCallback(response){
-                $scope.drugDetails=response.data;
-                console.log($scope.drugDetails)
-                $scope.drug3Qty = $scope.drugDetails[0].quentity;
-                console.log( $scope.drugDetails[0].quentity);
-
-                $("#drug3").attr({
-                    "max" : $scope.drug3Qty,
-                    "min" : 0
-                });
+                    $("#drug3").attr({
+                        "max": $scope.drug3Qty,
+                        "min": 0
+                    });
 
 
-            }
-            function errorCallback(error){
-                console.log("Error");
+                }
+
+                function errorCallback(error) {
+                    console.log("Error");
+                }
             }
         }
         function errorCallback(error){
@@ -179,23 +185,25 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
 
             var name = $scope.drug4;
 
+            if(name != null) {
+                $http.get('/api/drugQty/' + name).then(successCallback, errorCallback);
+                function successCallback(response) {
+                    $scope.drugDetails = response.data;
+                    console.log($scope.drugDetails)
+                    $scope.drug4Qty = $scope.drugDetails[0].quentity;
+                    console.log($scope.drugDetails[0].quentity);
 
-            $http.get('/api/drugQty/'+name).then(successCallback, errorCallback);
-            function successCallback(response){
-                $scope.drugDetails=response.data;
-                console.log($scope.drugDetails)
-                $scope.drug4Qty = $scope.drugDetails[0].quentity;
-                console.log( $scope.drugDetails[0].quentity);
-
-                $("#drug4").attr({
-                    "max" : $scope.drug4Qty,
-                    "min" : 0
-                });
+                    $("#drug4").attr({
+                        "max": $scope.drug4Qty,
+                        "min": 0
+                    });
 
 
-            }
-            function errorCallback(error){
-                console.log("Error");
+                }
+
+                function errorCallback(error) {
+                    console.log("Error");
+                }
             }
         }
         function errorCallback(error){
@@ -216,23 +224,25 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
 
             var name = $scope.drug5;
 
+            if(name != null) {
+                $http.get('/api/drugQty/' + name).then(successCallback, errorCallback);
+                function successCallback(response) {
+                    $scope.drugDetails = response.data;
+                    console.log($scope.drugDetails)
+                    $scope.drug5Qty = $scope.drugDetails[0].quentity;
+                    console.log($scope.drugDetails[0].quentity);
 
-            $http.get('/api/drugQty/'+name).then(successCallback, errorCallback);
-            function successCallback(response){
-                $scope.drugDetails=response.data;
-                console.log($scope.drugDetails)
-                $scope.drug5Qty = $scope.drugDetails[0].quentity;
-                console.log( $scope.drugDetails[0].quentity);
-
-                $("#drug5").attr({
-                    "max" : $scope.drug5Qty,
-                    "min" : 0
-                });
+                    $("#drug5").attr({
+                        "max": $scope.drug5Qty,
+                        "min": 0
+                    });
 
 
-            }
-            function errorCallback(error){
-                console.log("Error");
+                }
+
+                function errorCallback(error) {
+                    console.log("Error");
+                }
             }
         }
         function errorCallback(error){
@@ -253,23 +263,25 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
 
             var name = $scope.drug6;
 
+            if(name != null) {
+                $http.get('/api/drugQty/' + name).then(successCallback, errorCallback);
+                function successCallback(response) {
+                    $scope.drugDetails = response.data;
+                    console.log($scope.drugDetails)
+                    $scope.drug6Qty = $scope.drugDetails[0].quentity;
+                    console.log($scope.drugDetails[0].quentity);
 
-            $http.get('/api/drugQty/'+name).then(successCallback, errorCallback);
-            function successCallback(response){
-                $scope.drugDetails=response.data;
-                console.log($scope.drugDetails)
-                $scope.drug6Qty = $scope.drugDetails[0].quentity;
-                console.log( $scope.drugDetails[0].quentity);
-
-                $("#drug6").attr({
-                    "max" : $scope.drug6Qty,
-                    "min" : 0
-                });
+                    $("#drug6").attr({
+                        "max": $scope.drug6Qty,
+                        "min": 0
+                    });
 
 
-            }
-            function errorCallback(error){
-                console.log("Error");
+                }
+
+                function errorCallback(error) {
+                    console.log("Error");
+                }
             }
         }
         function errorCallback(error){
@@ -291,23 +303,25 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
 
             var name = $scope.drug7;
 
+            if(name != null) {
+                $http.get('/api/drugQty/' + name).then(successCallback, errorCallback);
+                function successCallback(response) {
+                    $scope.drugDetails = response.data;
+                    console.log($scope.drugDetails)
+                    $scope.drug7Qty = $scope.drugDetails[0].quentity;
+                    console.log($scope.drugDetails[0].quentity);
 
-            $http.get('/api/drugQty/'+name).then(successCallback, errorCallback);
-            function successCallback(response){
-                $scope.drugDetails=response.data;
-                console.log($scope.drugDetails)
-                $scope.drug7Qty = $scope.drugDetails[0].quentity;
-                console.log( $scope.drugDetails[0].quentity);
-
-                $("#drug7").attr({
-                    "max" : $scope.drug7Qty,
-                    "min" : 0
-                });
+                    $("#drug7").attr({
+                        "max": $scope.drug7Qty,
+                        "min": 0
+                    });
 
 
-            }
-            function errorCallback(error){
-                console.log("Error");
+                }
+
+                function errorCallback(error) {
+                    console.log("Error");
+                }
             }
         }
         function errorCallback(error){
@@ -322,12 +336,32 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
         function successCallback(response){
             $scope.prescription=response.data;
 
-            var drug8 = response.data.drug8;
+            $scope.drug8 = response.data.drug8;
 
-            $scope.showDrug8 = drug8;
+            $scope.showDrug8 = $scope.drug8;
 
-            console.log(drug8);
+            var name = $scope.drug8;
 
+            if(name != null) {
+                $http.get('/api/drugQty/' + name).then(successCallback, errorCallback);
+                function successCallback(response) {
+                    $scope.drugDetails = response.data;
+                    console.log($scope.drugDetails)
+                    $scope.drug8Qty = $scope.drugDetails[0].quentity;
+                    console.log($scope.drugDetails[0].quentity);
+
+                    $("#drug8").attr({
+                        "max": $scope.drug8Qty,
+                        "min": 0
+                    });
+
+
+                }
+
+                function errorCallback(error) {
+                    console.log("Error");
+                }
+            }
         }
         function errorCallback(error){
             console.log("Error");
@@ -341,24 +375,37 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
         function successCallback(response){
             $scope.prescription=response.data;
 
-            var drug9 = response.data.drug9;
+            $scope.drug9 = response.data.drug9;
 
-            $scope.showDrug9 = drug9;
+            $scope.showDrug9 = $scope.drug9;
 
-            console.log(drug9);
+            var name = $scope.drug9;
 
+            if(name != null) {
+                $http.get('/api/drugQty/' + name).then(successCallback, errorCallback);
+                function successCallback(response) {
+                    $scope.drugDetails = response.data;
+                    console.log($scope.drugDetails)
+                    $scope.drug9Qty = $scope.drugDetails[0].quentity;
+                    console.log($scope.drugDetails[0].quentity);
+
+                    $("#drug9").attr({
+                        "max": $scope.drug9Qty,
+                        "min": 0
+                    });
+
+
+                }
+
+                function errorCallback(error) {
+                    console.log("Error");
+                }
+            }
         }
         function errorCallback(error){
             console.log("Error");
         }
     }
-
-
-
-
-
-
-
 
     $scope.getPrescriptionDetails10 = function(){
         var id=$routeParams.id;
@@ -367,12 +414,32 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
         function successCallback(response){
             $scope.prescription=response.data;
 
-            var drug10 = response.data.drug10;
+            $scope.drug10 = response.data.drug10;
 
-            $scope.showDrug10 = drug10;
+            $scope.showDrug10 = $scope.drug10;
 
-            console.log(drug10);
+            var name = $scope.drug10;
 
+            if(name != null) {
+                $http.get('/api/drugQty/' + name).then(successCallback, errorCallback);
+                function successCallback(response) {
+                    $scope.drugDetails = response.data;
+                    console.log($scope.drugDetails)
+                    $scope.drug10Qty = $scope.drugDetails[0].quentity;
+                    console.log($scope.drugDetails[0].quentity);
+
+                    $("#drug10").attr({
+                        "max": $scope.drug10Qty,
+                        "min": 0
+                    });
+
+
+                }
+
+                function errorCallback(error) {
+                    console.log("Error");
+                }
+            }
         }
         function errorCallback(error){
             console.log("Error");
