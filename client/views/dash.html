@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="page-header" ng-init="loadData()">
+        <div class="page-header" ng-init="loadData(); getDrugs(); getPrescriptions(); getpatients()">
             <h3>Pharm Deus - Dashboard <span class="pull-right">Hello {{uname}}!</span></h3>
         </div>
         <div class="row">
@@ -21,7 +21,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading text-center">Total Number of Drugs</div>
                         <div class="panel-body text-center">
-                            <h3>123</h3>
+                            <h3>{{drugs.length}}</h3>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading text-center">Total Number of Prescriptions</div>
                         <div class="panel-body text-center">
-                            <h3>456</h3>
+                            <h3>{{prescriptions.length}}</h3>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading text-center">Total Number of Patient</div>
                         <div class="panel-body text-center">
-                            <h3>789</h3>
+                            <h3>{{patients.length}}</h3>
                         </div>
                     </div>
                 </div>
@@ -85,12 +85,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading text-center">Out of Stock Drugs</div>
                 <div class="panel-body">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item">Cras justo odio</a>
-                        <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                        <a href="#" class="list-group-item">Morbi leo risus</a>
-                        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item">Vestibulum at eros</a>
+                    <div class="list-group" >
+                        <a href="#" ng-model="searchString" ng-repeat="drug in drugs | filter:searchString" class="list-group-item">{{drug.drugname}}</a>
                     </div>
                 </div>
             </div>
