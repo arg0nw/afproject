@@ -65,3 +65,18 @@ module.exports.getUnitPrice=function(meal,callback){
 module.exports.addNewDrug=function(drug,callback){
     Drug.create(drug,callback);
 }
+
+module.exports.updateBook=function(id,book,options,callback){
+    var query={_id:id};
+    var update={
+        drugname:book.drugname,
+        drugcategory:book.drugcategory,
+        quentity:book.quentity,
+        unitprice:book.unitprice,
+        supliername:book.supliername,
+        supplieremail:book.supplieremail,
+        minorder:book.minorder
+    };
+
+    Drug.findOneAndUpdate(query,update,options,callback);
+}

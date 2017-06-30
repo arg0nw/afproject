@@ -149,7 +149,7 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
 	}
 
 
-	$scope.editBook=function() {
+	$scope.updateDrug=function() {
 		var id=$routeParams.id;
 
 		$http.put('api/drugs/'+id,$scope.drug).then(successCallback,errorCallback);
@@ -164,6 +164,6 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
 		
 	}
 
-	
+
 
 }]);
