@@ -51,7 +51,7 @@
                 <div class="panel-body">
                     <!--<canvas class="chat chat-bar" id="drug_stock_stat" chart-data="data" chart-labels="labels" chart-colors="colors"></canvas>-->
 
-                    <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options"
+                    <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options"
                         chart-dataset-override="datasetOverride" chart-click="onClick">
                     </canvas>
                 </div>
@@ -82,15 +82,13 @@
             })
         </script>-->
     </div>
-
-
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
-                <div class="panel-heading text-center">Out of Stock Drugs</div>
+                <div class="panel-heading text-center">Out of Stock Drugs  </div>
                 <div class="panel-body">
                     <div class="list-group">
-                        <a href="#" ng-model="searchString" ng-repeat="drug in drugs | filter:searchString" class="list-group-item">{{drug.drugname}}</a>
+                        <a href="#" ng-model="searchString" ng-repeat="drug in drugsOutofStockDrugs" class="list-group-item">{{drug.drugname}}</a>
                     </div>
                 </div>
             </div>

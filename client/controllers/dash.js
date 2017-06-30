@@ -20,15 +20,17 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 	// 	];
 	// 	}, 3000);
 
-	$scope.labels = ["January", "February", "March", "April", "May", "June", "July"];
-	$scope.series = ['Series A', 'Series B'];
-	$scope.data = [
-		[65, 59, 80, 81, 56, 55, 40],
-		[28, 48, 40, 19, 86, 27, 90]
-	];
+	var labelDatas = [];
+	var dataDatas = [];
+
+	$scope.labels = labelDatas;
+	$scope.data = dataDatas;
+
 	$scope.onClick = function (points, evt) {
 		console.log(points, evt);
 	};
+
+
 	// $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
 	// $scope.options = {
 	// 	scales: {
@@ -49,7 +51,7 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 	// 	}
 	// };
 
-	$scope.searchString = '';
+	// $scope.searchString = '200';
 
 	$scope.redirectAddNewUser = function () {
 		$location.path('/newuser')
@@ -67,16 +69,27 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 	$rootScope.loadData = function () {
 		$rootScope.uname = localStorage.getItem("username");
 		console.log($scope.uname);
-
-
 	}
 
 	$scope.getDrugs = function () {
 		$http.get('/api/drugs').then(successCallback, errorCallback);
 		function successCallback(response) {
 			$scope.drugs = response.data;
+
+			for (var i = 0; i < response.data.length; i++) {
+				labelDatas[i] = response.data[i].drugname;
+				dataDatas[i] = response.data[i].quentity;
+			}
 			console.log($scope.drugs);
 
+			$scope.drugsOutofStockDrugs = [];
+			debugger;
+			for (var index = 0; index < $scope.drugs.length; index++) {
+				if ($scope.drugs[index].minorder>=$scope.drugs[index].quentity) {
+					$scope.drugsOutofStockDrugs.push($scope.drugs[index]);
+				}		
+				
+			}	
 		}
 		function errorCallback(error) {
 			console.log("Error in Load Drugs");
