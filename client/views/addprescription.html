@@ -1,4 +1,4 @@
-<div class="panel panel-default" ng-init="addPrescription(); getDrugs()">
+<div class="panel panel-default" ng-init=" getDrugs()">
     <div class="panel-heading">
         <h3 class="panel-title">Enter a new Prescription</h3>
     </div>
@@ -17,7 +17,7 @@
                 </div>
                 <!--Prescribe Drugs-->
                 <div class="row cart-body">
-                    <form class="form-horizontal" ng-submit="addPrescription()" action="">
+                    <form class="form-horizontal" action="">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
                             <!--REVIEW ORDER-->
                             <div class="panel panel-info">
@@ -34,7 +34,7 @@
 
                                     <div class="form-group">
                                         <div class="col-md-12"><strong>Hospital ID:</strong></div>
-                                        <div class="col-md-12"><input type="text"  ng-model="prescription.hospitalid" class="form-control" name="car_number" value="HEMAS-362" disabled/></div>
+                                        <div class="col-md-12"><input type="text"  ng-model="hospitalid" class="form-control" name="car_number" value="HEMAS-362" disabled/></div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-12"><strong>Description:</strong></div>
@@ -45,7 +45,7 @@
                                         <div class="col-md-12">
                                         <select class="form-control" ng-model="prescription.drug1">
                                             <option value="" disabled selected></option>
-                                            <option ng-repeat="drug in drugs" value="drug.drugname">{{drug.drugname}}</option>
+                                            <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                         </select>
                                         </div>
                                     </div>
@@ -54,7 +54,7 @@
                                         <div class="col-md-12">
                                             <select class="form-control" ng-model="prescription.drug2">
                                                 <option value="" disabled selected></option>
-                                                <option ng-repeat="drug in drugs" value="drug.drugname">{{drug.drugname}}</option>
+                                                <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -63,7 +63,7 @@
                                         <div class="col-md-12">
                                             <select class="form-control" ng-model="prescription.drug3">
                                                 <option value="" disabled selected></option>
-                                                <option ng-repeat="drug in drugs" value="drug.drugname">{{drug.drugname}}</option>
+                                                <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -72,7 +72,7 @@
                                         <div class="col-md-12">
                                             <select class="form-control" ng-model="prescription.drug4">
                                                 <option value="" disabled selected></option>
-                                                <option ng-repeat="drug in drugs" value="drug.drugname">{{drug.drugname}}</option>
+                                                <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -81,7 +81,7 @@
                                         <div class="col-md-12">
                                             <select class="form-control" ng-model="prescription.drug5">
                                                 <option value="" disabled selected></option>
-                                                <option ng-repeat="drug in drugs" value="drug.drugname">{{drug.drugname}}</option>
+                                                <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -90,7 +90,7 @@
                                         <div class="col-md-12">
                                             <select class="form-control" ng-model="prescription.drug6">
                                                 <option value="" disabled selected></option>
-                                                <option ng-repeat="drug in drugs" value="drug.drugname">{{drug.drugname}}</option>
+                                                <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -99,7 +99,7 @@
                                         <div class="col-md-12">
                                             <select class="form-control" ng-model="prescription.drug7">
                                                 <option value="" disabled selected></option>
-                                                <option ng-repeat="drug in drugs" value="drug.drugname">{{drug.drugname}}</option>
+                                                <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -108,7 +108,7 @@
                                         <div class="col-md-12">
                                             <select class="form-control" ng-model="prescription.drug8">
                                                 <option value="" disabled selected></option>
-                                                <option ng-repeat="drug in drugs" value="drug.drugname">{{drug.drugname}}</option>
+                                                <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -117,7 +117,7 @@
                                         <div class="col-md-12">
                                             <select class="form-control" ng-model="prescription.drug9">
                                                 <option value="" disabled selected></option>
-                                                <option ng-repeat="drug in drugs" value="drug.drugname">{{drug.drugname}}</option>
+                                                <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -126,16 +126,16 @@
                                         <div class="col-md-12">
                                             <select class="form-control" ng-model="prescription.drug10">
                                                 <option value="" disabled selected></option>
-                                                <option ng-repeat="drug in drugs" value="drug.drugname">{{drug.drugname}}</option>
+                                                <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-12"><strong>Status:</strong></div>
-                                        <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="notissued" placeholder="notissued" disabled/></div>
+                                        <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="notissued" placeholder="notissued" ng-model="prescription.isissued" disabled/></div>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary btn-submit-fix btn pull-right">Submit</button>
+                                    <button type="submit" class="btn btn-primary btn-submit-fix btn pull-right" ng-click="addprescriptions(prescription.doctorid, prescription.doctorname, hospitalid,  prescription.detail, prescription.drug1, prescription.drug2, prescription.drug3, prescription.drug4, prescription.drug5, prescription.drug6, prescription.drug7, prescription.drug8, prescription.drug9, prescription.drug10, nic, prescription[0].name, prescription[0].age)">Submit</button>
                                 </div>
                             </div>
 

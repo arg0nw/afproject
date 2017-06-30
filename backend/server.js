@@ -176,7 +176,7 @@ app.get('/api/prescriptions/:_id', function(req,res){
     })
 });
 
-app.post('/api/addprescriptions', function(req,res){
+app.post('/api/prescriptions/add', function(req,res){
     var prescription=req.body;
     Prescription.addPrescriptions(prescription, function(err,prescriptions){
         if(err)
