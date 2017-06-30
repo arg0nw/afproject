@@ -73,6 +73,7 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
         $http.get('/api/notIssuedPrescriptions').then(successCallback, errorCallback);
         function successCallback(response){
             $scope.issuedPrescriptions=response.data;	
+			ii=0;
             ii =$scope.issuedPrescriptions.length;  
         }
         function errorCallback(error){
@@ -84,9 +85,9 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 		$http.get('/api/prescriptions').then(successCallback, errorCallback);
 		function successCallback(response) {
 			$scope.prescriptions = response.data;
+			i=0;
 			i=$scope.prescriptions.length;
-			iii=i-ii;
-			$scope.dataPre = [iii, i];
+			$scope.dataPre = [ii, i];
 		}
 		function errorCallback(error) {
 			console.log("Error in prescription controller");
