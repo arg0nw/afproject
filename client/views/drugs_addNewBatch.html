@@ -4,29 +4,24 @@
                 <h4>Add a new Batch </h4>
             </div>
             <div class="panel-body">
-                <!--<div class="row">
+                
+                <div class="row">
                     <div class="col-md-4">
-                        <h5>Select the Drug Category</h5>
+                        <h5>Batch No</h5>
                     </div>
                     <div class="col-md-8">
-                        <div class="dropdown">
-                            <select class="form-control" name="singleSelect" ng-model="drgCategory">
-                            <option value='' disabled selected>Select the drug category</option>
-                            <option value='Narcotics'>Narcotics</option>
-                            <option value='Drugs used in the treatment of injections'>Drugs used in the treatment of injections</option>
-                            <option value='Drugs used in the treatment of cardiovascular system'>Drugs used in the treatment of cardiovascular system</option>
-                            <option value='Drugs acting on the central nervous system'>Drugs acting on the central nervous system</option>
-                            <option value='Drugs affecting nutrions and blood'>Drugs affecting nutrions and blood</option>
-                        </select>
-                        </div>
+                        <input type="text" class="form-control" ng-model="batchNo" name="">
                     </div>
-                </div>-->
+                </div>
                 <div class="row">
                     <div class="col-md-4">
                         <h5>Select the Drug Name</h5>
                     </div>
                     <div class="col-md-8">
-                        <input type="text" class="form-control" name="singleSelect" ng-model="drgName">
+                        
+                        <select class="form-control">
+                            <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
+                        </select>
                     </div>
                 </div>
                 <section>
@@ -194,17 +189,25 @@
                         
                     </div>
                 </div>
-                <!--<div class="row">
+                <div class="row">
                     <div class="col-md-4">
-                        <h5>Unit Price</h5>
+                        <h5>Expire Date</h5>
                     </div>
                     <div class="col-md-8">
-                        <input type="number" id="unitPrice" class="form-control custom-control" rows="1" style="resize:none" ng-model="unitPrice">
+                        <input type="date" id="unitPrice" class="form-control custom-control" rows="1" style="resize:none" ng-model="expDate">
                         
                     </div>
                 </div>
-
                 <div class="row">
+                    <div class="col-md-4">
+                        <h5>Manufacture Date</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="date" id="unitPrice" class="form-control custom-control" rows="1" style="resize:none" ng-model="manuDate">
+                        
+                    </div>
+                </div>
+                <!--<div class="row">
                     <div class="col-md-4">
                         <h5>Supplier Name</h5>
                     </div>
