@@ -13,7 +13,7 @@ var Prescription= require('./models/prescriptions.js');
 var Email= require('./models/emails.js');
 var Patient = require('./models/patients.js');
 var User = require('./models/users.js')
-
+var Set = require('./models/sets.js')
 
 //Connection
 // mongoose.connect("mongodb://localhost:27017/test", function (err, db) {
@@ -347,6 +347,16 @@ app.get('/api/drugQty/:name', function(req,res){
 
 });
 
+app.post('/api/batch',function(req,res){
+    var batch=req.body;
+    Set.addBatch(batch,function(err,batch)
+    {
+        if (err) {
+            throw err;
+        }
+        res.json(batch);
+    });
+});
 
 app.listen(3000);
 console.log("Listing to port 3000");
