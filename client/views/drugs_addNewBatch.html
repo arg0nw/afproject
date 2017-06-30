@@ -1,0 +1,250 @@
+    <div class="col-md-8 col-md-offset-2" ng-init="getDrugs()">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4>Add a new Batch </h4>
+            </div>
+            <div class="panel-body">
+                <!--<div class="row">
+                    <div class="col-md-4">
+                        <h5>Select the Drug Category</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="dropdown">
+                            <select class="form-control" name="singleSelect" ng-model="drgCategory">
+                            <option value='' disabled selected>Select the drug category</option>
+                            <option value='Narcotics'>Narcotics</option>
+                            <option value='Drugs used in the treatment of injections'>Drugs used in the treatment of injections</option>
+                            <option value='Drugs used in the treatment of cardiovascular system'>Drugs used in the treatment of cardiovascular system</option>
+                            <option value='Drugs acting on the central nervous system'>Drugs acting on the central nervous system</option>
+                            <option value='Drugs affecting nutrions and blood'>Drugs affecting nutrions and blood</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>-->
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Select the Drug Name</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" name="singleSelect" ng-model="drgName">
+                    </div>
+                </div>
+                <section>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>Select the Type</h5>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="dropdown">
+                                <select class="form-control" name="singleSelect" ng-model="Type">
+                                    <option value="" disabled selected>Select your option</option>
+                                    <option value="Caroons">Cartoons</option>
+                                    <option value="Bottles">Bottles</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>Content</h5>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="dropdown">
+                                <select class="form-control" name="singleSelect" ng-model="Content">
+                                    <option value="" disabled selected>Select your option</option>
+                                    <option value='Tablets'>Tablets</option>
+                                    <option value='Liquid'>Liquid</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <div class="row" ng-show="Type=='Caroons' &&  Content=='Tablets'">
+                    <div class="col-md-4">
+                        <h5>Content Type</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="dropdown">
+                            <select class="form-control" name="singleSelect" ng-model="ContentType">
+                            <option value="" disabled selected>Select your option</option>
+                            <option value='Cards'>Cards</option>
+                            <option value='Bottles'>Bottles</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" ng-show="Type=='Caroons' &&  Content=='Tablets'">
+                    <div class="col-md-4">
+                        <h5>No of Cartoons</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="dropdown">
+                            <input type="number" ng-model="noOfCaroons">
+                        </div>
+                    </div>
+                </div>
+                <div class="row" ng-show="Type=='Caroons' &&  Content=='Liquid'">
+                    <div class="col-md-4">
+                        <h5>No of Cartoons</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="dropdown">
+                            <input type="number" ng-model="noOfCaroons1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" ng-show="Type=='Bottles' && Content=='Tablets'">
+                    <div class="col-md-4">
+                        <h5>Number of Bottles</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="number" ng-model="noOfBottles">
+                    </div>
+                </div>
+                <div class="row" ng-show="Type=='Bottles' && Content=='Tablets'">
+                    <div class="col-md-4">
+                        <h5>Number of Tablets per Bottle</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="number" ng-model="noOfTabletsPerBottles">
+                        <button ng-click="cal2(noOfBottles,noOfTabletsPerBottles)">Calculate</button>
+                    </div>
+                </div>
+
+                <div class="row" ng-show="Type=='Caroons' &&  Content=='Liquid'">
+                    <div class="col-md-4">
+                        <h5>No of Bottles per Cartoon</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="dropdown">
+                            <input type="number" ng-model="noOfBottlesPerCartoon">
+                            <button ng-click="cal1(noOfCaroons1,noOfBottlesPerCartoon)">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" ng-show="Type=='Caroons' &&  Content=='Tablets' && ContentType=='Cards'">
+                    <div class="col-md-4">
+                        <h5>No of Cards per Cartoon</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="dropdown">
+                            <input type="number" ng-model="noOfCardsPerCartoon">
+                        </div>
+                    </div>
+                </div>
+                <div class="row" ng-show="Type=='Caroons' &&  Content=='Tablets' && ContentType=='Cards'">
+                    <div class="col-md-4">
+                        <h5>No of Tablets per Card</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="dropdown">
+                            <input type="number" ng-model="noOfTabletsPerCard">
+                            <button ng-click="cal5(noOfCaroons,noOfCardsPerCartoon,noOfTabletsPerCard)">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" ng-show="Type=='Bottles' &&  Content=='Liquid'">
+                    <div class="col-md-4">
+                        <h5>No of Bottles</h5>
+                    </div>
+                    <div class="col-md-8">
+                        
+                            <input type="number" ng-model="noOfBottles2">
+                            <button ng-click="cal4(noOfBottles2)">Calculate</button>
+                       
+                    </div>
+                </div>
+                
+                <div class="row" ng-show="Type=='Caroons' &&  Content=='Tablets' && ContentType=='Bottles'">
+                    <div class="col-md-4">
+                        <h5>No of Bottles per Cartoon</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="dropdown">
+                            <input type="number" ng-model="noOfBottlessPerCartoon">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" ng-show="Type=='Caroons' &&  Content=='Tablets' && ContentType=='Bottles'">
+                    <div class="col-md-4">
+                        <h5>No of Tablets per Bottle</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="dropdown">
+                            <input type="number" ng-model="noOfTabletsPerBottle">
+                            <button ng-click="cal3(noOfCaroons,noOfBottlessPerCartoon,noOfTabletsPerBottle)">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Quantity</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="number" id="totQty" class="form-control custom-control" rows="1" style="resize:none" value="{{total}}" disabled>
+                        
+                    </div>
+                </div>
+                <!--<div class="row">
+                    <div class="col-md-4">
+                        <h5>Unit Price</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="number" id="unitPrice" class="form-control custom-control" rows="1" style="resize:none" ng-model="unitPrice">
+                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Supplier Name</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" id="unitPrice" class="form-control custom-control" rows="1" style="resize:none" ng-model="sname">
+                        
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Supplier E-mail</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" id="unitPrice" class="form-control custom-control" rows="1" style="resize:none" ng-model="semail">
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Minimum quantity level</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="number" id="unitPrice" class="form-control custom-control" rows="1" style="resize:none" ng-model="minQty">
+                        
+                    </div>
+                </div>-->
+                <br>
+                <div class="row">
+                    <div class="col-md-3">
+                        <button class="btn btn-primary" ng-click="addNewDrugs(drgName,drgCategory,unitPrice,total,sname,semail,minQty)">Submit</button>
+                    </div>
+                </div>
+                <br>
+                <div class="row" ng-show="errormsg != '' ">
+                    <div class="alert alert-danger">
+                        {{errormsg}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
