@@ -11,7 +11,11 @@
                     <div class="col-md-8">
                         <div class="dropdown">
                             <select class="form-control" name="singleSelect" ng-model="drgCategory">
-                            <option value={{drug.drugcategory}} ng-repeat="drug in drugs">{{drug.drugcategory}}</option>
+                            <option value='Narcotics'>Narcotics</option>
+                            <option value='Drugs used in the treatment of injections'>Drugs used in the treatment of injections</option>
+                            <option value='Drugs used in the treatment of cardiovascular system'>Drugs used in the treatment of cardiovascular system</option>
+                            <option value='Drugs acting on the central nervous system'>Drugs acting on the central nervous system</option>
+                            <option value='Drugs affecting nutrions and blood'>Drugs affecting nutrions and blood</option>
                         </select>
                         </div>
                     </div>
@@ -107,7 +111,7 @@
                     </div>
                     <div class="col-md-8">
                         <input type="number" ng-model="noOfTabletsPerBottles">
-                        <button ng-click=".cal2()">Calculate</button>
+                        <button ng-click="cal2(noOfBottles,noOfTabletsPerBottles)">Calculate</button>
                     </div>
                 </div>
 
@@ -118,7 +122,7 @@
                     <div class="col-md-8">
                         <div class="dropdown">
                             <input type="number" ng-model="noOfBottlesPerCartoon">
-                            <button ng-click="cal1()">Calculate</button>
+                            <button ng-click="cal1(noOfCaroons1,noOfBottlesPerCartoon)">Calculate</button>
                         </div>
                     </div>
                 </div>
@@ -140,7 +144,7 @@
                     <div class="col-md-8">
                         <div class="dropdown">
                             <input type="number" ng-model="noOfTabletsPerCard">
-                            <button ng-click="cal()">Calculate</button>
+                            <button ng-click="cal5(noOfCaroons,noOfCardsPerCartoon,noOfTabletsPerCard)">Calculate</button>
                         </div>
                     </div>
                 </div>
@@ -152,17 +156,40 @@
                     <div class="col-md-8">
                         
                             <input type="number" ng-model="noOfBottles2">
-                            <button ng-click="cal3()">Calculate</button>
+                            <button ng-click="cal4(noOfBottles2)">Calculate</button>
                        
                     </div>
                 </div>
                 
+                <div class="row" ng-show="Type=='Caroons' &&  Content=='Tablets' && ContentType=='Bottles'">
+                    <div class="col-md-4">
+                        <h5>No of Bottles per Cartoon</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="dropdown">
+                            <input type="number" ng-model="noOfBottlessPerCartoon">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" ng-show="Type=='Caroons' &&  Content=='Tablets' && ContentType=='Bottles'">
+                    <div class="col-md-4">
+                        <h5>No of Tablets per Bottle</h5>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="dropdown">
+                            <input type="number" ng-model="noOfTabletsPerBottle">
+                            <button ng-click="cal3(noOfCaroons,noOfBottlessPerCartoon,noOfTabletsPerBottle)">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-md-4">
                         <h5>Quantity</h5>
                     </div>
                     <div class="col-md-8">
-                        <input type="number" id="totQty" class="form-control custom-control" rows="1" style="resize:none" ng-model="totQuantity" disabled>
+                        <input type="number" id="totQty" class="form-control custom-control" rows="1" style="resize:none" value="{{total}}" disabled>
                         
                     </div>
                 </div>

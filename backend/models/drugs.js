@@ -32,11 +32,11 @@ var drugsSchema = mongoose.Schema({
     minorder:{
         type:Number,
         required:true
-    }
-   /* drugcreateddate:{
+    },
+    drugcreateddate:{
         type:Date,
         default:Date.now
-    }*/
+    }
 
 
 });
@@ -56,4 +56,8 @@ module.exports.addDrugs = function (drug,callback) {
 
 module.exports.getCategory = function (callback) {
     Drug.distinct("drugcategory",callback);
+}
+
+module.exports.getUnitPrice=function(meal,callback){
+    Drug.find({'drugname':meal},callback);
 }
