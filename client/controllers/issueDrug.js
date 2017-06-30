@@ -45,6 +45,57 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
             console.log("Error");
         }
     }
+    $scope.getDrugQty = function(){
+
+        var name = $scope.name;
+
+        $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
+        function successCallback(response){
+            $scope.prescription=response.data;
+            console.log($scope.prescription)
+        }
+        function errorCallback(error){
+            console.log("Error");
+        }
+    }
+
+    $scope.getPrescriptionDetails1 = function(){
+        var id=$routeParams.id;
+
+        $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
+        function successCallback(response){
+            $scope.prescription=response.data;
+
+            var drug1 = response.data.drug1;
+
+            $scope.showDrug1 = drug1;
+
+            console.log(drug1);
+
+        }
+        function errorCallback(error){
+            console.log("Error");
+        }
+    }
+
+    $scope.getPrescriptionDetails10 = function(){
+        var id=$routeParams.id;
+
+        $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
+        function successCallback(response){
+            $scope.prescription=response.data;
+
+            var drug10 = response.data.drug10;
+
+            $scope.showDrug10 = drug10;
+
+            console.log(drug10);
+
+        }
+        function errorCallback(error){
+            console.log("Error");
+        }
+    }
 
 
 
