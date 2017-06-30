@@ -1,48 +1,54 @@
 <!--<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
-  <a href="#/inventry">Home</a>
-  <a href="#/addNewDrugs">Add a new drug</a>
-  <a href="#/drugs">View</a>
-  <a href="#">Contact</a>
-</div>
-<span style="font-size:30px;cursor:pointer" ng-click="openNav()">&#9776;</span>-->
-<div class="row ">
-<div class="col-md-3 pull-right">
-<a href='#!/mail'><span class=""><i class="glyphicon glyphicon-envelope"> Mail</i></span></a>|
-<a href='#!/drugs/add'><span class=""><i class="glyphicon glyphicon-plus"> Add New Drug</i></span></a></div>
-
-</div>
-
-<div class="col-md-3 ">
-<p><font color="red">Less than ReOrder Level</font></p>
-</div>
-</div>
-<div class="panel panel-default" ng-init="getDrugs()">
-	<div class="panel-heading">
-		<h3>Drugs</h3>
-	</div>
-	<div class="panel-body">
-		<table class="table table-striped">
-			<thead>
-				<tr>
-				<th>Drug Name</th>
-				<th>Drug Category</th>
-				<th>Unit Price</th>
-				<th>Quantity</th>
-
-			</thead>
-			<tbody>
-				<tr ng-repeat="drug in drugs">
-				<td>{{drug.drugname}}</td>
-				<td>{{drug.drugcategory}}</td>
-			 	<td>{{drug.unitprice}}</td>
-				<td ng-show="drug.quentity <= drug.minorder" ><font color="red">{{drug.quentity}}</font></td>
-				<td ng-show="drug.quentity > drug.minorder">{{drug.quentity}}</td>
-			<!--<div ng-show="drug.quentity > drug.minorder">	<td>{{drug.quentity}}</td> </div> -->
-				<td><a href="#!/drugs/mail/{{drug._id}}" class="btn btn-primary">Place Order</a></td>
-				<td><a href="#!/drugs/details/{{drug._id}}" class="btn btn-primary">Details</a></td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+   <a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
+   <a href="#/inventry">Home</a>
+   <a href="#/addNewDrugs">Add a new drug</a>
+   <a href="#/drugs">View</a>
+   <a href="#">Contact</a>
+   </div>
+   <span style="font-size:30px;cursor:pointer" ng-click="openNav()">&#9776;</span>-->
+<div class="container">
+   <div class="page-header">
+      <h4>Drugs list - Inventory</h4>
+   </div>
+   <div class="row ">
+      <div class="col-md-3 ">
+         <h6><font color="red">*Less than ReOrder Level</font></h6>
+      </div>
+      <div class="col-md-6"></div>
+      <div class="col-md-3 pull-right">
+         <a href='#!/mail' class="btn btn-success"><span class="glyphicon glyphicon-envelope"></span>Sent Mails</a>
+         <a href='#!/drugs/add' class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Add new drug</a>
+      </div>
+   </div>
+   <hr>
+   <div class="row">
+   <div class="col-md-12">
+      <div class="panel panel-default" ng-init="getDrugs()">
+         <div class="panel-heading"><strong>List of drugs in the stock</strong></div>
+         <div class="panel-body">
+            <table class="table table-striped">
+               <thead>
+                  <tr>
+                     <th>Drug Name</th>
+                     <th>Drug Category</th>
+                     <th>Unit Price</th>
+                     <th>Quantity</th>
+               </thead>
+               <tbody>
+                  <tr ng-repeat="drug in drugs">
+                     <td>{{drug.drugname}}</td>
+                     <td>{{drug.drugcategory}}</td>
+                     <td>{{drug.unitprice}}</td>
+                     <td ng-show="drug.quentity <= drug.minorder" ><strong><font color="red">{{drug.quentity}}</font></strong></td>
+                     <td ng-show="drug.quentity > drug.minorder">{{drug.quentity}}</td>
+                     <!--<div ng-show="drug.quentity > drug.minorder">	<td>{{drug.quentity}}</td> </div> -->
+                     <td><a href="#!/drugs/mail/{{drug._id}}" class="btn btn-warning">Place Order</a></td>
+                     <td><a href="#!/drugs/details/{{drug._id}}" class="btn btn-primary">Details</a></td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      </div>
+   </div>
 </div>

@@ -264,13 +264,13 @@ app.get('/api/drugs/category', function(req,res){
 
 app.get('/api/drug/:name', function(req,res){
 	
-    Drug.getUnitPrice(req.params.name, function(err,drugs){
+    Drug.getUnitPrice(req.params.name, function(err,d){
         if(err)
         {
             throw err;
         }
-        console.log(drugs);
-        if (drugs.length==0)
+        console.log(d);
+        if (d.length==0)
         	res.send('true');
         else
         	res.send('fail');
