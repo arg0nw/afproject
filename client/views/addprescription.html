@@ -97,35 +97,35 @@
                                 <div class="panel-body">
                                     <div class="form-group">
                                         <div class="col-md-12"><strong>Patient ID:</strong></div>
-                                        <div class="col-md-10"><input type="text" class="form-control" name="car_number" value="" placeholder="Enter NIC"/></div>
-                                           <div class="col-md-2"> <button type="button" class="btn btn-info btn btn-primary btn-md">Find
+                                        <div class="col-md-10"><input type="text" class="form-control" name="car_number" value="" placeholder="Enter NIC" ng-model="nic"/></div>
+                                           <div class="col-md-2"> <button type="button" class="btn btn-info btn btn-primary btn-md" ng-click="getDetails(nic)">Find
                                            </button></div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-12"><strong>Patient Name:</strong></div>
-                                        <div class="col-md-12"><input type="text" class="form-control" name="car_number" value="" disabled/></div>
+                                        <div class="col-md-12"><input type="text" class="form-control" name="car_number" value="" disabled ng-model="prescription[0].name"/></div>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="col-md-12"><strong>Age:</strong></div>
-                                        <div class="col-md-12"><input type="text" class="form-control" name="car_number" value="" disabled/></div>
+                                        <div class="col-md-12"><input type="text" class="form-control" name="car_number" value="" disabled ng-model="prescription[0].age"/></div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-12"><strong>Blood Group:</strong></div>
-                                        <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="" disabled/></div>
+                                        <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="" ng-model="prescription[0].bloodgroup" disabled/></div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-12"><strong>Gender:</strong></div>
-                                        <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="" disabled/></div>
+                                        <div class="col-md-12"><input type="text" class="form-control" name="car_code" ng-model="prescription[0].gender" value="" disabled/></div>
                                     </div>
 
                                         <div class="form-group">
                                             <div class="col-md-6"><strong>Phone Number:</strong></div>
-                                            <div class="col-md-6"><input type="text" class="form-control" name="car_code" value="" disabled/></div>
+                                            <div class="col-md-6"><input type="text" class="form-control" name="car_code" ng-model="prescription[0].contactnumber" value="" disabled/></div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-md-6"><strong>Email:</strong></div>
-                                            <div class="col-md-6"><input type="text" class="form-control" name="car_code" value="" disabled/></div>
+                                            <div class="col-md-6"><input type="text" class="form-control" name="car_code" ng-model="prescription[0].email" value="" disabled/></div>
                                         </div>
                                 </div>
                             </div>
