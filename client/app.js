@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', ['ngRoute','chart.js']);
 myApp.config(function ($routeProvider) {
-	debugger;
+	//debugger;
 
 		$routeProvider.when('/dash', {
 			controller: 'DashController',

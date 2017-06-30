@@ -80,8 +80,33 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
 		//console.log(num1+''+num2+''+num3);
 		$scope.total=num1*num2*num3;
 	}
-	$scope.addNewDrugs = function (name) {
-		console.log(name)
+	$scope.addNewDrugs = function (name,drgCategory,unitPrice,tot,sname,semail) {
+		console.log(name+'/'+drgCategory+'/'+unitPrice+'/'+tot);
+		
+
+
+		if(drgCategory ==null || drgCategory=="")
+		{
+			$scope.errormsg="Drug Category is required";
+		}
+		else if(name ==null || name=="" )
+		{
+			$scope.errormsg="Drug Name is required";
+		}
+		else if(unitPrice== null || unitPrice <=0)
+		{
+			$scope.errormsg="Enter valid unit price";
+		}
+		else if(sname == null || sname=="")
+		{
+			$scope.errormsg="Supplier name is required";
+		}
+		else if(semail == null || semail=="")
+		{
+			$scope.errormsg="Supplier email is required";
+		}
+		else
+		{
 		$http.get('/api/drug/'+name).then(successCallback, errorCallback);
 		function successCallback(response){
 			console.log(response.data);
@@ -98,6 +123,7 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
    		
    		
 		}
+	}
 
 	}
 
