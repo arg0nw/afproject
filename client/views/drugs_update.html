@@ -12,7 +12,15 @@
         </div>
         <div class="form-group">
           <label>Drug Category</label>
-          <input type="text" class="form-control" name="descriptions" ng-model="drug.drugcategory" placeholder="Description">
+          <select class="form-control" name="singleSelect" ng-model="drug.drugcategory">
+            <option value='' disabled selected>Select the drug category</option>
+            <option value='Narcotics'>Narcotics</option>
+            <option value='Drugs used in the treatment of injections'>Drugs used in the treatment of injections</option>
+            <option value='Drugs used in the treatment of cardiovascular system'>Drugs used in the treatment of cardiovascular system</option>
+            <option value='Drugs acting on the central nervous system'>Drugs acting on the central nervous system</option>
+            <option value='Drugs affecting nutrions and blood'>Drugs affecting nutrions and blood</option>
+                        </select>
+          
         </div>
         <div class="form-group">
           <label>Quantity</label>
