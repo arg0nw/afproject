@@ -14,8 +14,8 @@ var doctorSchema = mongoose.Schema({
         required:true
     },
     speciality:{
-        type:Date,
-        default:Date.now
+        type:String,
+        default:true
     },
     doctordate:{
         type:Date,
