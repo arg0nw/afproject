@@ -99,8 +99,8 @@ myApp.config(function ($routeProvider) {
             templateUrl: 'views/issueDrugs.html'
         })
 
-        .when('/successDrugIssue', {
-            controller: 'PrescriptionsController',
+        .when('/successDrugIssue/:id', {
+            controller: 'IssuedPrescriptionsController',
             templateUrl: 'views/successIssuedPrescription.html'
         })
 
