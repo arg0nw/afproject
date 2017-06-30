@@ -31,4 +31,15 @@ myApp.controller('PrescriptionsController',['$scope', '$http','$location','$rout
             console.log("Error");
         }
     }
+
+    $scope.addPrescription = function(){
+
+        $http.post('/api/prescriptions/add', $scope.prescription).then(successCallback, errorCallback);
+        function successCallback(response){
+            window.location.href="#!/prescriptions";
+        }
+        function errorCallback(error){
+            console.log("Error");
+        }
+    }
 }]);
