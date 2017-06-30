@@ -1,3 +1,12 @@
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
+  <a href="#/inventry">Home</a>
+  <a href="#/addNewDrugs">Add a new drug</a>
+  <a href="#/drugs">View</a>
+  <a href="#">Contact</a>
+</div>
+<span style="font-size:30px;cursor:pointer" ng-click="openNav()">&#9776;</span>
+<a href='#!/mail'><span class="pull-right"><i class="glyphicon glyphicon-envelope"> Mail</i></span></a>
 <div class="panel panel-default" ng-init="getDrugs()">
 	<div class="panel-heading">
 		<h3>Drugs</h3>
@@ -15,9 +24,9 @@
 				<tr ng-repeat="drug in drugs">
 				<td>{{drug.drugname}}</td>
 				<td>{{drug.drugcategory}}</td>
-				<td>{{drug.quentity}}</td>
 				<td>{{drug.unitprice}}</td>
-				<td><a href="" class="btn btn-primary">Send E-mail</a></td>
+				<td>{{drug.quentity}}</td>
+				<td><a href="#!/drugs/mail/{{drug._id}}" class="btn btn-primary">Place Order</a></td>
 				</tr>
 			</tbody>
 		</table>

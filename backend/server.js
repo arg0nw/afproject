@@ -2,6 +2,7 @@ var express=require('express');
 var app=express();
 var bodyParser=require('body-parser');
 var mongoose=require('mongoose');
+var nodemailer = require('nodemailer');
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname+'/../client'));
@@ -9,7 +10,8 @@ var Gener= require('./models/geners.js');
 var Book= require('./models/books.js');
 var Drug= require('./models/drugs.js');
 var Prescription= require('./models/prescriptions.js');
-
+var Email= require('./models/emails.js');
+var Patient = require('./models/patients');
 
 //Connection
 // mongoose.connect("mongodb://localhost:27017/test", function (err, db) {
@@ -24,6 +26,19 @@ var db = mongoose.connection;
 
 app.get('/',function (req,res) {
 	res.send('Helloooo');
+});
+
+let transporter = nodemailer.createTransport({
+	service:'gmail',
+	secure:false,
+	port:25,
+	auth:{
+		user:'chiefpharmacist01@gmail.com',
+		pass:'adminuser$'
+	},
+	tls:{
+		rejectUnauthorized:false
+	}
 });
 
 console.log(__dirname);
@@ -128,6 +143,15 @@ app.get('/api/drugs',function(req,res){
         res.json(drugs)    
     });
 });
+app.get('/api/drugs/:_id', function(req,res){
+	Drug.getDrug(req.params._id,function(err,drug){
+		if(err)
+		{
+			throw err;
+		}
+		res.json(drug);
+	})
+});
 
 app.get('/api/prescriptions', function(req,res){
     Prescription.getPrescriptions(function(err,prescriptions){
@@ -139,5 +163,59 @@ app.get('/api/prescriptions', function(req,res){
     })
 });
 
+app.post('/api/mail' ,function (req,res) {
+	var mail=req.body;
+	transporter.sendMail(mail, function(error, info){
+    if (error) {
+        return console.log(error);
+    }
+    Email.addEmails(mail,function (err,mail) {
+    	if(err)
+    		throw err;
+    	res.json(mail);
+    })
+    
+});
+})
+
+app.get('/api/mail', function(req,res){
+    Email.getEmails(function(err,mails){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(mails);
+    })
+});
+
+app.get('/api/mail/:_id', function(req,res){
+    Email.getEmail(req.params._id, function(err,mail){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(mail);
+    })
+});
+
+app.get('/api/patients', function(req,res){
+    Patient.getPatients(function(err,patients){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(patients);
+    })
+});
+
+app.get('/api/patients/:_id', function(req,res){
+    Patient.getPatientByID(req.params._id, function(err,patient){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(patient);
+    })
+});
 app.listen(3000);
 console.log("Listing to port 3000");

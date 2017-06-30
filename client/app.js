@@ -49,4 +49,31 @@ myApp.config(function ($routeProvider) {
 		.otherwise({
 			redirectTo: '/dash'
 		})
+
+		.when('/prescriptions/add', {
+			controller: 'PrescriptionsController',
+			templateUrl: 'views/addprescription.html'
+		})
+
+		.when('/drugs/mail/:id', {
+			controller: 'DrugsController',
+			templateUrl: 'views/drugs_email.html'
+		})
+		.when('/mail', {
+			controller: 'EmailsController',
+			templateUrl: 'views/emails.html'
+		})
+		.when('/issueDrugs', {
+			controller: 'IssueDrugController',
+			templateUrl: 'views/issueDrugs.html'
+		})
+		.when('/drugs/add', {
+			controller: 'DrugsController',
+			templateUrl: 'views/drugs_add.html'
+		})
+		.otherwise({
+			redirectTo: '/'
+		})
+
+
 })
