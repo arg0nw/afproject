@@ -82,6 +82,10 @@ myApp.config(function ($routeProvider) {
 			controller: 'DrugsController',
 			templateUrl: 'views/drugs_add.html'
 		})
+		.when('/drugs/add/batch', {
+			controller: 'DrugsController',
+			templateUrl: 'views/drugs_addNewBatch.html'
+		})
 
 		.otherwise({
 			redirectTo: '/'
