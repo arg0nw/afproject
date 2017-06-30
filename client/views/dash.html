@@ -49,11 +49,15 @@
             <div class="panel panel-default">
                 <div class="panel-heading text-center">Drug Stock Stat</div>
                 <div class="panel-body">
-                    <canvas id="drug_stock_stat"></canvas>
+                    <!--<canvas class="chat chat-bar" id="drug_stock_stat" chart-data="data" chart-labels="labels" chart-colors="colors"></canvas>-->
+
+                    <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options"
+                        chart-dataset-override="datasetOverride" chart-click="onClick">
+                    </canvas>
                 </div>
             </div>
         </div>
-        <script>
+        <!--<script>
             let drug_stock_stat = document.getElementById('drug_stock_stat').getContext('2d');
 
             let massPopChart = new Chart(drug_stock_stat, {
@@ -76,7 +80,7 @@
                 },
                 options: {}
             })
-        </script>
+        </script>-->
     </div>
 
 
@@ -85,7 +89,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading text-center">Out of Stock Drugs</div>
                 <div class="panel-body">
-                    <div class="list-group" >
+                    <div class="list-group">
                         <a href="#" ng-model="searchString" ng-repeat="drug in drugs | filter:searchString" class="list-group-item">{{drug.drugname}}</a>
                     </div>
                 </div>
