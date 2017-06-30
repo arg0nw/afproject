@@ -3,20 +3,18 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 
 	//*************************Drug stat */
 	var labelDrugsDatas = [];
-	var dataDrugsDatas = [];
-	
+	var dataDrugsDatas = [];	
+
 
 	$scope.labelsDrugs = labelDrugsDatas;
 	$scope.dataDrugs = dataDrugsDatas;
+	//********************************** */
 
-	//**************************Patient stat */
-	var labelPatientDatas = [];
-	var dataPatientDatas = [];
+	var i = 0 ;
+	var ii = 0;
 	
-
-	$scope.labelsPatient = labelPatientDatas;
-	$scope.dataPatient = dataPatientDatas;
-
+	$scope.PreLabel = ['Isseued Prescriptions', 'Not Isseued Prescriptions'];
+	 $scope.dataPre = [i , ii];
 
 	$scope.onClick = function (points, evt) {
 		console.log(points, evt);
@@ -26,8 +24,12 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 		$location.path('/newuser')
 	}
 
-	$scope.redirectPharmacy = function () {
+	$scope.redirectDoctor = function () {
 		$location.path('/prescriptions')
+	}
+
+	$scope.redirectPharmacy = function () {
+		$location.path('/notIssuedPrescriptions')
 	}
 
 	$scope.redirectInventory = function () {
@@ -35,10 +37,10 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 	}
 
 
-	$rootScope.loadData = function () {
-		$rootScope.uname = localStorage.getItem("username");
-		console.log($scope.uname);
-	}
+	// $rootScope.loadData = function () {
+	// 	$rootScope.uname = localStorage.getItem("username");
+	// 	console.log($scope.uname);
+	// }
 
 	$scope.getDrugs = function () {
 		$http.get('/api/drugs').then(successCallback, errorCallback);
@@ -66,26 +68,22 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 		}
 	}
 
+	$scope.getNotIssuedPrescriptions = function(){
+        $http.get('/api/notIssuedPrescriptions').then(successCallback, errorCallback);
+        function successCallback(response){
+            $scope.issuedPrescriptions=response.data;	
+            ii =$scope.issuedPrescriptions.length;  
+        }
+        function errorCallback(error){
+            console.log("Error");
+        }
+    }
+	
 	$scope.getPrescriptions = function () {
 		$http.get('/api/prescriptions').then(successCallback, errorCallback);
 		function successCallback(response) {
 			$scope.prescriptions = response.data;
-			console.log($scope.prescriptions)
-
-			for (var i = 0; i < response.data.length; i++) {
-				labelPatientDatas[i] = response.data[i].drugname;
-				dataPatientDatas[i] = response.data[i].quentity;
-			}
-			console.log($scope.drugs);
-
-			$scope.drugsOutofStockDrugs = [];
-			debugger;
-			for (var index = 0; index < $scope.drugs.length; index++) {
-				if ($scope.drugs[index].minorder>=$scope.drugs[index].quentity) {
-					$scope.drugsOutofStockDrugs.push($scope.drugs[index]);
-				}		
-				
-			}
+			i=$scope.prescriptions.length;
 		}
 		function errorCallback(error) {
 			console.log("Error in prescription controller");

@@ -5,8 +5,13 @@
 //controller used for prescription controlling
 var myApp=angular.module('myApp');
 
-myApp.controller('PrescriptionsController',['$scope', '$http','$location','$routeParams', function ($scope, $http,$loction,$routeParams) {
+myApp.controller('PrescriptionsController',['$scope', '$http','$location','$routeParams', function ($scope, $http,$location,$routeParams) {
     console.log('PrescriptionsController loaded...');
+
+    $scope.addPresc = function(){
+        $location.path('/prescriptions/add');
+        
+    }
 
     $scope.getPrescriptions = function () {
         $http.get('/api/prescriptions').then(successCallback,errorCallback);
@@ -69,6 +74,10 @@ myApp.controller('PrescriptionsController',['$scope', '$http','$location','$rout
         function errorCallback(error){
             console.log("Error");
         }
+    }
+
+    $scope.redirectBack = function(){
+        $location.path('/prescriptions');
     }
 
     $scope.addprescriptions=function (doctorid,doctorname, hospitalid, detail, drug1, drug2, drug3, drug4, drug5, drug6, drug7, drug8, drug9, drug10, nic, pname, page) {

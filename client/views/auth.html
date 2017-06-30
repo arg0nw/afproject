@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-init="getUsers()">
     <div class="row">
         <div class="page-header">
             <h2>Pharm Deus</h2>
@@ -10,14 +10,13 @@
                 <div class="panel-body">
                     <form>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="username" placeholder="Username" id="username" ng-model="username">
+                            <input type="text" class="form-control" name="username" placeholder="Username" id="username" ng-model="uname">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="Password" placeholder="Enter password" id="password" ng-model="password">
+                            <input type="password" class="form-control" name="Password" placeholder="Enter password" id="password" ng-model="pwd">
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success" ng-click="signin()">Sign in</button>
-                            <button ng-click="redirect()" class=" btn-link pull-right text-info">Forget password?</button>
                         </div>
                     </form>
                 </div>

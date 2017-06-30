@@ -1,188 +1,194 @@
-<div class="panel panel-default" ng-init=" getDrugs()">
-    <div class="panel-heading">
-        <h3 class="panel-title">Enter a new Prescription</h3>
+<div class="container">
+    <div class="page-header">
+        <h4>Add Prescription<span class="btn btn-warning pull-right" ng-click="redirectBack()">Back</span></h4>
     </div>
-    <div class="panel-body">
-        <div class="row">
-            <div class="container wrapper">
-                <div class="row cart-head">
-                    <div class="container">
-                        <div class="row">
-                            <p></p>
-                        </div>
-                        <div class="row">
-                            <p></p>
-                        </div>
-                    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default" ng-init=" getDrugs()">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Enter prescription details</h3>
                 </div>
-                <!--Prescribe Drugs-->
-                <div class="row cart-body">
-                    <form class="form-horizontal" action="">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
-                            <!--REVIEW ORDER-->
-                            <div class="panel panel-info">
-                                <div class="panel-heading"><span><i class="glyphicon glyphicon-hand-down"></i></span><strong> Prescribe Drugs</strong></div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Doctor Id:</strong></div>
-                                        <div class="col-md-12"><input type="text" ng-model="prescription.doctorid" class="form-control" name="car_number" value="" placeholder="Enter Doctor ID"/></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Doctor Name:</strong></div>
-                                        <div class="col-md-12"><input type="text" ng-model="prescription.doctorname" class="form-control" name="car_number" value="" placeholder="Enter Doctor Name"/></div>
-                                    </div>
+                <div class="panel-body">
+                    <!--Prescribe Drugs-->
+                    <div class="row cart-body">
+                        <form class="form-horizontal" action="">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
+                                <!--REVIEW ORDER-->
+                                <div class="panel panel-info">
+                                    <div class="panel-heading"><span><i class="glyphicon glyphicon-hand-down"></i></span><strong> Prescribe Drugs</strong></div>
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Doctor Id:</strong></div>
+                                            <div class="col-md-12"><input type="text" ng-model="prescription.doctorid" class="form-control" name="car_number"
+                                                    value="" placeholder="Enter Doctor ID" /></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Doctor Name:</strong></div>
+                                            <div class="col-md-12"><input type="text" ng-model="prescription.doctorname" class="form-control" name="car_number"
+                                                    value="" placeholder="Enter Doctor Name" /></div>
+                                        </div>
 
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Hospital ID:</strong></div>
-                                        <div class="col-md-12"><input type="text"  ng-model="hospitalid" class="form-control" name="car_number" value="HEMAS-362" disabled/></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Description:</strong></div>
-                                        <div class="col-md-12"><textarea class="form-control" ng-model="prescription.detail" rows="5" id="description"></textarea></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Drug Name 01:</strong></div>
-                                        <div class="col-md-12">
-                                        <select class="form-control" ng-model="prescription.drug1">
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Hospital ID:</strong></div>
+                                            <div class="col-md-12"><input type="text" ng-model="hospitalid" class="form-control" name="car_number"
+                                                    value="HEMAS-362" disabled/></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Description:</strong></div>
+                                            <div class="col-md-12"><textarea class="form-control" ng-model="prescription.detail" rows="5" id="description"></textarea></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Drug Name 01:</strong></div>
+                                            <div class="col-md-12">
+                                                <select class="form-control" ng-model="prescription.drug1">
                                             <option value="" disabled selected></option>
                                             <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                         </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Drug Name 02:</strong></div>
-                                        <div class="col-md-12">
-                                            <select class="form-control" ng-model="prescription.drug2">
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Drug Name 02:</strong></div>
+                                            <div class="col-md-12">
+                                                <select class="form-control" ng-model="prescription.drug2">
                                                 <option value="" disabled selected></option>
                                                 <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Drug Name 03:</strong></div>
-                                        <div class="col-md-12">
-                                            <select class="form-control" ng-model="prescription.drug3">
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Drug Name 03:</strong></div>
+                                            <div class="col-md-12">
+                                                <select class="form-control" ng-model="prescription.drug3">
                                                 <option value="" disabled selected></option>
                                                 <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Drug Name 04:</strong></div>
-                                        <div class="col-md-12">
-                                            <select class="form-control" ng-model="prescription.drug4">
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Drug Name 04:</strong></div>
+                                            <div class="col-md-12">
+                                                <select class="form-control" ng-model="prescription.drug4">
                                                 <option value="" disabled selected></option>
                                                 <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Drug Name 05:</strong></div>
-                                        <div class="col-md-12">
-                                            <select class="form-control" ng-model="prescription.drug5">
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Drug Name 05:</strong></div>
+                                            <div class="col-md-12">
+                                                <select class="form-control" ng-model="prescription.drug5">
                                                 <option value="" disabled selected></option>
                                                 <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Drug Name 06:</strong></div>
-                                        <div class="col-md-12">
-                                            <select class="form-control" ng-model="prescription.drug6">
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Drug Name 06:</strong></div>
+                                            <div class="col-md-12">
+                                                <select class="form-control" ng-model="prescription.drug6">
                                                 <option value="" disabled selected></option>
                                                 <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Drug Name 07:</strong></div>
-                                        <div class="col-md-12">
-                                            <select class="form-control" ng-model="prescription.drug7">
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Drug Name 07:</strong></div>
+                                            <div class="col-md-12">
+                                                <select class="form-control" ng-model="prescription.drug7">
                                                 <option value="" disabled selected></option>
                                                 <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Drug Name 08:</strong></div>
-                                        <div class="col-md-12">
-                                            <select class="form-control" ng-model="prescription.drug8">
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Drug Name 08:</strong></div>
+                                            <div class="col-md-12">
+                                                <select class="form-control" ng-model="prescription.drug8">
                                                 <option value="" disabled selected></option>
                                                 <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Drug Name 09:</strong></div>
-                                        <div class="col-md-12">
-                                            <select class="form-control" ng-model="prescription.drug9">
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Drug Name 09:</strong></div>
+                                            <div class="col-md-12">
+                                                <select class="form-control" ng-model="prescription.drug9">
                                                 <option value="" disabled selected></option>
                                                 <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Drug Name 10:</strong></div>
-                                        <div class="col-md-12">
-                                            <select class="form-control" ng-model="prescription.drug10">
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Drug Name 10:</strong></div>
+                                            <div class="col-md-12">
+                                                <select class="form-control" ng-model="prescription.drug10">
                                                 <option value="" disabled selected></option>
                                                 <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                                             </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Status:</strong></div>
-                                        <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="notissued" placeholder="notissued" ng-model="prescription.isissued" disabled/></div>
-                                    </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Status:</strong></div>
+                                            <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="notissued" placeholder="notissued"
+                                                    ng-model="prescription.isissued" disabled/></div>
+                                        </div>
 
-                                    <button type="submit" class="btn btn-primary btn-submit-fix btn pull-right" ng-click="addprescriptions(prescription.doctorid, prescription.doctorname, hospitalid,  prescription.detail, prescription.drug1, prescription.drug2, prescription.drug3, prescription.drug4, prescription.drug5, prescription.drug6, prescription.drug7, prescription.drug8, prescription.drug9, prescription.drug10, nic, prescription[0].name, prescription[0].age)">Submit</button>
+                                        <button type="submit" class="btn btn-primary btn-submit-fix btn pull-right" ng-click="addprescriptions(prescription.doctorid, prescription.doctorname, hospitalid,  prescription.detail, prescription.drug1, prescription.drug2, prescription.drug3, prescription.drug4, prescription.drug5, prescription.drug6, prescription.drug7, prescription.drug8, prescription.drug9, prescription.drug10, nic, prescription[0].name, prescription[0].age)">Submit</button>
+                                    </div>
                                 </div>
+
+                                <!--Prescribe Drugs end-->
                             </div>
-
-                            <!--Prescribe Drugs end-->
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
-                            <!--Patient details-->
-                            <div class="panel panel-info">
-                                <div class="panel-heading"><span><i class="glyphicon glyphicon-user"></i></span><strong> Patient Details </strong></div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Patient ID:</strong></div>
-                                        <div class="col-md-10"><input type="text" class="form-control" name="car_number" value="" placeholder="Enter NIC" ng-model="nic"/></div>
-                                           <div class="col-md-2"> <button type="button" class="btn btn-info btn btn-primary btn-md" ng-click="getDetails(nic)">Find
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
+                                <!--Patient details-->
+                                <div class="panel panel-info">
+                                    <div class="panel-heading"><span><i class="glyphicon glyphicon-user"></i></span><strong> Patient Details </strong></div>
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Patient ID:</strong></div>
+                                            <div class="col-md-10"><input type="text" class="form-control" name="car_number" value="" placeholder="Enter NIC"
+                                                    ng-model="nic" /></div>
+                                            <div class="col-md-2"> <button type="button" class="btn btn-info btn btn-primary btn-md" ng-click="getDetails(nic)">Find
                                            </button></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Patient Name:</strong></div>
-                                        <div class="col-md-12"><input type="text" class="form-control" name="car_number" value="" disabled ng-model="prescription[0].name"/></div>
-                                    </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Patient Name:</strong></div>
+                                            <div class="col-md-12"><input type="text" class="form-control" name="car_number" value="" disabled ng-model="prescription[0].name"
+                                                /></div>
+                                        </div>
 
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Age:</strong></div>
-                                        <div class="col-md-12"><input type="text" class="form-control" name="car_number" value="" disabled ng-model="prescription[0].age"/></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Blood Group:</strong></div>
-                                        <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="" ng-model="prescription[0].bloodgroup" disabled/></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-12"><strong>Gender:</strong></div>
-                                        <div class="col-md-12"><input type="text" class="form-control" name="car_code" ng-model="prescription[0].gender" value="" disabled/></div>
-                                    </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Age:</strong></div>
+                                            <div class="col-md-12"><input type="text" class="form-control" name="car_number" value="" disabled ng-model="prescription[0].age"
+                                                /></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Blood Group:</strong></div>
+                                            <div class="col-md-12"><input type="text" class="form-control" name="car_code" value="" ng-model="prescription[0].bloodgroup"
+                                                    disabled/></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-12"><strong>Gender:</strong></div>
+                                            <div class="col-md-12"><input type="text" class="form-control" name="car_code" ng-model="prescription[0].gender"
+                                                    value="" disabled/></div>
+                                        </div>
 
                                         <div class="form-group">
                                             <div class="col-md-6"><strong>Phone Number:</strong></div>
-                                            <div class="col-md-6"><input type="text" class="form-control" name="car_code" ng-model="prescription[0].contactnumber" value="" disabled/></div>
+                                            <div class="col-md-6"><input type="text" class="form-control" name="car_code" ng-model="prescription[0].contactnumber"
+                                                    value="" disabled/></div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-md-6"><strong>Email:</strong></div>
-                                            <div class="col-md-6"><input type="text" class="form-control" name="car_code" ng-model="prescription[0].email" value="" disabled/></div>
+                                            <div class="col-md-6"><input type="text" class="form-control" name="car_code" ng-model="prescription[0].email"
+                                                    value="" disabled/></div>
                                         </div>
+                                    </div>
                                 </div>
+                                <!--patent details end-->
                             </div>
-                            <!--patent details end-->
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

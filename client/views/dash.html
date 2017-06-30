@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="page-header" ng-init="loadData(); getDrugs(); getPrescriptions(); getpatients()">
+        <div class="page-header" ng-init="loadData(); getDrugs(); getPrescriptions(); getpatients(); getNotIssuedPrescriptions()">
             <h3>Pharm Deus - Dashboard <span class="pull-right">Hello!</span></h3>
         </div>
         <div class="row">
@@ -10,8 +10,10 @@
             <div class="col-md-2">
                 <a class="btn btn-warning pull-left" ng-click="redirectInventory()">View inventory</a>
             </div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"><a class="btn btn-success pull-right" ng-click="redirectAddNewUser()">Add new user</a>
+            <div class="col-md-2">
+                <a class="btn btn-warning pull-left" ng-click="redirectDoctor()">View Doctor</a>
+            </div>
+            <div class="col-md-6"><a class="btn btn-success pull-right" ng-click="redirectAddNewUser()">Add new user</a>
             </div>
         </div>
         <hr>
@@ -35,9 +37,9 @@
                 </div>
                 <div class="col-md-4 sm-4">
                     <div class="panel panel-default">
-                        <div class="panel-heading text-center">Total Number of Patient</div>
+                        <div class="panel-heading text-center">Number of not isuued prescriptions</div>
                         <div class="panel-body text-center">
-                            <h3>{{patients.length}}</h3>
+                            <h3>{{issuedPrescriptions.length}}</h3>
                         </div>
                     </div>
                 </div>
@@ -57,9 +59,9 @@
         </div>
         <div class="col-md-6">
             <div class="panel panel-default">
-                <div class="panel-heading text-center">Patient Per day</div>
+                <div class="panel-heading text-center">Prescriptions stat</div>
                 <div class="panel-body">
-                    <canvas id="pie" class="chart chart-pie" chart-data="dataPatient" chart-labels="labelsPatient" chart-series="series" chart-options="options"
+                    <canvas id="pie" class="chart chart-pie" chart-data="dataPre" chart-labels="PreLabel" chart-series="series" chart-options="options"
                         chart-dataset-override="datasetOverride" chart-click="onClick">
                     </canvas>
                 </div>
@@ -72,7 +74,7 @@
                 <div class="panel-heading text-center">Out of Stock Drugs </div>
                 <div class="panel-body">
                     <div class="list-group">
-                        <a href="#" ng-model="searchString" ng-repeat="drug in drugsOutofStockDrugs" class="list-group-item">{{drug.drugname}}</a>
+                        <a href="#"  ng-repeat="drug in drugsOutofStockDrugs" class="list-group-item">{{drug.drugname}}</a>
                     </div>
                 </div>
             </div>
