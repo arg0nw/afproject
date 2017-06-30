@@ -126,7 +126,14 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
    				};
    				console.log(response.data);
 
-   				console.log(drugObj);
+   				$http.post('/api/drugs', drugObj).then(successCallback, errorCallback);
+				function successCallback(response){
+   						window.location.href="#!/drugs";
+				}
+				function errorCallback(error){
+    				console.log("errrrrrrrrrrrrrrrrrrrrrr");
+				}
+				
    			}
    			else
    			{

@@ -276,5 +276,16 @@ app.get('/api/drug/:name', function(req,res){
 
 });
 
+app.post('/api/drugs', function(req,res){
+    var drug=req.body;
+    Drug.addNewDrug(drug, function(err,drug){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(drug);
+    })
+});
+
 app.listen(3000);
 console.log("Listing to port 3000");
