@@ -164,4 +164,6 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
 		
 	}
 
+	
+
 }]);
