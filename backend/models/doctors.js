@@ -17,6 +17,10 @@ var doctorSchema = mongoose.Schema({
         type:String,
         default:true
     },
+    doctorid:{
+        type:String,
+        default:true
+    },
     doctordate:{
         type:Date,
         default:Date.now
