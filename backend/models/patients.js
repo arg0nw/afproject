@@ -55,3 +55,8 @@ module.exports.getPatients = function (callback,limit) {
 module.exports.getPatientByID = function (id,callback) {
     Patient.findById(id, callback);
 }
+
+
+module.exports.pidn=function(meal,callback){
+    Patient.find({'patientnic':meal},callback);
+}
