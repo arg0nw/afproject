@@ -165,7 +165,7 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
 	}
 
 	$scope.addNewBatch = function (id,qty,drgName,batchNo,total,expDate,manuDate) {
-		console.log(id+'     ??      '+drgName+'/'+batchNo+'/'+total+'/'+expDate+'/'+manuDate);
+		console.log(id+'     ??      '+drgName+'/'+batchNo+'/'+total+'/'+expDate+'/'+manuDate+'//'+qty);
 
 		var batchObj = {
 			"batchName": batchNo,
@@ -175,14 +175,41 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
        		"manufacDate": manuDate
     		
 		};
-		$scope.newQty=qty+total;
-		/*$http.post('/api/batch', batchObj).then(successCallback, errorCallback);
+		
+		$http.post('/api/batch', batchObj).then(successCallback, errorCallback);
 		function successCallback(response){
+
+		$http.get('/api/drugQty/'+drgName).then(successCallback, errorCallback);
+		function successCallback(response){
+			$scope.selectedDrug=response.data;
+			console.log($scope.selectedDrug);
+			console.log($scope.selectedDrug[0]._id+'     ??      '+drgName+'/'+batchNo+'/'+total+'/'+expDate+'/'+manuDate+'//'+$scope.selectedDrug.qty);
+		
+
+			$scope.selectedDrug[0].quentity=$scope.selectedDrug[0].quentity+total;
+
+
+			$http.put('api/drg/'+$scope.selectedDrug[0]._id, $scope.selectedDrug[0]).then(successCallback,errorCallback);
+		function successCallback(response)
+		{
+			window.location.href="#!/drugs";
+		}
+		function errorCallback(error)
+		{
+			console.log('err from getBooks')
+		}
+
+		}
+		function errorCallback(error){
+   		
+   		
+		}
+
    					window.location.href="#!/drugs";
 		}
 		function errorCallback(error){
     				console.log("errrrrrrrrrrrrrrrrrrrrrr");
-		}*/
+		}
 
 	}
 
