@@ -85,7 +85,7 @@ myApp.controller('PrescriptionsController',['$scope', '$http','$location','$rout
             "drug6":drug6,
             "drug7":drug7,
             "drug8":drug8,
-            "drug9":drug9,"patientnic":nic,"name":pname,"age":page
+            "drug9":drug9,"drug10":drug10,"patientnic":nic,"name":pname,"age":page
         };
         $http.post('/api/prescriptions/add', pesobj).then(successCallback, errorCallback);
         function successCallback(response){
