@@ -1,0 +1,25 @@
+<div class="panel panel-default" ng-init="getDrug()">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{drug.drugname}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row" >
+      
+      <div class="col-md-3">
+        <h3>{{drug.drugname}}</h3>
+        <p>{{drug.drugcategory}}</p>
+        <p>{{drug.quentity}}</p>
+        <p>{{drug.unitprice}}</p>
+        <p>{{drug.supliername}}</p>
+        <p>{{drug.quentity}}</p>
+        <p>{{drug.drugcreateddate}}</p>
+        
+      </div>
+      
+    </div>
+  </div>
+  </div>
+
+  <div class="pull-right">
+    <a href="#!/books/edit/{{book._id}}">Edit</a> | <a href="#/" ng-click="removeBook(book._id)">Delete</a>
+  </div>

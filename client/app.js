@@ -85,7 +85,7 @@ myApp.config(function ($routeProvider) {
 			controller: 'DrugsController',
 			templateUrl: 'views/drugs_addNewBatch.html'
 		})
-		.when('/drugs/details', {
+		.when('/drugs/details/:id', {
 			controller: 'DrugsController',
 			templateUrl: 'views/drugs_details.html'
 		})
