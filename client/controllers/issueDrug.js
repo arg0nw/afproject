@@ -97,6 +97,158 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
         }
     }
 
+    $scope.getPrescriptionDetails2 = function(){
+        var id=$routeParams.id;
+
+        $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
+        function successCallback(response){
+            $scope.prescription=response.data;
+
+            var drug2 = response.data.drug2;
+
+            $scope.showDrug2 = drug2;
+
+            console.log(drug2);
+
+        }
+        function errorCallback(error){
+            console.log("Error");
+        }
+    }
+
+    $scope.getPrescriptionDetails3 = function(){
+        var id=$routeParams.id;
+
+        $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
+        function successCallback(response){
+            $scope.prescription=response.data;
+
+            var drug3 = response.data.drug3;
+
+            $scope.showDrug3 = drug3;
+
+            console.log(drug3);
+
+        }
+        function errorCallback(error){
+            console.log("Error");
+        }
+    }
+
+    $scope.getPrescriptionDetails4 = function(){
+        var id=$routeParams.id;
+
+        $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
+        function successCallback(response){
+            $scope.prescription=response.data;
+
+            var drug4 = response.data.drug4;
+
+            $scope.showDrug4 = drug4;
+
+            console.log(drug4);
+
+        }
+        function errorCallback(error){
+            console.log("Error");
+        }
+    }
+
+    $scope.getPrescriptionDetails5 = function(){
+        var id=$routeParams.id;
+
+        $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
+        function successCallback(response){
+            $scope.prescription=response.data;
+
+            var drug5 = response.data.drug5;
+
+            $scope.showDrug5 = drug5;
+
+            console.log(drug5);
+
+        }
+        function errorCallback(error){
+            console.log("Error");
+        }
+    }
+
+    $scope.getPrescriptionDetails6 = function(){
+        var id=$routeParams.id;
+
+        $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
+        function successCallback(response){
+            $scope.prescription=response.data;
+
+            var drug6 = response.data.drug6;
+
+            $scope.showDrug6 = drug6;
+
+            console.log(drug6);
+
+        }
+        function errorCallback(error){
+            console.log("Error");
+        }
+    }
+
+
+    $scope.getPrescriptionDetails7 = function(){
+        var id=$routeParams.id;
+
+        $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
+        function successCallback(response){
+            $scope.prescription=response.data;
+
+            var drug7 = response.data.drug7;
+
+            $scope.showDrug7= drug7;
+
+            console.log(drug7);
+
+        }
+        function errorCallback(error){
+            console.log("Error");
+        }
+    }
+
+    $scope.getPrescriptionDetails8 = function(){
+        var id=$routeParams.id;
+
+        $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
+        function successCallback(response){
+            $scope.prescription=response.data;
+
+            var drug8 = response.data.drug8;
+
+            $scope.showDrug8 = drug8;
+
+            console.log(drug8);
+
+        }
+        function errorCallback(error){
+            console.log("Error");
+        }
+    }
+
+    $scope.getPrescriptionDetails9 = function(){
+        var id=$routeParams.id;
+
+        $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
+        function successCallback(response){
+            $scope.prescription=response.data;
+
+            var drug9 = response.data.drug9;
+
+            $scope.showDrug9 = drug9;
+
+            console.log(drug9);
+
+        }
+        function errorCallback(error){
+            console.log("Error");
+        }
+    }
 
 
 }]);
