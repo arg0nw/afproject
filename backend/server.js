@@ -260,26 +260,20 @@ app.get('/api/drugs/category', function(req,res){
     })
 });
 
-app.get('/api/drugs/:name', function(req,res){
-	console.log(req.params.name);
-    /*Drug.getUnitPrice(req.params.name, function(err,drugs){
+app.get('/api/drug/:name', function(req,res){
+	
+    Drug.getUnitPrice(req.params.name, function(err,drugs){
         if(err)
         {
             throw err;
         }
-        res.json(drugs);
-        /*if (drugs == null)
+        console.log(drugs);
+        if (drugs.length==0)
         	res.send('true');
         else
-        	res.send('fail')
-    })*/
-
-    db.drugs.find({'drugname':req.params.name},function(err,result) {
-    	if(err)
-    		throw err;
-    	res.json(result)
-    	// body...
+        	res.send('fail');
     })
+
 });
 
 app.listen(3000);

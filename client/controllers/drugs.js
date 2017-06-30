@@ -1,7 +1,7 @@
 var myApp= angular.module('myApp');
 myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParams',function($scope, $http, $location, $routeParams) {
 	console.log('DrugsController');
-
+	$scope.errormsg="";
 	$scope.getDrugs = function(){
 		$http.get('/api/drugs').then(successCallback, errorCallback);
 		function successCallback(response){
@@ -79,6 +79,26 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
 	$scope.cal5 = function(num1,num2,num3) {
 		//console.log(num1+''+num2+''+num3);
 		$scope.total=num1*num2*num3;
+	}
+	$scope.addNewDrugs = function (name) {
+		console.log(name)
+		$http.get('/api/drug/'+name).then(successCallback, errorCallback);
+		function successCallback(response){
+			console.log(response.data);
+   			if(response.data=='true')
+   			{
+   				$scope.errormsg="";
+   			}
+   			else
+   			{
+   				$scope.errormsg="Invalid Name";
+   			}
+		}
+		function errorCallback(error){
+   		
+   		
+		}
+
 	}
 
 }]);

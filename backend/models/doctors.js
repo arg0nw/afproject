@@ -6,7 +6,7 @@ var mongoose=require('mongoose');
 //Doctor Schema
 var doctorSchema = mongoose.Schema({
     doctorname:{
-        username:String,
+        type:String,
         required:true
     },
     doctoridhospital:{

@@ -3,7 +3,7 @@ var mongoose=require('mongoose');
 //User Schema
 var userSchema = mongoose.Schema({
     username:{
-        username:String,
+        type:String,
         required:true
     },
     password:{
