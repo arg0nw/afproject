@@ -19,7 +19,7 @@
                     </div>
                     <div class="col-md-8">
                         
-                        <select class="form-control">
+                        <select class="form-control " ng-model="drgName">
                             <option ng-repeat="drug in drugs" value="{{drug.drugname}}">{{drug.drugname}}</option>
                         </select>
                     </div>
@@ -238,7 +238,7 @@
                 <br>
                 <div class="row">
                     <div class="col-md-3">
-                        <button class="btn btn-primary" ng-click="addNewDrugs(drgName,drgCategory,unitPrice,total,sname,semail,minQty)">Submit</button>
+                        <button class="btn btn-primary" ng-click="addNewBatch(drg._id,drg.quentity,drgName,batchNo,total,expDate,manuDate)">Submit</button>
                     </div>
                 </div>
                 <br>
