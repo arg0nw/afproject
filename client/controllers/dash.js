@@ -1,27 +1,21 @@
 var myApp= angular.module('myApp');
-myApp.controller('DashController',['$scope', '$http', '$location', '$routeParams',function($scope, $http, $location, $routeParams) {
-	console.log('DashController');
-
-	$scope.signIn = function(){
-		$http.get('/api/dash').then(successCallback, errorCallback);
-	function successCallback(response){
-   		$scope.user=response.data;
-   		console.log($scope.user)
-	}
-	function errorCallback(error){
-    	console.log("errrrrrrrrrrrrrrrrrrrrrr1");
-	}
+myApp.controller('DashController',['$scope', '$http', '$location', '$routeParams','$rootScope',function($scope, $http, $location, $routeParams, $rootScope) {
+	$scope.redirectAddNewUser = function(){
+		$location.path('/newuser')
 	}
 
-	$scope.register = function(){
+	$scope.redirectPharmacy = function(){
+		$location.path('/prescriptions')
+	}
 
-		$http.post('/api/dash', $scope.book).then(successCallback, errorCallback);
-	function successCallback(response){
-   		window.location.href="#/users";
+	$scope.redirectInventory = function(){
+		$location.path('/newuser')
 	}
-	function errorCallback(error){
-    	console.log("errrrrrrrrrrrrrrrrrrrrrr");
-	}
+
+	
+	$rootScope.loadData = function(){
+		$rootScope.uname=localStorage.getItem("username");
+		console.log($scope.uname);
 	}
 
 }]);

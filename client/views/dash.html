@@ -1,9 +1,20 @@
 <div class="container">
     <div class="row">
-        <div class="page-header">
-            <h5>Pharm Deus - Dashboard</h5>
+        <div class="page-header" ng-init="loadData()">
+            <h3>Pharm Deus - Dashboard <span class="pull-right">Hello {{uname}}!</span></h3>
         </div>
-
+        <div class="row">
+            <div class="col-md-2">
+                <a class="btn btn-warning pull-left" ng-click="redirectPharmacy()">Pharmacy</a>
+            </div>
+            <div class="col-md-2">
+                <a class="btn btn-warning pull-left" ng-click="redirectInventory()">Inventory</a>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"><a class="btn btn-success pull-right" ng-click="redirectAddNewUser()">Add new user</a>
+            </div>
+        </div>
+        <hr>
         <div class="col-md-12 sm-6">
             <div class="row">
                 <div class="col-md-4 sm-4">
@@ -32,8 +43,43 @@
                 </div>
             </div>
         </div>
-
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">Drug Stock Stat</div>
+                <div class="panel-body">
+                    <canvas id="drug_stock_stat"></canvas>
+                </div>
+            </div>
+        </div>
+        <script>
+            let drug_stock_stat = document.getElementById('drug_stock_stat').getContext('2d');
+
+            let massPopChart = new Chart(drug_stock_stat, {
+                type: 'bar',
+                data: {
+                    labels: ['drug1', 'drug2', 'drug3'],
+                    datasets: [{
+                        label: 'drugs',
+                        data: [
+                            131,
+                            423,
+                            254
+                        ],
+                        backgroundColor: [
+                            '#67a0fc',
+                            '#41fc98',
+                            '#911e1e'
+                        ]
+                    }]
+                },
+                options: {}
+            })
+        </script>
+    </div>
+
+
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
@@ -51,16 +97,16 @@
         </div>
         <div class="col-md-6">
             <div class="panel panel-default">
-                <div class="panel-heading text-center">Drug Stock Stat</div>
+                <div class="panel-heading text-center">Patient Stat</div>
                 <div class="panel-body">
-                    <canvas id="drug_stock_stat"></canvas>
+                    <canvas id="patient_stat"></canvas>
                 </div>
             </div>
         </div>
         <script>
-            let drug_stock_stat = document.getElementById('drug_stock_stat').getContext('2d');
+            let patient_stat = document.getElementById('patient_stat').getContext('2d');
 
-            let massPopChart = new Chart(drug_stock_stat, {
+            let mssPopChart = new Chart(patient_stat, {
                 type: 'bar',
                 data: {
                     labels: ['drug1', 'drug2', 'drug3'],

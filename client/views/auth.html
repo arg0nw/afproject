@@ -10,13 +10,14 @@
                 <div class="panel-body">
                     <form>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Username">
+                            <input type="text" class="form-control" name="username" placeholder="Username" id="username" ng-model="username">
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input type="password" class="form-control" name="Password" placeholder="Enter password" id="password" ng-model="password">
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="form-control btn-success">Sign in</button>
+                            <button type="submit" class="btn btn-success" ng-click="signin()">Sign in</button>
+                            <button ng-click="redirect()" class=" btn-link pull-right text-info">Forget password?</button>
                         </div>
                     </form>
                 </div>

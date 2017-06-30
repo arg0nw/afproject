@@ -11,7 +11,14 @@ var Drug= require('./models/drugs.js');
 var Prescription= require('./models/prescriptions.js');
 
 
-mongoose.connect('mongodb://danika:qwerty@ds139242.mlab.com:39242/pharmdeus')
+//Connection
+// mongoose.connect("mongodb://localhost:27017/test", function (err, db) {
+//     if (!err) {
+//         console.log("we are connected to mongo");
+//     }
+// })
+
+ mongoose.connect('mongodb://danika:qwerty@ds139242.mlab.com:39242/pharmdeus')
 //mongoose.connect('mongodb://samitha071:asd123pharmdeus-shard-00-00-qmi26.mongodb.net:27017,pharmdeus-shard-00-01-qmi26.mongodb.net:27017,pharmdeus-shard-00-02-qmi26.mongodb.net:27017/pharmdeus?ssl=true&replicaSet=pharmdeus-shard-0&authSource=admin');
 var db = mongoose.connection;
 

@@ -1,7 +1,13 @@
 <div class="container">
     <div class="page-header">
-        <h4>Add new User</h4>
+        <h4>Add new User<span class="pull-right">Hello {{uname}}!</span></h4>
     </div>
+    <div class="row" ng-init="loadData()">
+    <div class="col-md-12">
+        <a ng-click="redirect()" class="btn btn-warning pull-right">Back</a>
+    </div>
+    </div>
+    <hr>
     <div class="row">
         <!--<div class="col-md-2"></div>-->
         <div class="col-md-6">
