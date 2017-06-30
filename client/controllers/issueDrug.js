@@ -495,6 +495,7 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
         $http.get('/api/successPrescriptions/'+id).then(successCallback, errorCallback);
         function successCallback(response){
             $scope.successPrescription=response.data;
+
             console.log($scope.successPrescription)
         }
         function errorCallback(error){
