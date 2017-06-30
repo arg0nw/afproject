@@ -10,11 +10,12 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 	$scope.dataDrugs = dataDrugsDatas;
 	//********************************** */
 
-	var i = 0 ;
-	var ii = 0;
+	var i ;
+	var ii ;
+	var iii;
 	
-	$scope.PreLabel = ['Isseued Prescriptions', 'Not Isseued Prescriptions'];
-	 $scope.dataPre = [i , ii];
+	$scope.PreLabel = ['Isseued Prescriptions', 'Total Prescriptions'];
+	
 
 	$scope.onClick = function (points, evt) {
 		console.log(points, evt);
@@ -67,7 +68,7 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 
 		}
 	}
-
+	
 	$scope.getNotIssuedPrescriptions = function(){
         $http.get('/api/notIssuedPrescriptions').then(successCallback, errorCallback);
         function successCallback(response){
@@ -84,11 +85,15 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 		function successCallback(response) {
 			$scope.prescriptions = response.data;
 			i=$scope.prescriptions.length;
+			iii=i-ii;
+			$scope.dataPre = [iii, i];
 		}
 		function errorCallback(error) {
 			console.log("Error in prescription controller");
 		}
 	}
+
+	
 
 
 }]);
