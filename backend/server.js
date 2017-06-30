@@ -12,8 +12,9 @@ var Drug= require('./models/drugs.js');
 var Prescription= require('./models/prescriptions.js');
 var Email= require('./models/emails.js');
 var Patient = require('./models/patients.js');
-var User = require('./models/users.js')
-var Set = require('./models/sets.js')
+var User = require('./models/users.js');
+var Set = require('./models/sets.js');
+var IssuedPrescription = require('./models/issuedPrescriptions.js');
 
 //Connection
 // mongoose.connect("mongodb://localhost:27017/test", function (err, db) {
@@ -356,6 +357,17 @@ app.post('/api/batch',function(req,res){
         }
         res.json(batch);
     });
+});
+
+app.post('/api/addIssuedPrescription', function(req,res){
+    var issuedPrescription=req.body;
+    IssuedPrescription.addIssuedPrescription(issuedPrescription, function(err,issuedPrescription){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(issuedPrescription);
+    })
 });
 
 app.listen(3000);
