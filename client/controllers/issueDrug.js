@@ -76,7 +76,35 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
         function errorCallback(error){
             console.log("Error");
         }
+
+                            $scope.getDrugDetails1 = function(){
+                                var id=$routeParams.id;
+
+                                $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
+                                function successCallback(response){
+                                    $scope.prescription=response.data;
+
+                                    var drug10 = response.data.drug10;
+
+                                    $scope.showDrug10 = drug10;
+
+                                    console.log(drug10);
+
+                                }
+                                function errorCallback(error){
+                                    console.log("Error");
+                                }
+                            }
+
+
     }
+
+
+
+
+
+
+
 
     $scope.getPrescriptionDetails10 = function(){
         var id=$routeParams.id;

@@ -334,5 +334,19 @@ app.get('/api/user',function(req,res){
 	});
 });
 
+app.get('/api/drugQty/:name', function(req,res){
+
+    Drug.getUnitPrice(req.params.name, function(err,drugs){
+        if(err)
+        {
+            throw err;
+        }
+        console.log(drugs);
+        res.json(drugs);
+    })
+
+});
+
+
 app.listen(3000);
 console.log("Listing to port 3000");
