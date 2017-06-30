@@ -1,12 +1,22 @@
 var myApp = angular.module('myApp');
 myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParams', '$rootScope', '$timeout', function ($scope, $http, $location, $routeParams, $rootScope, $timeout, ChartJsProvider) {
 
-	var labelDatas = [];
-	var dataDatas = [];
+	//*************************Drug stat */
+	var labelDrugsDatas = [];
+	var dataDrugsDatas = [];
 	
 
-	$scope.labels = labelDatas;
-	$scope.data = dataDatas;
+	$scope.labelsDrugs = labelDrugsDatas;
+	$scope.dataDrugs = dataDrugsDatas;
+
+	//**************************Patient stat */
+	var labelPatientDatas = [];
+	var dataPatientDatas = [];
+	
+
+	$scope.labelsPatient = labelPatientDatas;
+	$scope.dataPatient = dataPatientDatas;
+
 
 	$scope.onClick = function (points, evt) {
 		console.log(points, evt);
@@ -36,8 +46,8 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 			$scope.drugs = response.data;
 
 			for (var i = 0; i < response.data.length; i++) {
-				labelDatas[i] = response.data[i].drugname;
-				dataDatas[i] = response.data[i].quentity;
+				labelDrugsDatas[i] = response.data[i].drugname;
+				dataDrugsDatas[i] = response.data[i].quentity;
 			}
 			console.log($scope.drugs);
 
@@ -61,6 +71,21 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 		function successCallback(response) {
 			$scope.prescriptions = response.data;
 			console.log($scope.prescriptions)
+
+			for (var i = 0; i < response.data.length; i++) {
+				labelPatientDatas[i] = response.data[i].drugname;
+				dataPatientDatas[i] = response.data[i].quentity;
+			}
+			console.log($scope.drugs);
+
+			$scope.drugsOutofStockDrugs = [];
+			debugger;
+			for (var index = 0; index < $scope.drugs.length; index++) {
+				if ($scope.drugs[index].minorder>=$scope.drugs[index].quentity) {
+					$scope.drugsOutofStockDrugs.push($scope.drugs[index]);
+				}		
+				
+			}
 		}
 		function errorCallback(error) {
 			console.log("Error in prescription controller");

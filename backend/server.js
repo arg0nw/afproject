@@ -12,7 +12,7 @@ var Drug= require('./models/drugs.js');
 var Prescription= require('./models/prescriptions.js');
 var Email= require('./models/emails.js');
 var Patient = require('./models/patients.js');
-
+var User = require('./models/users.js')
 
 
 //Connection
@@ -312,5 +312,41 @@ app.put('/api/drugs/:_id',function(req,res){
         res.json(book);
     });
 });
+
+app.post('/api/user',function(req,res){
+	var user=req.body;
+	User.addUser(user,function(err,user)
+	{
+		if (err) {
+			throw err;
+		}
+		res.json(user);
+	});
+});
+
+app.get('/api/user',function(req,res){
+	User.getUsers(function(err,user)
+	{
+		if (err) {
+			throw err;
+		}
+		res.json(user);
+	});
+});
+
+app.get('/api/drugQty/:name', function(req,res){
+
+    Drug.getUnitPrice(req.params.name, function(err,drugs){
+        if(err)
+        {
+            throw err;
+        }
+        console.log(drugs);
+        res.json(drugs);
+    })
+
+});
+
+
 app.listen(3000);
 console.log("Listing to port 3000");

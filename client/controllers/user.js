@@ -5,7 +5,7 @@ var myApp= angular.module('myApp');
 myApp.controller('UsersController',['$scope', '$http', '$location', '$routeParams',function($scope, $http, $location, $routeParams) {
     console.log('UsersController');
 
-    $scope.getUsers = function(){
+   /* $scope.getUsers = function(){
         $http.get('/api/users').then(successCallback, errorCallback);
         function successCallback(response){
             $scope.users=response.data;
@@ -27,6 +27,8 @@ myApp.controller('UsersController',['$scope', '$http', '$location', '$routeParam
         function errorCallback(error){
             console.log("Error");
         }
-    }
+    }*/
 
-}]);
+    
+
+}]);    
