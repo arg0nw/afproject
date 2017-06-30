@@ -15,13 +15,13 @@ var Patient = require('./models/patients.js');
 
 
 //Connection
-/*mongoose.connect("mongodb://localhost:27017/test", function (err, db) {
+mongoose.connect("mongodb://localhost:27017/test", function (err, db) {
     if (!err) {
         console.log("we are connected to mongo");
     }
-})*/
+})
 
- mongoose.connect('mongodb://danika:qwerty@ds139242.mlab.com:39242/pharmdeus')
+ //mongoose.connect('mongodb://danika:qwerty@ds139242.mlab.com:39242/pharmdeus')
 //mongoose.connect('mongodb://samitha071:asd123pharmdeus-shard-00-00-qmi26.mongodb.net:27017,pharmdeus-shard-00-01-qmi26.mongodb.net:27017,pharmdeus-shard-00-02-qmi26.mongodb.net:27017/pharmdeus?ssl=true&replicaSet=pharmdeus-shard-0&authSource=admin');
 var db = mongoose.connection;
 
@@ -260,27 +260,26 @@ app.get('/api/drugs/category', function(req,res){
     })
 });
 
-app.get('/api/drug/:name', function(req,res){
+app.get('/api/drugs/:name', function(req,res){
 	console.log(req.params.name);
-    Drug.getUnitPrice(req.params.name, function(err,drugs){
+    /*Drug.getUnitPrice(req.params.name, function(err,drugs){
         if(err)
         {
             throw err;
         }
-        
-        if (drugs == null)
+        res.json(drugs);
+        /*if (drugs == null)
         	res.send('true');
         else
         	res.send('fail')
-    });
+    })*/
 
-    /*Drug.find({'drugname':req.params.name},function(err,result) {
-        if(err)
-            throw err;
-        res.json(result)
-        // body...
-    });*/
-    
+    db.drugs.find({'drugname':req.params.name},function(err,result) {
+    	if(err)
+    		throw err;
+    	res.json(result)
+    	// body...
+    })
 });
 
 app.listen(3000);
