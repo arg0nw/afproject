@@ -61,7 +61,7 @@
                                             <span class="input-group-addon">-</span>
                                             <input type="text" class="form-control" ng-model="drug1Qty" placeholder="Drug1" disabled>
                                                 <span class="input-group-addon">-</span>
-                                                <input type="text" class="form-control" ng-model="prescription.drug1" placeholder="Drug1" disabled>
+                                                <input  class="form-control" type="number"  min="1" max="9"  placeholder="Qty" id="drug1" onkeydown="return false" >
                                             </div>
                                         </div>
 
@@ -70,20 +70,20 @@
                                             <div class="input-group">
                                                 <input type="text" class="form-control" ng-model="prescription.drug2" placeholder="Drug2" disabled>
                                                 <span class="input-group-addon">-</span>
-                                                <input type="text" class="form-control" ng-model="prescription.drug3" placeholder="Drug2" disabled>
+                                                <input type="text" class="form-control" ng-model="drug2Qty" placeholder="Drug2" disabled>
                                                 <span class="input-group-addon">-</span>
-                                                <input type="text" class="form-control" ng-model="prescription.drug1" placeholder="Drug2" disabled>
+                                                <input  class="form-control" type="number"  min="1" max="9"  placeholder="Qty" id="drug2" onkeydown="return false" >
                                             </div>
                                         </div>
 
-                                        <div class="form-group" ng-init="getPrescriptionDetails3()" ng-show="showDrug3">
+                                        <div class="form-group" ng-init="getPrescriptionDetails3()" ng-show="showDrug2">
                                             <label>Drug 3</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control" ng-model="prescription.drug3" placeholder="Drug3" disabled>
                                                 <span class="input-group-addon">-</span>
-                                                <input type="text" class="form-control" ng-model="prescription.drug3" placeholder="Drug3" disabled>
+                                                <input type="text" class="form-control" ng-model="drug3Qty" placeholder="Drug3" disabled>
                                                 <span class="input-group-addon">-</span>
-                                                <input type="text" class="form-control" ng-model="prescription.drug3" placeholder="Drug3" disabled>
+                                                <input  class="form-control" type="number"  min="1" max="9"  placeholder="Qty" id="drug3" onkeydown="return false" >
                                             </div>
                                         </div>
 
