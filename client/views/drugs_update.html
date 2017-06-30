@@ -1,0 +1,47 @@
+<a href="#!/drugs">Go Back</a>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Update Drugs</h3>
+  </div>
+  <div class="panel-body">
+   	<div class="row">
+   		<form ng-init="getDrug()" ng-submit="updateDrug()">
+        <div class="form-group">
+          <label>Drug Name</label>
+          <input type="text" class="form-control" name="title" ng-model="drug.drugname" placeholder="Drug Name">
+        </div>
+        <div class="form-group">
+          <label>Drug Category</label>
+          <input type="text" class="form-control" name="descriptions" ng-model="drug.drugcategory" placeholder="Description">
+        </div>
+        <div class="form-group">
+          <label>Quantity</label>
+          <input type="text" class="form-control" name="publisher" ng-model="drug.quentity" placeholder="Quentity">
+        </div>
+        <div class="form-group">
+          <label>Unit Price</label>
+          <input type="text" class="form-control" name="author" ng-model="drug.unitprice" placeholder="Unit price">
+        </div>
+        <!--
+        <div class="form-group">
+          <label>Genres</label>
+          <select  class="form-control" name="geners" ng-model="book.geners">
+            <option value="Suspense">Suspense</option>
+            <option value="Romance">Romance</option>
+            <option value="Adventure">Adventure </option>
+          </select>
+        </div>-->
+        <div class="form-group">
+          <label>Supplier Name</label>
+          <input type="text" class="form-control" name="pages" ng-model="drug.supliername" placeholder="Supplier Mail">
+        </div>
+        <div class="form-group">
+          <label>Supplier Mail</label>
+          <input type="text" class="form-control" name="pages" ng-model="drug.supplieremail" placeholder="Supplier e-mail">
+        </div>
+        
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+   	</div>
+  </div>
+</div>
