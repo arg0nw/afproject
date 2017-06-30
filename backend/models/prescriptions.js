@@ -14,6 +14,10 @@ var prescriptionsSchema = mongoose.Schema({
         type:String,
         required:true
     },
+    age:{
+        type:String,
+        required:true
+    },
     date:{
         type:Date,
         default:Date.now
