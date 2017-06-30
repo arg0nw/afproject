@@ -30,4 +30,14 @@ myApp.controller('notIssuedPrescriptionsController',['$scope', '$http', '$locati
             console.log("Error");
         }
     }
+
+    $scope.sendPrescriptionDetails = function(prescriptionID){
+        $http.post('/api/prescriptions/'+prescriptionID, $scope.book).then(successCallback, errorCallback);
+        function successCallback(response){
+            window.location.href="#/issueDrugs";
+        }
+        function errorCallback(error){
+            console.log("errrrrrrrrrrrrrrrrrrrrrr");
+        }
+    }
 }]);
