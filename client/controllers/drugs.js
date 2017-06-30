@@ -80,7 +80,7 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
 		//console.log(num1+''+num2+''+num3);
 		$scope.total=num1*num2*num3;
 	}
-	$scope.addNewDrugs = function (name,drgCategory,unitPrice,tot,sname,semail) {
+	$scope.addNewDrugs = function (name,drgCategory,unitPrice,tot,sname,semail,minQty) {
 		console.log(name+'/'+drgCategory+'/'+unitPrice+'/'+tot);
 		
 
@@ -113,6 +113,20 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
    			if(response.data=='true')
    			{
    				$scope.errormsg="";
+   				var drugObj = {
+   					"drugname":name,
+   					"drugcategory":drgCategory,
+   					"quentity":tot,
+   					"unitprice":unitPrice,
+   					"supliername":sname,
+   					"supplieremail":semail,
+   					"status":"true",
+   					"minorder":minQty
+   				
+   				};
+   				console.log(response.data);
+
+   				console.log(drugObj);
    			}
    			else
    			{
