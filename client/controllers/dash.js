@@ -1,14 +1,4 @@
-var myApp = angular.module('myApp', ['chart.js']);
-// myApp.config(['ChartJsProvider'], function (ChartJsProvider) {
-// 		ChartJsProvider.setOptions({
-// 			chartColors: ['red', 'green', 'blue'],
-// 			responsive: true
-// 		});
-
-// 		ChartJsProvider.setOptions('bar', {
-// 			showLines: false
-// 		})
-// 	})
+var myApp = angular.module('myApp');
 myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParams', '$rootScope', '$timeout', function ($scope, $http, $location, $routeParams, $rootScope, $timeout, ChartJsProvider) {
 
 	// $scope.labels = ['drug1', 'drug2', 'drug3'];
@@ -39,25 +29,25 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 	$scope.onClick = function (points, evt) {
 		console.log(points, evt);
 	};
-	$scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
-	$scope.options = {
-		scales: {
-			yAxes: [
-				{
-					id: 'y-axis-1',
-					type: 'linear',
-					display: true,
-					position: 'left'
-				},
-				{
-					id: 'y-axis-2',
-					type: 'linear',
-					display: true,
-					position: 'right'
-				}
-			]
-		}
-	};
+	// $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
+	// $scope.options = {
+	// 	scales: {
+	// 		yAxes: [
+	// 			{
+	// 				id: 'y-axis-1',
+	// 				type: 'linear',
+	// 				display: true,
+	// 				position: 'left'
+	// 			},
+	// 			{
+	// 				id: 'y-axis-2',
+	// 				type: 'linear',
+	// 				display: true,
+	// 				position: 'right'
+	// 			}
+	// 		]
+	// 	}
+	// };
 
 	$scope.searchString = '';
 

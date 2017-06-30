@@ -1,9 +1,11 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute','chart.js']);
 myApp.config(function ($routeProvider) {
-	$routeProvider.when('/dash', {
-		controller: 'DashController',
-		templateUrl: 'views/dash.html'
-	})
+	debugger;
+
+		$routeProvider.when('/dash', {
+			controller: 'DashController',
+			templateUrl: 'views/dash.html'
+		})
 		.when('/books', {
 			controller: 'BooksController',
 			templateUrl: 'views/books.html'
