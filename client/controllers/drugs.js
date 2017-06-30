@@ -14,7 +14,7 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
    		
 		}
 	}
-
+	$scope.total=0;
 	$scope.openNav=function() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
@@ -59,6 +59,26 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
    		 
 		}
 		console.log(mailOptions);
+	}
+
+	$scope.cal1 = function(num1,num2) {
+		$scope.total=num1*num2;
+	}
+
+	$scope.cal2 = function(num1,num2) {
+		$scope.total=num1*num2;
+	}
+	$scope.cal3 = function(num1,num2,num3) {
+		console.log(num1+''+num2+''+num3);
+		$scope.total=num1*num2*num3;
+	}
+	$scope.cal4 = function(num1) {
+		//console.log(num1+''+num2+''+num3);
+		$scope.total=num1;
+	}
+	$scope.cal5 = function(num1,num2,num3) {
+		//console.log(num1+''+num2+''+num3);
+		$scope.total=num1*num2*num3;
 	}
 
 }]);

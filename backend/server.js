@@ -259,5 +259,28 @@ app.get('/api/drugs/category', function(req,res){
         res.json(drugs);
     })
 });
+
+app.get('/api/drugs/:name', function(req,res){
+	console.log(req.params.name);
+    /*Drug.getUnitPrice(req.params.name, function(err,drugs){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(drugs);
+        /*if (drugs == null)
+        	res.send('true');
+        else
+        	res.send('fail')
+    })*/
+
+    db.drugs.find({'drugname':req.params.name},function(err,result) {
+    	if(err)
+    		throw err;
+    	res.json(result)
+    	// body...
+    })
+});
+
 app.listen(3000);
 console.log("Listing to port 3000");
