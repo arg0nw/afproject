@@ -1,57 +1,72 @@
-<div class="panel panel-default" ng-init="getMails()">
 <div class="container">
-	<div class="panel-heading">
-		<h3>E-mails</h3>
-	</div>
-	<div class="panel-body">
-		
-		<div class="row" ng-repeat="mail in mails" style="width: 100%">
-			
-			<a href="" ng-click="showData(mail._id)" data-toggle="modal" data-target="#myModal"><h4><i class="glyphicon glyphicon-chevron-right"></i> {{mail.subject}}</h4></a> <span class="pull-right">{{mail.emaildate.substring(0,10)}}</span>
-			<p>{{mail.text.substring(0, 51)}}....</p>
-			<hr>
-		</div>
-			
-	</div>
-	</div>
-</div>
+  <div class="page-header">
+    <h4>Sent Mails</h4>
+  </div>
+  <div class="row">
+    
+    <a href="#!/drugs" class="btn btn-default">Go Back</a>
+    <hr>
+    <div class="col-md-12">
+      <div class="panel panel-default" ng-init="getMails()">
+        <div class="container">
+          <div class="panel-heading">
+            <h3>E-mails</h3>
+          </div>
+          <div class="panel-body">
 
-<!--
-<button type="button" class="btn btn-info btn-lg" ng-click="showData()" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+            <div class="row" ng-repeat="mail in mails" style="width: 100%">
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+              <a href="" ng-click="showData(mail._id)" data-toggle="modal" data-target="#myModal">
+                <h4><i class="glyphicon glyphicon-chevron-right"></i> {{mail.subject}}</h4>
+              </a> <span class="pull-right">{{mail.emaildate.substring(0,10)}}</span>
+              <p>{{mail.text.substring(0, 51)}}....</p>
+              <hr>
+            </div>
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">E-mail</h4>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-        	<div class="col-md-3">From</div>
-        	<div class="col-md-7">{{m.from}}</div>
-        </div><br>
-        <div class="row">
-        	<div class="col-md-3">To</div>
-        	<div class="col-md-7">{{m.to}}</div>
-        </div><br>
-        <div class="row">
-        	<div class="col-md-3">Subject</div>
-        	<div class="col-md-7">{{m.subject}}</div>
-        </div><br>
-        <div class="row">
-        	<div class="col-md-3">Message</div>
-        	<div class="col-md-7">{{m.text}}</div>
+          </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+      <!--
+<button type="button" class="btn btn-info btn-lg" ng-click="showData()" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+
+      <!-- Modal -->
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">E-mail</h4>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-3">From</div>
+                <div class="col-md-7">{{m.from}}</div>
+              </div><br>
+              <div class="row">
+                <div class="col-md-3">To</div>
+                <div class="col-md-7">{{m.to}}</div>
+              </div><br>
+              <div class="row">
+                <div class="col-md-3">Subject</div>
+                <div class="col-md-7">{{m.subject}}</div>
+              </div><br>
+              <div class="row">
+                <div class="col-md-3">Message</div>
+                <div class="col-md-7">{{m.text}}</div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
 
+
   </div>
 </div>
-

@@ -1,25 +1,32 @@
-<div class="panel panel-default" ng-init="getDrug()">
-  <div class="panel-heading">
-    <h3 class="panel-title">{{drug.drugname}}</h3>
+<div class="container">
+  <div class="page-header">
+    <h3>Drug Details</h3>
   </div>
-  <div class="panel-body">
-    <div class="row" >
-      
-      <div class="col-md-3">
-        <h3>{{drug.drugname}}</h3>
-        <p>{{drug.drugcategory}}</p>
-        <p>{{drug.quentity}}</p>
-        <p>{{drug.unitprice}}</p>
-        <p>{{drug.supliername}}</p>
-        <p>{{drug.quentity}}</p>
-        <p>{{drug.drugcreateddate}}</p>
+  <div class="row">
+    <div class="col-md-3"><a href="#!/drugs" class="btn btn-default">Go Back</a>  </div>
+    <div class="col-md-6">
+      <div class="panel panel-primary" ng-init="getDrug()">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <h4>{{drug.drugname}}</h4>
+          </div>
+        </div>
+        <div class="panel-body">
+          <h3><b>Name:</b> {{drug.drugname}}</h3>
+          <h5><b>Category:</b> {{drug.drugcategory}}</h5>
+          <h5><b>Quentity:</b> {{drug.quentity}}</h5>
+          <h5><b>Unit Price:</b> {{drug.unitprice}}</h5>
+          <h5><b>Suplier Name:</b>{{drug.supliername}}</h5>
+          <h5><b>Quentity:</b> {{drug.quentity}}</h5>
+          <h5><b>Date:</b> {{drug.drugcreateddate}}</h5>
+          <div class="pull-right">
+        <a href="#!/drugs/update/{{drug._id}}" class="btn btn-warning">Edit</a>
+      </div>
+        </div>
         
       </div>
       
     </div>
+    <div class="col-md-3"></div>
   </div>
-  </div>
-
-  <div class="pull-right">
-    <a href="#!/drugs/update/{{drug._id}}">Edit</a> | <a href="#/" ng-click="removeBook(book._id)">Delete</a>
-  </div>
+</div>

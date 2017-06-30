@@ -43,6 +43,19 @@ myApp.controller('PrescriptionsController',['$scope', '$http','$location','$rout
         }
     }
 
+    $scope.getDrugs = function(){
+        $http.get('/api/drugs').then(successCallback, errorCallback);
+        function successCallback(response){
+            $scope.drugs=response.data;
+            console.log($scope.drugs);
+
+        }
+        function errorCallback(error){
+
+
+        }
+    }
+
 
 
     $scope.getDetails = function(nic){

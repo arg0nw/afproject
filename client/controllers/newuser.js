@@ -29,7 +29,7 @@ myApp.controller('NewUController',['$scope', '$http', '$location', '$routeParams
         $http.post('/api/user/', $scope.user).then(successCallback,errorCallback);
 		function successCallback(response)
 		{
-			window.location.href="#!/drugs";
+			window.location.href="#!/newuser";
 		}
 		function errorCallback(error)
 		{
