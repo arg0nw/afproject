@@ -174,6 +174,17 @@ app.get('/api/prescriptions/:_id', function(req,res){
     })
 });
 
+app.post('/api/prescriptions', function(req,res){
+    var book=req.body;
+    Book.addBooks(book, function(err,book){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(book);
+    })
+});
+
 app.post('/api/mail' ,function (req,res) {
 	var mail=req.body;
 	transporter.sendMail(mail, function(error, info){
