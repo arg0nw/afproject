@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09b8b16d-8b46-4c31-97f1-fc7fcdc8cafd" name="Default" comment="">
+    <list default="true" id="09b8b16d-8b46-4c31-97f1-fc7fcdc8cafd" name="Default" comment="stable release">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/models/prescriptions.js" afterPath="$PROJECT_DIR$/backend/models/prescriptions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/server.js" afterPath="$PROJECT_DIR$/backend/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/controllers/issueDrug.js" afterPath="$PROJECT_DIR$/client/controllers/issueDrug.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/views/issueDrugs.html" afterPath="$PROJECT_DIR$/client/views/issueDrugs.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="issueDrug.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="issueDrug.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/controllers/issueDrug.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="495" column="0" lean-forward="true" selection-start-line="495" selection-start-column="0" selection-end-line="495" selection-end-column="0" />
+            <state relative-caret-position="3907">
+              <caret line="1051" column="71" lean-forward="false" selection-start-line="1051" selection-start-column="71" selection-end-line="1051" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -37,8 +33,8 @@
       <file leaf-file-name="prescriptions.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/models/prescriptions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1063">
-              <caret line="108" column="32" lean-forward="false" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="32" />
+            <state relative-caret-position="485">
+              <caret line="110" column="31" lean-forward="true" selection-start-line="110" selection-start-column="31" selection-end-line="110" selection-end-column="31" />
               <folding>
                 <element signature="e#0#56#0" expanded="false" />
               </folding>
@@ -50,17 +46,7 @@
         <entry file="file://$PROJECT_DIR$/backend/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="4" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="14" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="issueDrugs.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/views/issueDrugs.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1363">
-              <caret line="140" column="137" lean-forward="true" selection-start-line="140" selection-start-column="137" selection-end-line="140" selection-end-column="137" />
+              <caret line="16" column="4" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="16" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -70,8 +56,40 @@
         <entry file="file://$PROJECT_DIR$/client/views/successIssuedPrescription.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+              <caret line="20" column="2" lean-forward="false" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="issueDrugs.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/views/issueDrugs.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="166" column="963" lean-forward="false" selection-start-line="166" selection-start-column="963" selection-end-line="166" selection-end-column="963" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="99">
+              <caret line="337" column="27" lean-forward="true" selection-start-line="337" selection-start-column="9" selection-end-line="337" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="drugs.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/controllers/drugs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="200" column="9" lean-forward="true" selection-start-line="189" selection-start-column="12" selection-end-line="200" selection-end-column="9" />
+              <folding>
+                <marker date="1498865275774" expanded="true" signature="5801:5809" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,8 +158,8 @@
         <option value="$PROJECT_DIR$/client/views/successIssuedPrescription.html" />
         <option value="$PROJECT_DIR$/client/views/viewNotIssuedPrescriptions.html" />
         <option value="$PROJECT_DIR$/backend/server.js" />
-        <option value="$PROJECT_DIR$/client/controllers/issueDrug.js" />
         <option value="$PROJECT_DIR$/backend/models/prescriptions.js" />
+        <option value="$PROJECT_DIR$/client/controllers/issueDrug.js" />
         <option value="$PROJECT_DIR$/client/views/issueDrugs.html" />
       </list>
     </option>
@@ -715,7 +733,7 @@
       <workItem from="1498693092365" duration="4463000" />
       <workItem from="1498701862151" duration="367000" />
       <workItem from="1498749655780" duration="8701000" />
-      <workItem from="1498867450761" duration="5291000" />
+      <workItem from="1498867450761" duration="16508000" />
     </task>
     <task id="LOCAL-00001" summary="new commit">
       <created>1498665551561</created>
@@ -955,11 +973,32 @@
       <option name="project" value="LOCAL" />
       <updated>1498870447343</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="stable release">
+      <created>1498872793112</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1498872793112</updated>
+    </task>
+    <task id="LOCAL-00036" summary="stable release">
+      <created>1498881090487</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1498881090487</updated>
+    </task>
+    <task id="LOCAL-00037" summary="stable release">
+      <created>1498883806978</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1498883806978</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74833000" />
+    <option name="totallyTimeSpent" value="86050000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -1230,6 +1269,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="60" column="27" lean-forward="false" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1308,7 +1348,7 @@
     <entry file="file://$PROJECT_DIR$/backend/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="4" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="14" selection-end-column="4" />
+          <caret line="16" column="4" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="16" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1321,12 +1361,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="337" column="27" lean-forward="true" selection-start-line="337" selection-start-column="9" selection-end-line="337" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/controllers/drugs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-442">
-          <caret line="130" column="54" lean-forward="false" selection-start-line="130" selection-start-column="48" selection-end-line="130" selection-end-column="54" />
+        <state relative-caret-position="544">
+          <caret line="200" column="9" lean-forward="true" selection-start-line="189" selection-start-column="12" selection-end-line="200" selection-end-column="9" />
           <folding>
             <marker date="1498865275774" expanded="true" signature="5801:5809" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/prescriptions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="110" column="31" lean-forward="true" selection-start-line="110" selection-start-column="31" selection-end-line="110" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#56#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1339,44 +1397,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="408" column="0" lean-forward="false" selection-start-line="408" selection-start-column="0" selection-end-line="408" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/views/successIssuedPrescription.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/prescriptions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1063">
-          <caret line="108" column="32" lean-forward="false" selection-start-line="108" selection-start-column="32" selection-end-line="108" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#56#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/controllers/issueDrug.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="495" column="0" lean-forward="true" selection-start-line="495" selection-start-column="0" selection-end-line="495" selection-end-column="0" />
+          <caret line="20" column="2" lean-forward="false" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/views/issueDrugs.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1363">
-          <caret line="140" column="137" lean-forward="true" selection-start-line="140" selection-start-column="137" selection-end-line="140" selection-end-column="137" />
+        <state relative-caret-position="289">
+          <caret line="166" column="963" lean-forward="false" selection-start-line="166" selection-start-column="963" selection-end-line="166" selection-end-column="963" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/controllers/issueDrug.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3907">
+          <caret line="1051" column="71" lean-forward="false" selection-start-line="1051" selection-start-column="71" selection-end-line="1051" selection-end-column="71" />
           <folding />
         </state>
       </provider>
