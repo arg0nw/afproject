@@ -4,14 +4,16 @@
   "description": "simple app",
   "main": "server.js",
   "scripts": {
-    "test": "test test/test.js",
+    "test": "mocha test/test.js",
     "start": "node server.js"
   },
   "dependencies": {
     "angular-chart.js": "^1.1.1",
     "body-parser": "*",
     "express": "*",
-    "mongoose": "*"
+    "mongoose": "*",
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1"
   },
   "author": "",
   "license": "ISC"

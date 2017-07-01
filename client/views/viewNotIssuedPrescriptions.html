@@ -1,55 +1,51 @@
 <div class="container" ng-app="sortApp" ng-init="getNotIssuedPrescriptions()">
-    <div class="page-header">
-        <h4>Issue Drugs</h4>
-    </div>
-    <div class="row">
-        <!--
+    <!--
       <div class="alert alert-info">
         <p>Sort Type: {{ sortType }}</p>
         <p>Sort Reverse: {{ sortReverse }}</p>
         <p>Search Query: {{ searchFish }}</p>
       </div>
     -->
-        <div>
-            <acme-navbar></acme-navbar>
-        </div>
-        <form>
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon " id="basic-addon1">Search</span>
-                    <input type="text" class="form-control" placeholder="Enter NIC" aria-describedby="basic-addon1" ng-model="searchFish">
-                </div>
+    <div>
+        <acme-navbar></acme-navbar>
+    </div>
+    <form>
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon " id="basic-addon1" >Search</span>
+                <input type="text" class="form-control" placeholder="Enter NIC" aria-describedby="basic-addon1" ng-model="searchFish">
             </div>
-        </form>
+        </div>
+    </form>
 
-        <div class="panel panel-primary">
-            <div class="panel-heading">Prescriptions</div>
-            <table class="table table-bordered table-striped">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Prescriptions</div>
+        <table class="table table-bordered table-striped">
 
-                <thead>
-                </thead>
+            <thead>
+            </thead>
                 <th>
-                    Patient Name
+                   Patient Name
                 </th>
                 <th>
                     NIC
                 </th>
                 <th>
                 </th>
-                <tbody>
-                    <tbody>
-                        <tr ng-repeat="b in issuedPrescriptions | orderBy:sortType:sortReverse | filter:searchFish">
-                            <td>{{b.name}}</td>
-                            <td>{{b.patientnic}}</td>
-                            <!--<td ><button type="button" class="btn btn-success center-block" ng-click="sendPrescriptionDetails(b._id,b.patientnic)">Issue Drugs</button></td>-->
-                            <td><a href="#!/issueDrugs/{{b._id}}/{{b.patientnic}}" class="btn btn-primary">Issue Drug</a></td>
+            <tbody>
+            <tbody>
+            <tr ng-repeat="b in issuedPrescriptions | orderBy:sortType:sortReverse | filter:searchFish"  >
+                <td>{{b.name}}</td>
+                <td>{{b.patientnic}}</td>
+                <!--<td ><button type="button" class="btn btn-success center-block" ng-click="sendPrescriptionDetails(b._id,b.patientnic)">Issue Drugs</button></td>-->
+                <td><a href="#!/issueDrugs/{{b._id}}/{{b.patientnic}}" class="btn btn-success center-block">Issue Drugs</a></td>
 
-                        </tr>
-                    </tbody>
-                </tbody>
+            </tr>
+            </tbody>
+            </tbody>
 
-            </table>
-        </div>
+        </table>
 
-    </div>
+
+</div>
 </div>

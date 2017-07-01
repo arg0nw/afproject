@@ -1,188 +1,172 @@
-<div class="container">
-    <div class="page-header">
-        <h4>Issue Drug</h4>
+<div class="panel panel-default" ng-init="getPrescription() ; getPatientsByNIC()">
+    <div class="panel-heading">
+        <h3 class="panel-title">Prescription Details</h3>
     </div>
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="panel panel-default" ng-init="getPrescription() ; getPatientsByNIC()">
-            <div class="panel-heading">
-                <h3 class="panel-title">Prescription Details</h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
+    <div class="panel-body">
+        <div class="row">
 
-                    <div class="col-md-6">
-                        <div class="col-md-12">
-                            <div class="container" ng-init="">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-6 col-md-6">
-                                        <div class="well well-sm">
-                                            <div class="row">
-                                                <div class="col-sm-6 col-md-4">
-                                                    <img src="{{patient[0].url}}" alt="" class="img-rounded img-responsive" />
-                                                </div>
-                                                <div class="col-sm-6 col-md-8">
-                                                    <h4>{{patient[0].name}}</h4>
-                                                    <p>
-                                                        <i class="glyphicon glyphicon-user"></i>{{[patient[0].age]}}
-                                                        <br />
-                                                        <i class="glyphicon glyphicon-tint"></i>{{patient[0].bloodgroup}}</a>
-                                                        <br />
-                                                        <i class="glyphicon glyphicon-triangle-right"></i>{{patient[0].gender}}
-                                                        <br />
-                                                        <i class="glyphicon glyphicon-credit-card"></i>{{patient[0].patientnic}}
-                                                        <br />
-                                                        <i class="glyphicon glyphicon-phone-alt"></i>{{patient[0].contactnumber}}
-                                                        <br />
-                                                        <i class="glyphicon glyphicon-envelope"></i>{{patient[0].email}}
+            <div class="col-md-6">
+                <div class="col-md-12">
+                    <div class="container" ng-init="">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="well well-sm">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-4">
+                                            <img src="{{patient[0].url}}" alt="" class="img-rounded img-responsive" />
+                                        </div>
+                                        <div class="col-sm-6 col-md-8">
+                                            <h4>{{patient[0].name}}</h4>
+                                            <p>
+                                                <i class="glyphicon glyphicon-user"></i>{{[patient[0].age]}}
+                                                <br />
+                                                <i class="glyphicon glyphicon-tint"></i>{{patient[0].bloodgroup}}</a>
+                                                <br />
+                                                <i class="glyphicon glyphicon-triangle-right"></i>{{patient[0].gender}}
+                                                <br />
+                                                <i class="glyphicon glyphicon-credit-card"></i>{{patient[0].patientnic}}
+                                                <br />
+                                                <i class="glyphicon glyphicon-phone-alt"></i>{{patient[0].contactnumber}}
+                                                <br />
+                                                <i class="glyphicon glyphicon-envelope"></i>{{patient[0].email}}
 
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
+                </div>
 
-                    <div class="col-md-6">
-                        <div class="col-md-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">Prescription</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <form ng-submit="addBooking()">
-                                                <div class="form-group">
-                                                    <label>Prescription ID</label>
-                                                    <input type="text" class="form-control" ng-model="prescription._id" placeholder="PresID" disabled>
-                                                </div>
-                                                <div class="form-group" ng-init="getPrescriptionDetails1()" ng-show="prescription.drug1">
-                                                    <label>Drug 1</label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" ng-model="prescription.drug1" placeholder="Drug1" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input type="text" class="form-control" ng-model="drug1Qty" placeholder="Drug1" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input class="form-control" type="number" min="1" max="9" placeholder="Qty" id="drug1" onkeydown="return false">
-                                                    </div>
-                                                </div>
+            </div>
 
-                                                <div class="form-group" ng-init="getPrescriptionDetails2()" ng-show="prescription.drug2">
-                                                    <label>Drug 2</label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" ng-model="prescription.drug2" placeholder="Drug2" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input type="text" class="form-control" ng-model="drug2Qty" placeholder="Drug2" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input class="form-control" type="number" min="1" max="9" placeholder="Qty" id="drug2" onkeydown="return false">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group" ng-init="getPrescriptionDetails3()" ng-show="prescription.drug3">
-                                                    <label>Drug 3</label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" ng-model="prescription.drug3" placeholder="Drug3" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input type="text" class="form-control" ng-model="drug3Qty" placeholder="Drug3" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input class="form-control" type="number" min="1" max="9" placeholder="Qty" id="drug3" onkeydown="return false">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group" ng-init="getPrescriptionDetails4()" ng-show="prescription.drug4">
-                                                    <label>Drug 4</label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" ng-model="prescription.drug4" placeholder="Drug4" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input type="text" class="form-control" ng-model="drug4Qty" placeholder="Drug4" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input class="form-control" type="number" min="1" max="9" placeholder="Qty" id="drug4" onkeydown="return false">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group" ng-init="getPrescriptionDetails5()" ng-show="prescription.drug5">
-                                                    <label>Drug 5</label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" ng-model="prescription.drug5" placeholder="Drug5" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input type="text" class="form-control" ng-model="drug5Qty" placeholder="Drug5" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input class="form-control" type="number" min="1" max="9" placeholder="Qty" id="drug5" onkeydown="return false">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group" ng-init="getPrescriptionDetails6()" ng-show="prescription.drug6">
-                                                    <label>Drug 6</label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" ng-model="prescription.drug6" placeholder="Drug6" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input type="text" class="form-control" ng-model="drug6Qty" placeholder="Drug6" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input class="form-control" type="number" min="1" max="9" placeholder="Qty" id="drug6" onkeydown="return false">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group" ng-init="getPrescriptionDetails7()" ng-show="prescription.drug7">
-                                                    <label>Drug 7</label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" ng-model="prescription.drug7" placeholder="Drug7" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input type="text" class="form-control" ng-model="drug7Qty" placeholder="Drug7" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input class="form-control" type="number" min="1" max="9" placeholder="Qty" id="drug7" onkeydown="return false">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group" ng-init="getPrescriptionDetails8()" ng-show="prescription.drug8">
-                                                    <label>Drug 8</label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" ng-model="prescription.drug8" placeholder="Drug8" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input type="text" class="form-control" ng-model="drug8Qty" placeholder="Drug8" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input class="form-control" type="number" min="1" max="9" placeholder="Qty" id="drug8" onkeydown="return false">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group" ng-init="getPrescriptionDetails9()" ng-show="prescription.drug9">
-                                                    <label>Drug 9</label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" ng-model="prescription.drug9" placeholder="Drug9" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input type="text" class="form-control" ng-model="drug9Qty" placeholder="Drug9" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input class="form-control" type="number" min="1" max="9" placeholder="Qty" id="drug9" onkeydown="return false">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group" ng-init="getPrescriptionDetails10()" ng-show="prescription.drug10">
-                                                    <label>Drug 10</label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" ng-model="prescription.drug10" placeholder="Drug10" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input type="text" class="form-control" ng-model="drug10Qty" placeholder="Drug10" disabled>
-                                                        <span class="input-group-addon">-</span>
-                                                        <input class="form-control" type="number" min="1" max="9" placeholder="Qty" id="drug10" onkeydown="return false">
-                                                    </div>
-                                                </div>
-
-                                                <button type="submit" class="btn btn-default" ng-click="addIssuedPrescription(prescription.doctorid, prescription.doctorname, hospitalid,  prescription.detail, prescription.drug1, prescription.drug2, prescription.drug3, prescription.drug4, prescription.drug5, prescription.drug6, prescription.drug7, prescription.drug8, prescription.drug9, prescription.drug10,drug1Qty,drug2Qty,drug3Qty,drug4Qty,drug5Qty,drug6Qty,drug7Qty,drug8Qty,drug9Qty,drug10Qty, patient[0].patientnic, patient[0].name, patient[0].age)">Submit</button>
-                                            <a ng-click="redirect()" class="btn btn-warning pull-right">Back</a>
-                                            </form>
-                                              
+            <div class="col-md-6">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Prescription</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form ng-submit="addBooking()">
+                                        <div class="form-group" >
+                                            <label>Prescription ID</label>
+                                            <input type="text" class="form-control" ng-model="prescription._id" placeholder="PresID" disabled>
                                         </div>
-<<<<<<< HEAD
-                                    </div>
-=======
+                                        <div class="form-group" ng-init="getPrescriptionDetails1()" ng-show="prescription.drug1">
+                                            <label>Drug 1</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="prescription.drug1" placeholder="Drug1" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input type="text" class="form-control" ng-model="drug1Qty" placeholder="Drug1" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input  class="form-control" type="number"  min="1" max="9"  placeholder="Qty" id="drug1" ng-model="newQty1" onkeydown="return false" >
+                                            </div>
+                                        </div>
 
-                                        <button type="submit" class="btn btn-default" ng-click="addIssuedPrescription(prescription.doctorid, prescription.doctorname, hospitalid,  prescription.detail, prescription.drug1, prescription.drug2, prescription.drug3, prescription.drug4, prescription.drug5, prescription.drug6, prescription.drug7, prescription.drug8, prescription.drug9, prescription.drug10,drug1Qty,drug2Qty,drug3Qty,drug4Qty,drug5Qty,drug6Qty,drug7Qty,drug8Qty,drug9Qty,drug10Qty, patient[0].patientnic, patient[0].name, patient[0].age, prescription.detail )" >Submit</button>
+                                        <div class="form-group" ng-init="getPrescriptionDetails2()" ng-show="prescription.drug2">
+                                            <label>Drug 2</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="prescription.drug2" placeholder="Drug2" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input type="text" class="form-control" ng-model="drug2Qty" placeholder="Drug2" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input  class="form-control" type="number"  min="1" max="9"  placeholder="Qty" id="drug2" onkeydown="return false" >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" ng-init="getPrescriptionDetails3()" ng-show="prescription.drug3">
+                                            <label>Drug 3</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="prescription.drug3" placeholder="Drug3" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input type="text" class="form-control" ng-model="drug3Qty" placeholder="Drug3" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input  class="form-control" type="number"  min="1" max="9"  placeholder="Qty" id="drug3" onkeydown="return false" >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" ng-init="getPrescriptionDetails4()" ng-show="prescription.drug4">
+                                            <label>Drug 4</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="prescription.drug4" placeholder="Drug4" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input type="text" class="form-control" ng-model="drug4Qty" placeholder="Drug4" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input  class="form-control" type="number"  min="1" max="9"  placeholder="Qty" id="drug4" onkeydown="return false" >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" ng-init="getPrescriptionDetails5()" ng-show="prescription.drug5">
+                                            <label>Drug 5</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="prescription.drug5" placeholder="Drug5" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input type="text" class="form-control" ng-model="drug5Qty" placeholder="Drug5" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input  class="form-control" type="number"  min="1" max="9"  placeholder="Qty" id="drug5" onkeydown="return false" >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" ng-init="getPrescriptionDetails6()" ng-show="prescription.drug6">
+                                            <label>Drug 6</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="prescription.drug6" placeholder="Drug6" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input type="text" class="form-control" ng-model="drug6Qty" placeholder="Drug6" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input  class="form-control" type="number"  min="1" max="9"  placeholder="Qty" id="drug6" onkeydown="return false" >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" ng-init="getPrescriptionDetails7()" ng-show="prescription.drug7">
+                                            <label>Drug 7</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="prescription.drug7" placeholder="Drug7" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input type="text" class="form-control" ng-model="drug7Qty" placeholder="Drug7" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input  class="form-control" type="number"  min="1" max="9"  placeholder="Qty" id="drug7" onkeydown="return false" >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" ng-init="getPrescriptionDetails8()" ng-show="prescription.drug8">
+                                            <label>Drug 8</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="prescription.drug8" placeholder="Drug8" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input type="text" class="form-control" ng-model="drug8Qty" placeholder="Drug8" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input  class="form-control" type="number"  min="1" max="9"  placeholder="Qty" id="drug8" onkeydown="return false" >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" ng-init="getPrescriptionDetails9()" ng-show="prescription.drug9">
+                                            <label>Drug 9</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="prescription.drug9" placeholder="Drug9" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input type="text" class="form-control" ng-model="drug9Qty" placeholder="Drug9" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input  class="form-control" type="number"  min="1" max="9"  placeholder="Qty" id="drug9" onkeydown="return false" >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" ng-init="getPrescriptionDetails10()" ng-show="prescription.drug10">
+                                            <label>Drug 10</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" ng-model="prescription.drug10" placeholder="Drug10" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input type="text" class="form-control" ng-model="drug10Qty" placeholder="Drug10" disabled>
+                                                <span class="input-group-addon">-</span>
+                                                <input  class="form-control" type="number"  min="1" max="9"  placeholder="Qty" id="drug10" onkeydown="return false" >
+                                            </div>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-default" ng-click="addIssuedPrescription(prescription.doctorid, prescription.doctorname, hospitalid,  prescription.detail, prescription.drug1, prescription.drug2, prescription.drug3, prescription.drug4, prescription.drug5, prescription.drug6, prescription.drug7, prescription.drug8, prescription.drug9, prescription.drug10,newQty1,drug2Qty,drug3Qty,drug4Qty,drug5Qty,drug6Qty,drug7Qty,drug8Qty,drug9Qty,drug10Qty, patient[0].patientnic, patient[0].name, patient[0].age, prescription.detail )" >Submit</button>
                                     </form>
 
->>>>>>> c1569abc98d04c307d0b12537f54d20da720c460
                                 </div>
                             </div>
                         </div>
