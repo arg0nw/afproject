@@ -381,5 +381,15 @@ app.put('/api/drg/:_id',function(req,res){
         res.json(book);
     });
 });
+
+app.get('/api/successPrescriptions/:_id', function(req,res){
+    IssuedPrescription.getNotIssuedPrescriptions(function(err,notIssuedPrescriptions){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(notIssuedPrescriptions);
+    })
+});
 app.listen(3000);
 console.log("Listing to port 3000");

@@ -45,7 +45,6 @@
 }
 
 
-
 .glyphicon {  margin-bottom: 10px;margin-right: 10px;}
 
 small {
@@ -156,4 +155,3 @@ small {
 [class*=' form-group'].margin-0 [class*=' form-group'] {
     margin-left: 0;
     margin-right: 0; }
-    

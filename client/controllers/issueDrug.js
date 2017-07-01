@@ -478,10 +478,27 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
         };
         $http.post('/api/addIssuedPrescription', pesobj).then(successCallback, errorCallback);
         function successCallback(response){
-            window.location.href="#!/prescriptions";
+
+            var id = response.data._id;
+
+            window.location.href="#!/successDrugIssue/"+id;
         }
         function errorCallback(error){
             console.log(error);
+        }
+    }
+
+    $scope.getSuccessPrescriptionByID = function(){
+
+        var id=$routeParams.id;
+
+        $http.get('/api/successPrescriptions/'+id).then(successCallback, errorCallback);
+        function successCallback(response){
+            $scope.successPrescription=response.data;
+            console.log($scope.successPrescription)
+        }
+        function errorCallback(error){
+            console.log("errrrrrrrrrrrrrrrrrrrrrr");
         }
     }
 

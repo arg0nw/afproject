@@ -103,3 +103,7 @@ module.exports.addIssuedPrescription = function (issuedPrescription,callback) {
     IssuedPrescription.create(issuedPrescription,callback);
 }
 
+module.exports.getSuccessPrescriptionByID = function (id,callback) {
+    IssuedPrescription.findById(id, callback);
+}
+
