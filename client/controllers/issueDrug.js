@@ -5,6 +5,9 @@ var myApp= angular.module('myApp');
 myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeParams',function($scope, $http, $location, $routeParams) {
     console.log('IssueDrugController');
 
+    $scope.redirect = function(){
+        $location.path('/notIssuedPrescriptions');
+    }
 
     $scope.drugDetails=null;
     $scope.getPatientsByNIC = function(){

@@ -105,7 +105,7 @@ myApp.config(function ($routeProvider) {
         })
 
 		.otherwise({
-			redirectTo: '/dash'
+			redirectTo: '/auth'
 		})
 
 

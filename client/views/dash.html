@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" ng-init="getPrescriptions(); getNotIssuedPrescriptions()">
             <div class="panel panel-default">
                 <div class="panel-heading text-center">Prescriptions stat</div>
                 <div class="panel-body">
@@ -69,23 +69,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading text-center">Out of Stock Drugs </div>
                 <div class="panel-body">
                     <div class="list-group">
                         <a href="#"  ng-repeat="drug in drugsOutofStockDrugs" class="list-group-item">{{drug.drugname}}</a>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading text-center">Drug Stock Stat</div>
-                <div class="panel-body">
-                    <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options"
-                        chart-dataset-override="datasetOverride" chart-click="onClick">
-                    </canvas>
                 </div>
             </div>
         </div>
