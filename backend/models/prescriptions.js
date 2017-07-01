@@ -101,3 +101,12 @@ module.exports.updatePrescription = function (id,prescription,options,callback) 
 module.exports.getNotIssuedPrescriptions = function (callback,limit) {
     Prescription.find({'isissued':'notissued'},callback).limit(limit);
 }
+
+module.exports.updateDrugQty1 = function (name,prescription,options,callback) {
+
+    var query = {name:name};
+    var update = {
+        quentity: $scope.leftQty
+    };
+    Prescription.update(query,update,options,callback);
+}

@@ -518,6 +518,67 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
         }
     }
 
+    $scope.updateDrugQty1 = function(){
+
+        var name;
+
+        $scope.getPrescriptionDetails1 = function(){
+            var id=$routeParams.id;
+
+            $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
+            function successCallback(response){
+                $scope.prescription=response.data;
+
+                $scope.drug1 = response.data.drug1;
+
+                $scope.showDrug1 = $scope.drug1;
+
+                var name = $scope.drug1;
+
+                if(name != null) {
+                    $http.get('/api/drugQty/' + name).then(successCallback, errorCallback);
+                    function successCallback(response) {
+                        $scope.drugDetails = response.data;
+                        console.log($scope.drugDetails)
+                        $scope.drug1Qty = $scope.drugDetails[0].quentity;
+                        console.log($scope.drugDetails[0].quentity);
+
+                        $("#drug1").attr({
+                            "max": $scope.drug1Qty,
+                            "min": 0
+                        });
+
+
+                    }
+
+                    function errorCallback(error) {
+                        console.log("Error");
+                    }
+                }
+            }
+            function errorCallback(error){
+                console.log("Error");
+            }
+
+
+
+        }
+
+
+        var drugqty =parseInt( $scope.drug1Qty);
+        var baseqty =parseInt( $scope.drugQty1Now);
+        $scope.leftQty = baseqty - drugqty;
+
+        $http.put(name, $scope.prescription).then(successCallback, errorCallback);
+        function successCallback(response){
+
+        }
+        function errorCallback(error){
+            console.log("errrrrrrrrrrrrrrrrrrrrrr");
+        }
+    }
+
+
 
 
 
