@@ -17,5 +17,6 @@ myApp.controller('AuthController',['$scope', '$http', '$location', '$routeParams
 	$scope.redirect = function(){
 		$location.path('/forget');
 	}
-	
+
+
 }]);

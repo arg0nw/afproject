@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute','chart.js', 'satellizer']);
+var myApp = angular.module('myApp', ['ngRoute','chart.js']);
 myApp.config(function ($routeProvider) {
 	//debugger;
 
