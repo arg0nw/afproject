@@ -26,14 +26,21 @@ myApp.controller('NewUController',['$scope', '$http', '$location', '$routeParams
 	}
 
 	$scope.addUser = function(){
+		if ($scope.user.username=='' || $scope.user.username==null) {
+			$location.path('/')
+		}
         $http.post('/api/user/', $scope.user).then(successCallback,errorCallback);
 		function successCallback(response)
 		{
-			window.location.href="#!/newuser";
+			$scope.redirectNewUser();
 		}
 		function errorCallback(error)
 		{
 			console.log('err from getBooks')
 		}
     }
+
+	$scope.redirectNewUser = function(){
+		$location.path="#!/newuser";
+	}
 }]);
