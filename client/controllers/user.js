@@ -28,7 +28,17 @@ myApp.controller('UsersController',['$scope', '$http', '$location', '$routeParam
             console.log("Error");
         }
     }*/
-
+        $scope.signin =function(usr,pwd){
+            console.location(usr+'/'+pwd);
+            if(uname=='admin' && pwd=='admin')
+            {
+                window.location.href='#!/dash';
+            }
+            else
+            {
+                window.location.href='#!/auth';
+            }
+        }
     
 
 }]);    

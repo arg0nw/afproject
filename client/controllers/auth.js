@@ -34,7 +34,7 @@ myApp.controller('AuthController', ['$scope', '$http', '$location', '$routeParam
 	// 		}
 	// 		}
 
-	$scope.signin = function () {
+	/*$scope.signin = function () {
 		// if (username == "admin" && password == "admin") {
 			localStorage.setItem("username", username);
 			$location.path('/dash');
@@ -59,5 +59,17 @@ myApp.controller('AuthController', ['$scope', '$http', '$location', '$routeParam
 
 		}
 	}
+*/
 
+$scope.signin =function(usr,pwd){
+            console.log(usr+'/'+pwd);
+            if(usr=='admin' && pwd=='admin')
+            {
+                window.location.href='#!/dash';
+            }
+            else
+            {
+                window.location.href='#!/auth';
+            }
+        }
 }]);
