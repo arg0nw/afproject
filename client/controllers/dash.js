@@ -1,27 +1,9 @@
 var myApp = angular.module('myApp');
 myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParams', '$rootScope', '$timeout', function ($scope, $http, $location, $routeParams, $rootScope, $timeout, ChartJsProvider) {
 
-	// $scope.labels = ['drug1', 'drug2', 'drug3'];
-	// 	$scope.data = [
-	// 		131,
-	// 		423,
-	// 		254
-	// 	];
-
-	// 	$scope.onClick = function(point, evt){
-	// 		console.log(point, evt);
-	// 	}
-
-	// 	$timeout(function(){
-	// 		$scope.data = [
-	// 		131,
-	// 		423,
-	// 		254
-	// 	];
-	// 	}, 3000);
-
 	var labelDatas = [];
 	var dataDatas = [];
+	
 
 	$scope.labels = labelDatas;
 	$scope.data = dataDatas;
@@ -29,29 +11,6 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 	$scope.onClick = function (points, evt) {
 		console.log(points, evt);
 	};
-
-
-	// $scope.datasetOverride = [{ yAxisID: 'y-axis-1' }, { yAxisID: 'y-axis-2' }];
-	// $scope.options = {
-	// 	scales: {
-	// 		yAxes: [
-	// 			{
-	// 				id: 'y-axis-1',
-	// 				type: 'linear',
-	// 				display: true,
-	// 				position: 'left'
-	// 			},
-	// 			{
-	// 				id: 'y-axis-2',
-	// 				type: 'linear',
-	// 				display: true,
-	// 				position: 'right'
-	// 			}
-	// 		]
-	// 	}
-	// };
-
-	// $scope.searchString = '200';
 
 	$scope.redirectAddNewUser = function () {
 		$location.path('/newuser')
@@ -62,7 +21,7 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 	}
 
 	$scope.redirectInventory = function () {
-		$location.path('/newuser')
+		$location.path('/drugs')
 	}
 
 
