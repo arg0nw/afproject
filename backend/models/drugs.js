@@ -11,7 +11,7 @@ var drugsSchema = mongoose.Schema({
 		required:true
 	},
 	quentity:{
-    	type:String,
+    	type:Number,
     	required:true
     },
     unitprice:{
@@ -77,6 +77,21 @@ module.exports.updateBook=function(id,book,options,callback){
         supliername:book.supliername,
         supplieremail:book.supplieremail,
         minorder:book.minorder
+    };
+
+    Drug.findOneAndUpdate(query,update,options,callback);
+}
+
+module.exports.updateQty=function(id,qty,options,callback){
+    var query={_id:id};
+    var update={
+        drugname:qty.drugname,
+        drugcategory:qty.drugcategory,
+        quentity:qty.quentity,
+        unitprice:qty.unitprice,
+        supliername:qty.supliername,
+        supplieremail:qty.supplieremail,
+        minorder:qty.minorder
     };
 
     Drug.findOneAndUpdate(query,update,options,callback);

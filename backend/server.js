@@ -370,5 +370,16 @@ app.post('/api/addIssuedPrescription', function(req,res){
     })
 });
 
+app.put('/api/drg/:_id',function(req,res){
+    var id=req.params._id;
+    var batch=req.body;
+    Drug.updateQty(id,batch,{},function(err,book)
+    {
+        if (err) {
+            throw err;
+        }
+        res.json(book);
+    });
+});
 app.listen(3000);
 console.log("Listing to port 3000");
