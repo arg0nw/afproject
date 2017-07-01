@@ -1,4 +1,4 @@
-<div class="panel panel-default" ng-init="getPrescriptions()">
+<div class="panel panel-default" ng-init="getPrescription() ; getPatientsByNIC()">
     <div class="panel-heading">
         <h3 class="panel-title">Prescription Details</h3>
     </div>
@@ -7,28 +7,28 @@
 
                 <div class="col-md-6">
                     <div class="col-md-12">
-                    <div class="container" ng-init="getPatientsByID()">
+                    <div class="container" ng-init="">
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <div class="well well-sm">
                                     <div class="row">
                                         <div class="col-sm-6 col-md-4">
-                                            <img src="{{patient.url}}" alt="" class="img-rounded img-responsive" />
+                                            <img src="{{patient[0].url}}" alt="" class="img-rounded img-responsive" />
                                         </div>
                                         <div class="col-sm-6 col-md-8">
-                                            <h4>{{patient.name}}</h4>
+                                            <h4>{{patient[0].name}}</h4>
                                             <p>
-                                                <i class="glyphicon glyphicon-user"></i>{{patient.age}}
+                                                <i class="glyphicon glyphicon-user"></i>{{[patient[0].age]}}
                                                 <br />
-                                                <i class="glyphicon glyphicon-tint"></i>{{patient.bloodgroup}}</a>
+                                                <i class="glyphicon glyphicon-tint"></i>{{patient[0].bloodgroup}}</a>
                                                 <br />
-                                                <i class="glyphicon glyphicon-triangle-right"></i>{{patient.gender}}
+                                                <i class="glyphicon glyphicon-triangle-right"></i>{{patient[0].gender}}
                                                 <br />
-                                                <i class="glyphicon glyphicon-credit-card"></i>{{patient.patientnic}}
+                                                <i class="glyphicon glyphicon-credit-card"></i>{{patient[0].patientnic}}
                                                 <br />
-                                                <i class="glyphicon glyphicon-phone-alt"></i>{{patient.contactnumber}}
+                                                <i class="glyphicon glyphicon-phone-alt"></i>{{patient[0].contactnumber}}
                                                 <br />
-                                                <i class="glyphicon glyphicon-envelope"></i>{{patient.email}}
+                                                <i class="glyphicon glyphicon-envelope"></i>{{patient[0].email}}
 
                                         </div>
                                     </div>
@@ -49,48 +49,50 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <form ng-submit="addBooking()" ng-init="getPrescriptionByID()">
+                                    <form ng-submit="addBooking()">
                                         <div class="form-group" >
                                             <label>Prescription ID</label>
-                                            <input type="text" class="form-control" ng-model="booking.bookingID" placeholder="Booking ID">
+                                            <input type="text" class="form-control" ng-model="prescription._id" placeholder="PresID" disabled>
                                         </div>
                                         <div class="form-group">
-                                            <label>User Name</label>
-                                            <input type="text" class="form-control" ng-model="booking.userName" placeholder="User Name">
+                                            <label>Drug 1</label>
+                                            <input type="text" class="form-control" ng-model="prescription.drug1" placeholder="Drug1" disabled>
                                         </div>
-
                                         <div class="form-group">
-                                            <label>Time Slot</label>
-                                            <select ng-model="booking.timeSlot" class="form-control">
-                                                <option value="1.30 - 3.00">1.30 - 3.00</option>
-                                                <option value="4.00 - 5.00">4.00 - 5.00</option>
-                                                <option value="6.00 - 8.00">6.00 - 8.00</option>
-                                            </select>
+                                            <label>Drug 2</label>
+                                            <input type="text" class="form-control" ng-model="prescription.drug2" placeholder="Drug2" disabled>
                                         </div>
-
                                         <div class="form-group">
-                                            <label>Seat No</label>
-                                            <input type="text" class="form-control" ng-model="booking.seatNo" placeholder="Seat No">
+                                            <label>Drug 3</label>
+                                            <input type="text" class="form-control" ng-model="prescription.drug3" placeholder="Drug3" disabled>
                                         </div>
-
                                         <div class="form-group">
-                                            <label>Meal</label>
-                                            <select ng-model="booking.meal" class="form-control">
-                                                <option value="Burger + Coke">Burger + Coke</option>
-                                                <option value="PopCorn + Coke">PopCorn + Coke</option>
-                                                <option value="Burger">Burger</option>
-                                                <option value="Coke">Coke</option>
-                                            </select>
+                                            <label>Drug 4</label>
+                                            <input type="text" class="form-control" ng-model="prescription.drug4" placeholder="Drug4" disabled>
                                         </div>
-
                                         <div class="form-group">
-                                            <label>Movie ID</label>
-                                            <input type="text" class="form-control" ng-model="booking.movieID" placeholder="Movie ID">
+                                            <label>Drug 5</label>
+                                            <input type="text" class="form-control" ng-model="prescription.drug6" placeholder="Drug6" disabled>
                                         </div>
-
                                         <div class="form-group">
-                                            <label>Theater ID</label>
-                                            <input type="text" class="form-control" ng-model="booking.theaterID" placeholder="Theater ID">
+                                            <label>Drug 6</label>
+                                            <input type="text" class="form-control" ng-model="prescription.drug6" placeholder="Drug6" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Drug 7</label>
+                                            <input type="text" class="form-control" ng-model="prescription.drug7" placeholder="Drug7" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Drug 8</label>
+                                            <input type="text" class="form-control" ng-model="prescription.drug8" placeholder="Drug8" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Drug 9</label>
+                                            <input type="text" class="form-control" ng-model="prescription.drug9" placeholder="Drug9" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Drug 10</label>
+                                            <input type="text" class="form-control" ng-model="prescription.drug10" placeholder="Drug10" disabled>
                                         </div>
 
                                         <button type="submit" class="btn btn-default">Submit</button>

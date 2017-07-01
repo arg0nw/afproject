@@ -96,6 +96,15 @@ myApp.config(function ($routeProvider) {
 			controller: 'DrugsController',
 			templateUrl: 'views/drugs_details.html'
 		})
+		.when('/drugs/update/:id', {
+			controller: 'DrugsController',
+			templateUrl: 'views/drugs_update.html'
+		})
+
+        .when('/issueDrugs/:id/:nic', {
+            controller: 'IssueDrugController',
+            templateUrl: 'views/issueDrugs.html'
+        })
 
 		.otherwise({
 			redirectTo: '/'

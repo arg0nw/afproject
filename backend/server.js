@@ -289,5 +289,28 @@ app.post('/api/drugs', function(req,res){
     })
 });
 
+app.get('/api/pid/:name', function(req,res){
+    
+    Patient.pidn(req.params.name, function(err,drugs){
+        if(err)
+        {
+            throw err;
+        }
+        console.log(drugs);
+        res.json(drugs);
+    })
+
+});
+app.put('/api/drugs/:_id',function(req,res){
+    var id=req.params._id;
+    var book=req.body;
+    Drug.updateBook(id,book,{},function(err,book)
+    {
+        if (err) {
+            throw err;
+        }
+        res.json(book);
+    });
+});
 app.listen(3000);
 console.log("Listing to port 3000");

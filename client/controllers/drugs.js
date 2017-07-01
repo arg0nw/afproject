@@ -148,4 +148,22 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
 
 	}
 
+
+	$scope.updateDrug=function() {
+		var id=$routeParams.id;
+
+		$http.put('api/drugs/'+id,$scope.drug).then(successCallback,errorCallback);
+		function successCallback(response)
+		{
+			window.location.href="#!/drugs";
+		}
+		function errorCallback(error)
+		{
+			console.log('err from getBooks')
+		}
+		
+	}
+
+
+
 }]);

@@ -42,4 +42,19 @@ myApp.controller('PrescriptionsController',['$scope', '$http','$location','$rout
             console.log("Error");
         }
     }
+
+
+
+    $scope.getDetails = function(nic){
+
+
+        $http.get('/api/pid/'+nic).then(successCallback, errorCallback);
+        function successCallback(response){
+            $scope.prescription=response.data;
+            console.log($scope.prescription)
+        }
+        function errorCallback(error){
+            console.log("Error");
+        }
+    }
 }]);
