@@ -164,6 +164,28 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
 		
 	}
 
+	$scope.addNewBatch = function (id,qty,drgName,batchNo,total,expDate,manuDate) {
+		console.log(id+'     ??      '+drgName+'/'+batchNo+'/'+total+'/'+expDate+'/'+manuDate);
+
+		var batchObj = {
+			"batchName": batchNo,
+    		"qty": total,
+    		"drugname": drgName,
+    		"expireDate": expDate,
+       		"manufacDate": manuDate
+    		
+		};
+		$scope.newQty=qty+total;
+		/*$http.post('/api/batch', batchObj).then(successCallback, errorCallback);
+		function successCallback(response){
+   					window.location.href="#!/drugs";
+		}
+		function errorCallback(error){
+    				console.log("errrrrrrrrrrrrrrrrrrrrrr");
+		}*/
+
+	}
+
 
 
 }]);

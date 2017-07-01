@@ -1,9 +1,6 @@
 /**
  * Created by Blindsight3D on 6/29/2017.
  */
-/**
- * Created by SamithaHeanthenna-PC on 6/28/2017.
- */
 
 var mongoose=require('mongoose');
 
@@ -61,6 +58,36 @@ var issuedPrescriptionsSchema = mongoose.Schema({
     drug10:{
         type:String
     },
+    drugQty1:{
+        type:String
+    },
+    drugQty2:{
+        type:String
+    },
+    drugQty3:{
+        type:String
+    },
+    drugQty4:{
+        type:String
+    },
+    drugQty5:{
+        type:String
+    },
+    drugQty6:{
+        type:String
+    },
+    drugQty7:{
+        type:String
+    },
+    drugQty8:{
+        type:String
+    },
+    drugQty9:{
+        type:String
+    },
+    drugQty10:{
+        type:String
+    },
     detail:{
         type:String
     },
@@ -72,18 +99,7 @@ var issuedPrescriptionsSchema = mongoose.Schema({
 
 var IssuedPrescription = module.exports = mongoose.model('IssuedPrescription',issuedPrescriptionsSchema);
 
-//get all issued prescriptions
-module.exports.getIssuedPrescriptions = function (callback,limit) {
-    IssuedPrescription.find(callback).limit(limit);
-}
-
-//get issued prescriptions by id
-module.exports.getIssuedPrescriptionByID = function (id,callback) {
-    IssuedPrescription.findById(id, callback);
-}
-
-//post issued prescriptions
-module.exports.addIssuedPrescriptions = function (issuedprescription,callback) {
-    IssuedPrescription.create(issuedprescription,callback);
+module.exports.addIssuedPrescription = function (issuedPrescription,callback) {
+    IssuedPrescription.create(issuedPrescription,callback);
 }
 
