@@ -1,8 +1,12 @@
 <div class="container" ng-init="getPrescriptions()">
     <div class="page-header">
-        <h4>Recently Issued Prescriptions <span class="btn btn-success pull-right" ng-click="addPresc()">Add Prescription</span></h4>
+        <h4>Recently Issued Prescriptions<span class="btn btn-danger pull-right" ng-click="logout()">Logout</span></h4>
     </div>
-
+    <div class="row">
+    <span class="btn btn-success pull-right" ng-click="addPresc()">Add Prescription</span>
+    </div>
+    <hr>
+    
     <div class="col-md-12">
         <div class="col-md-3" ng-repeat="prescription in prescriptions">
             <div class="panel panel-success">

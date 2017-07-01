@@ -14,6 +14,10 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 	var ii ;
 	var iii;
 	
+	$scope.logout = function(){
+		$location.path('/auth');
+	}
+
 	$scope.PreLabel = ['Not Isseued Prescriptions', 'Isseued Prescriptions'];
 	
 

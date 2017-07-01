@@ -13,6 +13,10 @@ myApp.controller('PrescriptionsController',['$scope', '$http','$location','$rout
         
     }
 
+    $scope.logout = function(){
+		$location.path('/auth');
+	}
+    
     $scope.getPrescriptions = function () {
         $http.get('/api/prescriptions').then(successCallback,errorCallback);
         function successCallback(response){
