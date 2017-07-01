@@ -382,8 +382,10 @@ app.put('/api/drg/:_id',function(req,res){
     });
 });
 
+
+
 app.get('/api/successPrescriptions/:_id', function(req,res){
-    IssuedPrescription.getNotIssuedPrescriptions(function(err,notIssuedPrescriptions){
+    IssuedPrescription.getSuccessPrescriptionByID(req.params._id, function(err,notIssuedPrescriptions){
         if(err)
         {
             throw err;
