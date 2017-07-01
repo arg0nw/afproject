@@ -55,11 +55,6 @@ myApp.config(function ($routeProvider) {
 			controller: 'ForgetController',
 			templateUrl: 'views/forget.html'
 		})
-
-		.otherwise({
-			redirectTo: '/dash'
-		})
-
 		.when('/prescriptions/add', {
 			controller: 'PrescriptionsController',
 			templateUrl: 'views/addprescription.html'
