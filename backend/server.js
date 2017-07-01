@@ -13,6 +13,10 @@ var Prescription= require('./models/prescriptions.js');
 var Email= require('./models/emails.js');
 var Patient = require('./models/patients.js');
 
+var checkAuthenticated = require('./services/checkAuthenticated');
+var auth = require('./controllers/auth');
+
+
 
 //Connection
 // mongoose.connect("mongodb://localhost:27017/test", function (err, db) {
@@ -24,6 +28,12 @@ var Patient = require('./models/patients.js');
 mongoose.connect('mongodb://danika:qwerty@ds139242.mlab.com:39242/pharmdeus')
 //mongoose.connect('mongodb://samitha071:asd123pharmdeus-shard-00-00-qmi26.mongodb.net:27017,pharmdeus-shard-00-01-qmi26.mongodb.net:27017,pharmdeus-shard-00-02-qmi26.mongodb.net:27017/pharmdeus?ssl=true&replicaSet=pharmdeus-shard-0&authSource=admin');
 var db = mongoose.connection;
+
+
+app.post('/auth/register', auth.register);
+
+app.post('/auth/login', auth.login);
+
 
 app.get('/',function (req,res) {
 	res.send('Helloooo');
