@@ -55,7 +55,7 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 			console.log($scope.drugs);
 
 			$scope.drugsOutofStockDrugs = [];
-			debugger;
+			//debugger;
 			for (var index = 0; index < $scope.drugs.length; index++) {
 				if ($scope.drugs[index].minorder>=$scope.drugs[index].quentity) {
 					$scope.drugsOutofStockDrugs.push($scope.drugs[index]);
