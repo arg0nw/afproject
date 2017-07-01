@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="page-header" ng-init="loadData(); getDrugs(); getPrescriptions(); getNotIssuedPrescriptions()">
-            <h3>Pharm Deus - Dashboard <span class="pull-right">Hello!</span></h3>
+            <h3>Pharm Deus - Dashboard s</h3>
         </div>
         <div class="row">
             <div class="col-md-2">
@@ -20,7 +20,7 @@
         <div class="col-md-12 sm-6">
             <div class="row">
                 <div class="col-md-4 sm-4">
-                    <div class="panel panel-default">
+                    <div class="panel panel-success">
                         <div class="panel-heading text-center">Total Number of Drugs</div>
                         <div class="panel-body text-center">
                             <h3>{{drugs.length}}</h3>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 sm-4">
-                    <div class="panel panel-default">
+                    <div class="panel panel-success">
                         <div class="panel-heading text-center">Total Number of Prescriptions</div>
                         <div class="panel-body text-center">
                             <h3>{{prescriptions.length}}</h3>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 sm-4">
-                    <div class="panel panel-default">
+                    <div class="panel panel-success">
                         <div class="panel-heading text-center">Number of not isuued prescriptions</div>
                         <div class="panel-body text-center">
                             <h3>{{issuedPrescriptions.length}}</h3>
@@ -70,8 +70,8 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-default">
-                <div class="panel-heading text-center">Out of Stock Drugs </div>
+            <div class="panel panel-danger">
+                <div class="panel-heading text-center">Drugs that reached to the margin</div>
                 <div class="panel-body">
                     <div class="list-group">
                         <a href="#"  ng-repeat="drug in drugsOutofStockDrugs" class="list-group-item">{{drug.drugname}}</a>
