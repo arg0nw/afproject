@@ -446,7 +446,7 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
         }
     }
 
-    $scope.addIssuedPrescription=function (doctorid,doctorname, hospitalid, detail, drug1, drug2, drug3, drug4, drug5, drug6, drug7, drug8, drug9, drug10,drugQty1, drugQty2, drugQty3, drugQty4, drugQty5, drugQty6, drugQty7, drugQty8, drugQty9, drugQty10, nic, pname, page) {
+    $scope.addIssuedPrescription=function (doctorid,doctorname, hospitalid, detail, drug1, drug2, drug3, drug4, drug5, drug6, drug7, drug8, drug9, drug10,drugQty1, drugQty2, drugQty3, drugQty4, drugQty5, drugQty6, drugQty7, drugQty8, drugQty9, drugQty10, nic, pname, page,details) {
         var pesobj = {
             "doctorid":doctorid,
             "doctorname":doctorname,
@@ -474,7 +474,8 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
             "drugQty10":drugQty10,
             "patientnic":nic,
             "name":pname,
-            "age":page
+            "age":page,
+            "detail":details
         };
         $http.post('/api/addIssuedPrescription', pesobj).then(successCallback, errorCallback);
         function successCallback(response){
@@ -502,6 +503,8 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
             console.log("errrrrrrrrrrrrrrrrrrrrrr");
         }
     }
+
+
 
 
 }]);
