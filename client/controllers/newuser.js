@@ -7,7 +7,7 @@ myApp.controller('NewUController',['$scope', '$http', '$location', '$routeParams
 
 
 	$scope.getUsers = function(){
-		$http.get('/api/users').then(successCallback, errorCallback);
+		$http.get('/api/user').then(successCallback, errorCallback);
 		function successCallback(response){
    			$scope.users=response.data;
    			console.log($scope.users);
@@ -26,12 +26,14 @@ myApp.controller('NewUController',['$scope', '$http', '$location', '$routeParams
 	}
 
 	$scope.addUser = function(){
-	$http.post('/api/users', $scope.user).then(successCallback, errorCallback);
-	function successCallback(response){
-   		console.log("added record");
-	}
-	function errorCallback(error){
-    	console.log("errrrrrrrrrrrrrrrrrrrrrr");
-	}
-	}
+        $http.post('/api/user/', $scope.user).then(successCallback,errorCallback);
+		function successCallback(response)
+		{
+			window.location.href="#!/drugs";
+		}
+		function errorCallback(error)
+		{
+			console.log('err from getBooks')
+		}
+    }
 }]);
