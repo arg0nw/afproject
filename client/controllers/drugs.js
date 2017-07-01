@@ -175,7 +175,8 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
        		"manufacDate": manuDate
     		
 		};
-		
+		if(expDate.getTime() > manuDate.getTime())
+		{	
 		$http.post('/api/batch', batchObj).then(successCallback, errorCallback);
 		function successCallback(response){
 
@@ -189,7 +190,7 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
 			$scope.selectedDrug[0].quentity=$scope.selectedDrug[0].quentity+total;
 
 
-			$http.put('api/drg/'+$scope.selectedDrug[0]._id, $scope.selectedDrug[0]).then(successCallback,errorCallback);
+			$http.put('api/drg/'+$scope.selectedDrug[0]._id , $scope.selectedDrug[0]).then(successCallback,errorCallback);
 		function successCallback(response)
 		{
 			window.location.href="#!/drugs";
@@ -209,6 +210,11 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
 		}
 		function errorCallback(error){
     				console.log("errrrrrrrrrrrrrrrrrrrrrr");
+		}
+		}
+		else
+		{
+			console.log("date error");
 		}
 
 	}
