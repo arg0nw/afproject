@@ -15,6 +15,13 @@ myApp.config(function ($routeProvider) {
 			templateUrl: 'views/auth.html'
 		})
 		.when('/dash', {
+			resolve:{
+				"check": function(){
+					if (1==2) {
+						$location.path('/newuser');
+					}
+				}
+			},
 			controller: 'DashController',
 			templateUrl: 'views/dash.html'
 		})

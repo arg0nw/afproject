@@ -1,14 +1,14 @@
 <div class="container">
     <div class="row">
         <div class="page-header" ng-init="loadData(); getDrugs(); getPrescriptions(); getpatients()">
-            <h3>Pharm Deus - Dashboard <span class="pull-right">Hello {{uname}}!</span></h3>
+            <h3>Pharm Deus - Dashboard <span class="pull-right">Hello!</span></h3>
         </div>
         <div class="row">
             <div class="col-md-2">
-                <a class="btn btn-warning pull-left" ng-click="redirectPharmacy()">Pharmacy</a>
+                <a class="btn btn-warning pull-left" ng-click="redirectPharmacy()">View Pharmacy</a>
             </div>
             <div class="col-md-2">
-                <a class="btn btn-warning pull-left" ng-click="redirectInventory()">Inventory</a>
+                <a class="btn btn-warning pull-left" ng-click="redirectInventory()">View inventory</a>
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-4"><a class="btn btn-success pull-right" ng-click="redirectAddNewUser()">Add new user</a>
@@ -45,47 +45,31 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading text-center">Drug Stock Stat</div>
                 <div class="panel-body">
-                    <!--<canvas class="chat chat-bar" id="drug_stock_stat" chart-data="data" chart-labels="labels" chart-colors="colors"></canvas>-->
-
-                    <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options"
+                    <canvas id="bar" class="chart chart-bar" chart-data="dataDrugs" chart-labels="labelsDrugs" chart-series="series" chart-options="options"
                         chart-dataset-override="datasetOverride" chart-click="onClick">
                     </canvas>
                 </div>
             </div>
         </div>
-        <!--<script>
-            let drug_stock_stat = document.getElementById('drug_stock_stat').getContext('2d');
-
-            let massPopChart = new Chart(drug_stock_stat, {
-                type: 'bar',
-                data: {
-                    labels: ['drug1', 'drug2', 'drug3'],
-                    datasets: [{
-                        label: 'drugs',
-                        data: [
-                            131,
-                            423,
-                            254
-                        ],
-                        backgroundColor: [
-                            '#67a0fc',
-                            '#41fc98',
-                            '#911e1e'
-                        ]
-                    }]
-                },
-                options: {}
-            })
-        </script>-->
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">Patient Per day</div>
+                <div class="panel-body">
+                    <canvas id="pie" class="chart chart-pie" chart-data="dataPatient" chart-labels="labelsPatient" chart-series="series" chart-options="options"
+                        chart-dataset-override="datasetOverride" chart-click="onClick">
+                    </canvas>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="col-md-6">
             <div class="panel panel-default">
-                <div class="panel-heading text-center">Out of Stock Drugs  </div>
+                <div class="panel-heading text-center">Out of Stock Drugs </div>
                 <div class="panel-body">
                     <div class="list-group">
                         <a href="#" ng-model="searchString" ng-repeat="drug in drugsOutofStockDrugs" class="list-group-item">{{drug.drugname}}</a>
@@ -93,37 +77,15 @@
                 </div>
             </div>
         </div>
-        <!--<div class="col-md-6">
+        <div class="col-md-6">
             <div class="panel panel-default">
-                <div class="panel-heading text-center">Patient Stat</div>
+                <div class="panel-heading text-center">Drug Stock Stat</div>
                 <div class="panel-body">
-                    <canvas id="patient_stat"></canvas>
+                    <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options"
+                        chart-dataset-override="datasetOverride" chart-click="onClick">
+                    </canvas>
                 </div>
             </div>
         </div>
-        <script>
-            let patient_stat = document.getElementById('patient_stat').getContext('2d');
-
-            let mssPopChart = new Chart(patient_stat, {
-                type: 'bar',
-                data: {
-                    labels: ['drug1', 'drug2', 'drug3'],
-                    datasets: [{
-                        label: 'drugs',
-                        data: [
-                            131,
-                            423,
-                            254
-                        ],
-                        backgroundColor: [
-                            '#67a0fc',
-                            '#41fc98',
-                            '#911e1e'
-                        ]
-                    }]
-                },
-                options: {}
-            })
-        </script>-->
     </div>
 </div>

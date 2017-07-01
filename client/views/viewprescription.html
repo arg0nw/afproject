@@ -1,21 +1,22 @@
-<div class="panel panel-default" ng-init="getPrescriptions()">
-    <div class="panel-heading">
-        <h3 class="panel-title">Recently issued prescriptions</h3>
+<div class="container" ng-init="getPrescriptions()">
+    <div class="page-header">
+        <h4>Recently Issued Prescriptions</h4>
     </div>
-    <div class="panel-body">
-        <div class="row">
-            <div ng-repeat="prescription in prescriptions">
-                <div class="col-md-4 row-eq-height">
-                    <div class="col-md-12">
-                        <h3>{{prescription.patientnic}}</h3>
-                        <h4>Name:{{prescription.name}}</h4>
-                        <p><b>Date:{{prescription.date}}</b></p>
-                        <p>Doctor:{{prescription.doctorname}}:<b>{{prescription.doctorid}}</b></p>
-
-                        <a class="btn btn-primary" href="#!/prescriptions/details/{{prescription._id}}">More</a>
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="col-md-4" ng-repeat="prescription in prescriptions">
+            <div class="panel panel-success">
+                <div class="panel-heading"><b><h5>{{prescription.patientnic}}</h5></b></div>
+                <div class="panel-body">
+                    <div class="row-eq-height">
+                        <label> <h6><b>Name:{{prescription.name}}</b></h6></label>
+                        <label> <h6>Date:{{prescription.date}}</h6></label>
+                        <label> <h6>Doctor:{{prescription.doctorname}}:{{prescription.doctorid}}</h6></label>
                     </div>
                 </div>
+                <div class="panel-footer"><a class="btn btn-primary" href="#!/prescriptions/details/{{prescription._id}}">More</a></div>
             </div>
         </div>
     </div>
+    <div class="col-md-2"></div>
 </div>
