@@ -14,7 +14,7 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 	var ii ;
 	var iii;
 	
-	$scope.PreLabel = ['Isseued Prescriptions', 'Total Prescriptions'];
+	$scope.PreLabel = ['Not Isseued Prescriptions', 'Isseued Prescriptions'];
 	
 
 	$scope.onClick = function (points, evt) {
@@ -86,7 +86,7 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 		function successCallback(response) {
 			$scope.prescriptions = response.data;
 			i=0;
-			i=$scope.prescriptions.length;
+			i=$scope.prescriptions.length-ii;
 			$scope.dataPre = [ii, i];
 		}
 		function errorCallback(error) {
