@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="page-header" ng-init="loadData(); getDrugs(); getPrescriptions(); getNotIssuedPrescriptions()">
-            <h3>Pharm Deus - Dashboard s</h3>
+            <h3>Pharm Deus - Dashboard</h3>
         </div>
         <div class="row">
             <div class="col-md-2">
@@ -48,12 +48,12 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel-heading text-center">Drug Stock Stat</div>
+            <div class="panel panel-danger">
+                <div class="panel-heading text-center">Drugs that reached to the margin</div>
                 <div class="panel-body">
-                    <canvas id="bar" class="chart chart-bar" chart-data="dataDrugs" chart-labels="labelsDrugs" chart-series="series" chart-options="options"
-                        chart-dataset-override="datasetOverride" chart-click="onClick">
-                    </canvas>
+                    <div class="list-group">
+                        <a href="#" ng-repeat="drug in drugsOutofStockDrugs" class="list-group-item">{{drug.drugname}}</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -70,12 +70,12 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-danger">
-                <div class="panel-heading text-center">Drugs that reached to the margin</div>
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">Drug Stock Stat</div>
                 <div class="panel-body">
-                    <div class="list-group">
-                        <a href="#"  ng-repeat="drug in drugsOutofStockDrugs" class="list-group-item">{{drug.drugname}}</a>
-                    </div>
+                    <canvas id="bar" class="chart chart-bar" chart-data="dataDrugs" chart-labels="labelsDrugs" chart-series="series" chart-options="options"
+                        chart-dataset-override="datasetOverride" chart-click="onClick">
+                    </canvas>
                 </div>
             </div>
         </div>

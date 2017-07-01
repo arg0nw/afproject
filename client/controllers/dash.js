@@ -14,7 +14,7 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 	var ii ;
 	var iii;
 	
-	$scope.PreLabel = ['Isseued Prescriptions', 'Total Prescriptions'];
+	$scope.PreLabel = ['Not Isseued Prescriptions', 'Isseued Prescriptions'];
 	
 
 	$scope.onClick = function (points, evt) {
@@ -55,7 +55,7 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 			console.log($scope.drugs);
 
 			$scope.drugsOutofStockDrugs = [];
-			debugger;
+			//debugger;
 			for (var index = 0; index < $scope.drugs.length; index++) {
 				if ($scope.drugs[index].minorder>=$scope.drugs[index].quentity) {
 					$scope.drugsOutofStockDrugs.push($scope.drugs[index]);
@@ -86,7 +86,7 @@ myApp.controller('DashController', ['$scope', '$http', '$location', '$routeParam
 		function successCallback(response) {
 			$scope.prescriptions = response.data;
 			i=0;
-			i=$scope.prescriptions.length;
+			i=$scope.prescriptions.length-ii;
 			$scope.dataPre = [ii, i];
 		}
 		function errorCallback(error) {
