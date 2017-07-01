@@ -89,10 +89,10 @@ module.exports.addPrescriptions = function (prescription,callback) {
 }
 
 //put/update prescriptions status
-module.exports.updatePrescriptions = function (id,prescription,options,callback) {
+module.exports.updatePrescription = function (id,prescription,options,callback) {
     var query = {_id:id};
     var update = {
-        isissued: prescription.title
+        isissued: 'isissued'
     };
     Prescription.findOneAndUpdate(query,update,options,callback);
 }

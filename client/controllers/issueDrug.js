@@ -504,6 +504,20 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
         }
     }
 
+    $scope.updatePrescription = function(){
+        var id=$routeParams.id;
+        $http.put('/api/updatePrescrition/'+id, $scope.prescription).then(successCallback, errorCallback);
+        function successCallback(response){
+
+        }
+        function errorCallback(error){
+            console.log("errrrrrrrrrrrrrrrrrrrrrr");
+        }
+    }
+
+
+
+
 
 
 

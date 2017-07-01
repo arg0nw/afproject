@@ -393,5 +393,23 @@ app.get('/api/successPrescriptions/:_id', function(req,res){
         res.json(notIssuedPrescriptions);
     })
 });
+
+app.put('/api/updatePrescrition/:_id', function(req,res){
+    var id=req.params._id;
+    var prescription=req.body;
+    Prescription.updatePrescription(id,prescription,{}, function(err,prescription){
+        if(err)
+        {
+            throw err;
+        }
+        res.json(prescription);
+    })
+});
+
+
+
+
+
+
 app.listen(3000);
 console.log("Listing to port 3000");
