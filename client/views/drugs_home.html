@@ -45,6 +45,8 @@
                      <!--<div ng-show="drug.quentity > drug.minorder">	<td>{{drug.quentity}}</td> </div> -->
                      <td><a href="#!/drugs/mail/{{drug._id}}" class="btn btn-warning">Place Order</a></td>
                      <td><a href="#!/drugs/details/{{drug._id}}" class="btn btn-primary">Details</a></td>
+                     <!--<td><a href="#!/drugs" class="btn btn-default" ng-click="removeDrug(drug._id)">Delete</a></td>-->
+                     <td><button class="btn btn-default" ng-click="removeDrug(drug._id)">Delete</button></td>
                   </tr>
                </tbody>
             </table>
