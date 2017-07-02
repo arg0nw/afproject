@@ -58,8 +58,8 @@ module.exports.getCategory = function (callback) {
     Drug.distinct("drugcategory",callback);
 }
 
-module.exports.getUnitPrice=function(meal,callback){
-    Drug.find({'drugname':meal},callback);
+module.exports.getDrugByName=function(drugname,callback){
+    Drug.find({'drugname':drugname},callback);
 }
 
 
@@ -95,4 +95,10 @@ module.exports.updateQty=function(id,qty,options,callback){
     };
 
     Drug.findOneAndUpdate(query,update,options,callback);
+}
+
+module.exports.deleteDrug=function(id,callback)
+{
+    var query={_id:id};
+    Drug.remove(query,callback);
 }

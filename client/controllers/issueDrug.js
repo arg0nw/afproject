@@ -480,6 +480,57 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
             "age":page,
             "detail":details
         };
+
+        // $http.get('/api/drugQty/'+drug1).then(successCallback, errorCallback);
+        // function successCallback(response){
+        //
+        //     $scope.id = response.data;
+        //     console.log($scope.newQty1);
+        //
+        //     $scope.id[0].quentity=$scope.id[0].quentity-$scope.newQty1;
+        //     console.log($scope.id[0].quentity);
+        //
+        //      $http.put('api/drg/'+$scope.id[0]._id , $scope.id[0]).then(successCallback,errorCallback);
+        //      function successCallback(response)
+        //      {
+        //      //window.location.href="#!/drugs";
+        //      }
+        //      function errorCallback(error)
+        //      {
+        //      console.log('err from getBooks')
+        //      }
+        //
+        //     //window.location.href="#!/successDrugIssue/"+id;
+        // }
+        // function errorCallback(error){
+        //     console.log(error);
+        // }
+
+        // $http.get('/api/drugQty/'+drug2).then(successCallback, errorCallback);
+        // function successCallback(response){
+        //
+        //     $scope.id = response.data;
+        //     console.log($scope.newQty2);
+        //
+        //     $scope.id[0].quentity=$scope.id[0].quentity-$scope.newQty1;
+        //     console.log($scope.id[0].quentity);
+        //
+        //     $http.put('api/drg/'+$scope.id[0]._id , $scope.id[0]).then(successCallback,errorCallback);
+        //     function successCallback(response)
+        //     {
+        //         //window.location.href="#!/drugs";
+        //     }
+        //     function errorCallback(error)
+        //     {
+        //         console.log('err from getBooks')
+        //     }
+        //
+        //     //window.location.href="#!/successDrugIssue/"+id;
+        // }
+        // function errorCallback(error){
+        //     console.log(error);
+        // }
+
         $http.post('/api/addIssuedPrescription', pesobj).then(successCallback, errorCallback);
         function successCallback(response){
 
@@ -490,7 +541,14 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
         function errorCallback(error){
             console.log(error);
         }
+
+
+
+
+
     }
+
+
 
     $scope.getSuccessPrescriptionByID = function(){
 
@@ -505,6 +563,8 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
         function errorCallback(error){
             console.log("errrrrrrrrrrrrrrrrrrrrrr");
         }
+
+
     }
 
     $scope.updatePrescription = function(){
@@ -516,68 +576,525 @@ myApp.controller('IssueDrugController',['$scope', '$http', '$location', '$routeP
         function errorCallback(error){
             console.log("errrrrrrrrrrrrrrrrrrrrrr");
         }
+
+
     }
 
-    $scope.updateDrugQty1 = function(){
+    // $scope.updateDrugQty1 = setTimeout(function(){
+    //
+    //     var name;
+    //
+    //     $scope.getPrescriptionDetails1 = function(){
+    //         var id=$routeParams.id;
+    //
+    //         $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
+    //         function successCallback(response){
+    //             $scope.prescription=response.data;
+    //
+    //             $scope.drug1 = response.data.drug1;
+    //
+    //             $scope.showDrug1 = $scope.drug1;
+    //
+    //             var name = $scope.drug1;
+    //
+    //             if(name != null) {
+    //                 $http.get('/api/drugQty/' + name).then(successCallback, errorCallback);
+    //                 function successCallback(response) {
+    //                     $scope.drugDetails = response.data;
+    //                     console.log($scope.drugDetails)
+    //                     $scope.drug1Qty = $scope.drugDetails[0].quentity;
+    //                     console.log($scope.drugDetails[0].quentity);
+    //
+    //                     $("#drug1").attr({
+    //                         "max": $scope.drug1Qty,
+    //                         "min": 0
+    //                     });
+    //
+    //
+    //                 }
+    //
+    //                 function errorCallback(error) {
+    //                     console.log("Error");
+    //                 }
+    //             }
+    //         }
+    //         function errorCallback(error){
+    //             console.log("Error");
+    //         }
+    //
+    //
+    //
+    //
+    //     }
 
-        var name;
 
-        $scope.getPrescriptionDetails1 = function(){
-            var id=$routeParams.id;
-
-            $http.get('/api/prescriptions/'+id).then(successCallback, errorCallback);
-            function successCallback(response){
-                $scope.prescription=response.data;
-
-                $scope.drug1 = response.data.drug1;
-
-                $scope.showDrug1 = $scope.drug1;
-
-                var name = $scope.drug1;
-
-                if(name != null) {
-                    $http.get('/api/drugQty/' + name).then(successCallback, errorCallback);
-                    function successCallback(response) {
-                        $scope.drugDetails = response.data;
-                        console.log($scope.drugDetails)
-                        $scope.drug1Qty = $scope.drugDetails[0].quentity;
-                        console.log($scope.drugDetails[0].quentity);
-
-                        $("#drug1").attr({
-                            "max": $scope.drug1Qty,
-                            "min": 0
-                        });
-
-
-                    }
-
-                    function errorCallback(error) {
-                        console.log("Error");
-                    }
-                }
-            }
-            function errorCallback(error){
-                console.log("Error");
-            }
+        // var drugqty =parseInt( $scope.drug1Qty);
+        // var baseqty =parseInt( $scope.drugQty1Now);
+        // $scope.leftQty = baseqty - drugqty;
+        //
+        // $http.put(name, $scope.prescription).then(successCallback, errorCallback);
+        // function successCallback(response){
+        //
+        // }
+        // function errorCallback(error){
+        //     console.log("errrrrrrrrrrrrrrrrrrrrrr");
+        // }
+    // },3000)
 
 
 
-        }
+
+    $scope.updateDrug1qty=function(drug1){
 
 
-        var drugqty =parseInt( $scope.drug1Qty);
-        var baseqty =parseInt( $scope.drugQty1Now);
-        $scope.leftQty = baseqty - drugqty;
 
-        $http.put(name, $scope.prescription).then(successCallback, errorCallback);
+        $http.get('/api/drugQty/'+drug1).then(successCallback, errorCallback);
         function successCallback(response){
 
+            $scope.id = response.data;
+            console.log($scope.newQty1);
+
+            $scope.id[0].quentity=$scope.id[0].quentity-$scope.newQty1;
+            console.log($scope.id[0].quentity);
+
+            $http.put('api/drg/'+$scope.id[0]._id , $scope.id[0]).then(successCallback,errorCallback);
+            function successCallback(response)
+            {
+                //window.location.href="#!/drugs";
+            }
+            function errorCallback(error)
+            {
+                console.log('err from getBooks')
+            }
+
+            //window.location.href="#!/successDrugIssue/"+id;
         }
         function errorCallback(error){
-            console.log("errrrrrrrrrrrrrrrrrrrrrr");
+            console.log(error);
         }
+
+
+
     }
 
+    $scope.updateDrug2qty=function(drug2){
+
+
+        var miliseconds = 10000;
+
+        function sleep(miliseconds) {
+            var currentTime = new Date().getTime();
+
+            while (currentTime + miliseconds >= new Date().getTime()) {
+            }
+        }
+
+        $http.get('/api/drugQty/'+drug2).then(successCallback, errorCallback);
+        function successCallback(response){
+
+            $scope.id = response.data;
+            console.log($scope.newQty2);
+
+            $scope.id[0].quentity=$scope.id[0].quentity-$scope.newQty2;
+            console.log($scope.id[0].quentity);
+
+            $http.put('api/drg/'+$scope.id[0]._id , $scope.id[0]).then(successCallback,errorCallback);
+            function successCallback(response)
+            {
+                //window.location.href="#!/drugs";
+            }
+            function errorCallback(error)
+            {
+                console.log('err from getBooks')
+            }
+
+            //window.location.href="#!/successDrugIssue/"+id;
+        }
+        function errorCallback(error){
+            console.log(error);
+        }
+
+    }
+
+    $scope.updateDrug3qty=function(drug3){
+
+
+        var miliseconds = 10000;
+
+        function sleep(miliseconds) {
+            var currentTime = new Date().getTime();
+
+            while (currentTime + miliseconds >= new Date().getTime()) {
+            }
+        }
+
+        $http.get('/api/drugQty/'+drug3).then(successCallback, errorCallback);
+        function successCallback(response){
+
+            $scope.id = response.data;
+            console.log($scope.newQty3);
+
+            $scope.id[0].quentity=$scope.id[0].quentity-$scope.newQty3;
+            console.log($scope.id[0].quentity);
+
+            $http.put('api/drg/'+$scope.id[0]._id , $scope.id[0]).then(successCallback,errorCallback);
+            function successCallback(response)
+            {
+                //window.location.href="#!/drugs";
+            }
+            function errorCallback(error)
+            {
+                console.log('err from getBooks')
+            }
+
+            //window.location.href="#!/successDrugIssue/"+id;
+        }
+        function errorCallback(error){
+            console.log(error);
+        }
+
+    }
+
+    $scope.updateDrug4qty=function(drug4){
+
+
+        var miliseconds = 10000;
+
+        function sleep(miliseconds) {
+            var currentTime = new Date().getTime();
+
+            while (currentTime + miliseconds >= new Date().getTime()) {
+            }
+        }
+
+        $http.get('/api/drugQty/'+drug4).then(successCallback, errorCallback);
+        function successCallback(response){
+
+            $scope.id = response.data;
+            console.log($scope.newQty4);
+
+            $scope.id[0].quentity=$scope.id[0].quentity-$scope.newQty4;
+            console.log($scope.id[0].quentity);
+
+            $http.put('api/drg/'+$scope.id[0]._id , $scope.id[0]).then(successCallback,errorCallback);
+            function successCallback(response)
+            {
+                //window.location.href="#!/drugs";
+            }
+            function errorCallback(error)
+            {
+                console.log('err from getBooks')
+            }
+
+            //window.location.href="#!/successDrugIssue/"+id;
+        }
+        function errorCallback(error){
+            console.log(error);
+        }
+
+    }
+
+    $scope.updateDrug5qty=function(drug5){
+
+
+        var miliseconds = 10000;
+
+        function sleep(miliseconds) {
+            var currentTime = new Date().getTime();
+
+            while (currentTime + miliseconds >= new Date().getTime()) {
+            }
+        }
+
+        $http.get('/api/drugQty/'+drug5).then(successCallback, errorCallback);
+        function successCallback(response){
+
+            $scope.id = response.data;
+            console.log($scope.newQty5);
+
+            $scope.id[0].quentity=$scope.id[0].quentity-$scope.newQty5;
+            console.log($scope.id[0].quentity);
+
+            $http.put('api/drg/'+$scope.id[0]._id , $scope.id[0]).then(successCallback,errorCallback);
+            function successCallback(response)
+            {
+                //window.location.href="#!/drugs";
+            }
+            function errorCallback(error)
+            {
+                console.log('err from getBooks')
+            }
+
+            //window.location.href="#!/successDrugIssue/"+id;
+        }
+        function errorCallback(error){
+            console.log(error);
+        }
+
+    }
+
+
+    $scope.updateDrug5qty=function(drug5){
+
+
+        var miliseconds = 10000;
+
+        function sleep(miliseconds) {
+            var currentTime = new Date().getTime();
+
+            while (currentTime + miliseconds >= new Date().getTime()) {
+            }
+        }
+
+        $http.get('/api/drugQty/'+drug5).then(successCallback, errorCallback);
+        function successCallback(response){
+
+            $scope.id = response.data;
+            console.log($scope.newQty5);
+
+            $scope.id[0].quentity=$scope.id[0].quentity-$scope.newQty5;
+            console.log($scope.id[0].quentity);
+
+            $http.put('api/drg/'+$scope.id[0]._id , $scope.id[0]).then(successCallback,errorCallback);
+            function successCallback(response)
+            {
+                //window.location.href="#!/drugs";
+            }
+            function errorCallback(error)
+            {
+                console.log('err from getBooks')
+            }
+
+            //window.location.href="#!/successDrugIssue/"+id;
+        }
+        function errorCallback(error){
+            console.log(error);
+        }
+
+    }
+
+
+
+    $scope.updateDrug6qty=function(drug6){
+
+
+        var miliseconds = 10000;
+
+        function sleep(miliseconds) {
+            var currentTime = new Date().getTime();
+
+            while (currentTime + miliseconds >= new Date().getTime()) {
+            }
+        }
+
+        $http.get('/api/drugQty/'+drug6).then(successCallback, errorCallback);
+        function successCallback(response){
+
+            $scope.id = response.data;
+            console.log($scope.newQty6);
+
+            $scope.id[0].quentity=$scope.id[0].quentity-$scope.newQty6;
+            console.log($scope.id[0].quentity);
+
+            $http.put('api/drg/'+$scope.id[0]._id , $scope.id[0]).then(successCallback,errorCallback);
+            function successCallback(response)
+            {
+                //window.location.href="#!/drugs";
+            }
+            function errorCallback(error)
+            {
+                console.log('err from getBooks')
+            }
+
+            //window.location.href="#!/successDrugIssue/"+id;
+        }
+        function errorCallback(error){
+            console.log(error);
+        }
+
+    }
+
+    $scope.updateDrug7qty=function(drug7){
+
+
+        var miliseconds = 10000;
+
+        function sleep(miliseconds) {
+            var currentTime = new Date().getTime();
+
+            while (currentTime + miliseconds >= new Date().getTime()) {
+            }
+        }
+
+        $http.get('/api/drugQty/'+drug7).then(successCallback, errorCallback);
+        function successCallback(response){
+
+            $scope.id = response.data;
+            console.log($scope.newQty7);
+
+            $scope.id[0].quentity=$scope.id[0].quentity-$scope.newQty7;
+            console.log($scope.id[0].quentity);
+
+            $http.put('api/drg/'+$scope.id[0]._id , $scope.id[0]).then(successCallback,errorCallback);
+            function successCallback(response)
+            {
+                //window.location.href="#!/drugs";
+            }
+            function errorCallback(error)
+            {
+                console.log('err from getBooks')
+            }
+
+            //window.location.href="#!/successDrugIssue/"+id;
+        }
+        function errorCallback(error){
+            console.log(error);
+        }
+
+    }
+
+    $scope.updateDrug8qty=function(drug8){
+
+
+        var miliseconds = 10000;
+
+        function sleep(miliseconds) {
+            var currentTime = new Date().getTime();
+
+            while (currentTime + miliseconds >= new Date().getTime()) {
+            }
+        }
+
+        $http.get('/api/drugQty/'+drug8).then(successCallback, errorCallback);
+        function successCallback(response){
+
+            $scope.id = response.data;
+            console.log($scope.newQty8);
+
+            $scope.id[0].quentity=$scope.id[0].quentity-$scope.newQty8;
+            console.log($scope.id[0].quentity);
+
+            $http.put('api/drg/'+$scope.id[0]._id , $scope.id[0]).then(successCallback,errorCallback);
+            function successCallback(response)
+            {
+                //window.location.href="#!/drugs";
+            }
+            function errorCallback(error)
+            {
+                console.log('err from getBooks')
+            }
+
+            //window.location.href="#!/successDrugIssue/"+id;
+        }
+        function errorCallback(error){
+            console.log(error);
+        }
+
+    }
+
+    $scope.updateDrug9qty=function(drug9){
+
+
+        var miliseconds = 10000;
+
+        function sleep(miliseconds) {
+            var currentTime = new Date().getTime();
+
+            while (currentTime + miliseconds >= new Date().getTime()) {
+            }
+        }
+
+        $http.get('/api/drugQty/'+drug9).then(successCallback, errorCallback);
+        function successCallback(response){
+
+            $scope.id = response.data;
+            console.log($scope.newQty9);
+
+            $scope.id[0].quentity=$scope.id[0].quentity-$scope.newQty9;
+            console.log($scope.id[0].quentity);
+
+            $http.put('api/drg/'+$scope.id[0]._id , $scope.id[0]).then(successCallback,errorCallback);
+            function successCallback(response)
+            {
+                //window.location.href="#!/drugs";
+            }
+            function errorCallback(error)
+            {
+                console.log('err from getBooks')
+            }
+
+            //window.location.href="#!/successDrugIssue/"+id;
+        }
+        function errorCallback(error){
+            console.log(error);
+        }
+
+    }
+
+    $scope.updateDrug10qty=function(drug10){
+
+
+        var miliseconds = 10000;
+
+        function sleep(miliseconds) {
+            var currentTime = new Date().getTime();
+
+            while (currentTime + miliseconds >= new Date().getTime()) {
+            }
+        }
+
+        $http.get('/api/drugQty/'+drug10).then(successCallback, errorCallback);
+        function successCallback(response){
+
+            $scope.id = response.data;
+            console.log($scope.newQty10);
+
+            $scope.id[0].quentity=$scope.id[0].quentity-$scope.newQty10;
+            console.log($scope.id[0].quentity);
+
+            $http.put('api/drg/'+$scope.id[0]._id , $scope.id[0]).then(successCallback,errorCallback);
+            function successCallback(response)
+            {
+                //window.location.href="#!/drugs";
+            }
+            function errorCallback(error)
+            {
+                console.log('err from getBooks')
+            }
+
+            //window.location.href="#!/successDrugIssue/"+id;
+        }
+        function errorCallback(error){
+            console.log(error);
+        }
+
+    }
+
+
+    // $http.get('/api/drugQty/'+drug6).then(successCallback, errorCallback);
+    // function successCallback(response){
+    //
+    //     $scope.id = response.data;
+    //     console.log($scope.newQty6);
+    //
+    //     $scope.id[0].quentity=$scope.id[0].quentity-$scope.newQty6;
+    //     console.log($scope.id[0].quentity);
+    //
+    //     $http.put('api/drg/'+$scope.id[0]._id , $scope.id[0]).then(successCallback,errorCallback);
+    //     function successCallback(response)
+    //     {
+    //         //window.location.href="#!/drugs";
+    //     }
+    //     function errorCallback(error)
+    //     {
+    //         console.log('err from getBooks')
+    //     }
+    //
+    //     //window.location.href="#!/successDrugIssue/"+id;
+    // }
+    // function errorCallback(error){
+    //     console.log(error);
+    // }
 
 
 

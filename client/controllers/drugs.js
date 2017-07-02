@@ -220,5 +220,21 @@ myApp.controller('DrugsController',['$scope', '$http', '$location', '$routeParam
 	}
 
 
+		$scope.removeDrug=function(id) {
+		
+
+		$http.delete('api/drug/'+id).then(successCallback,errorCallback);
+		function successCallback(response)
+		{
+			//window.location.href="#!/drugs";
+			$location.path('/drugs');
+		}
+		function errorCallback(error)
+		{
+			console.log('err from remove');
+			window.location.href="#!/drugs";
+		}
+		
+	}
 
 }]);

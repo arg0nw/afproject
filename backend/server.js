@@ -265,7 +265,7 @@ app.get('/api/drugs/category', function(req,res){
 
 app.get('/api/drug/:name', function(req,res){
 	
-    Drug.getUnitPrice(req.params.name, function(err,d){
+    Drug.getDrugByName(req.params.name, function(err,d){
         if(err)
         {
             throw err;
@@ -337,7 +337,7 @@ app.get('/api/user',function(req,res){
 
 app.get('/api/drugQty/:name', function(req,res){
 
-    Drug.getUnitPrice(req.params.name, function(err,drugs){
+    Drug.getDrugByName(req.params.name, function(err,drugs){
         if(err)
         {
             throw err;
@@ -406,7 +406,17 @@ app.put('/api/updatePrescrition/:_id', function(req,res){
     })
 });
 
-
+app.delete('/api/drug/:_id',function(req,res){
+    var id=req.params._id;
+    
+    Drug.deleteDrug(id,function(err,drug)
+    {
+        if (err) {
+            throw err;
+        }
+        res.json(drug);
+    });
+});
 
 
 
