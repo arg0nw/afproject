@@ -67,7 +67,7 @@ module.exports.addNewDrug=function(drug,callback){
     Drug.create(drug,callback);
 }
 
-module.exports.updateBook=function(id,book,options,callback){
+module.exports.updateDrug=function(id,book,options,callback){
     var query={_id:id};
     var update={
         drugname:book.drugname,

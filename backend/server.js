@@ -114,7 +114,7 @@ app.post('/api/books', function(req,res){
 		res.json(book);
 	})
 });
-app.put('/api/books/:_id', function(req,res){
+/*app.put('/api/books/:_id', function(req,res){
 	var id=req.params._id;
 	var book=req.body;
 	Book.updateBooks(id,book,{}, function(err,book){
@@ -124,7 +124,7 @@ app.put('/api/books/:_id', function(req,res){
 		}
 		res.json(book);
 	})
-});
+});*/
 app.delete('/api/books/:_id', function(req,res){
 	var id=req.params._id;
 	Book.deleteBooks(id, function(err,book){
@@ -305,7 +305,7 @@ app.get('/api/pid/:name', function(req,res){
 app.put('/api/drugs/:_id',function(req,res){
     var id=req.params._id;
     var book=req.body;
-    Drug.updateBook(id,book,{},function(err,book)
+    Drug.updateDrug(id,book,{},function(err,book)
     {
         if (err) {
             throw err;
