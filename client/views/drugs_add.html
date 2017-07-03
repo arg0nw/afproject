@@ -89,7 +89,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="dropdown">
-                                <input type="number" ng-model="noOfCaroons">
+                                <input type="number" ng-model="noOfCaroons" min=1>
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="dropdown">
-                                <input type="number" ng-model="noOfCaroons1">
+                                <input type="number" ng-model="noOfCaroons1" min=1>
                             </div>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                             <h5>Number of Bottles</h5>
                         </div>
                         <div class="col-md-8">
-                            <input type="number" ng-model="noOfBottles">
+                            <input type="number" ng-model="noOfBottles" min=1>
                         </div>
                     </div>
                     <div class="row" ng-show="Type=='Bottles' && Content=='Tablets'">
@@ -117,18 +117,18 @@
                             <h5>Number of Tablets per Bottle</h5>
                         </div>
                         <div class="col-md-8">
-                            <input type="number" ng-model="noOfTabletsPerBottles">
+                            <input type="number" ng-model="noOfTabletsPerBottles" min=1>
                             <button ng-click="cal2(noOfBottles,noOfTabletsPerBottles)">Calculate</button>
                         </div>
                     </div>
 
-                    <div class="row" ng-show="Type=='Caroons' &&  Content=='Liquid'">
+                    <div class="row" ng-show="Type=='Caroons' &&  Content=='Liquid'" >
                         <div class="col-md-4">
                             <h5>No of Bottles per Cartoon</h5>
                         </div>
                         <div class="col-md-8">
                             <div class="dropdown">
-                                <input type="number" ng-model="noOfBottlesPerCartoon">
+                                <input type="number" ng-model="noOfBottlesPerCartoon" min=1>
                                 <button ng-click="cal1(noOfCaroons1,noOfBottlesPerCartoon)">Calculate</button>
                             </div>
                         </div>
@@ -140,7 +140,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="dropdown">
-                                <input type="number" ng-model="noOfCardsPerCartoon">
+                                <input type="number" ng-model="noOfCardsPerCartoon" min=1>
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="dropdown">
-                                <input type="number" ng-model="noOfTabletsPerCard">
+                                <input type="number" ng-model="noOfTabletsPerCard" min=1>
                                 <button ng-click="cal5(noOfCaroons,noOfCardsPerCartoon,noOfTabletsPerCard)">Calculate</button>
                             </div>
                         </div>
@@ -162,7 +162,7 @@
                         </div>
                         <div class="col-md-8">
 
-                            <input type="number" ng-model="noOfBottles2">
+                            <input type="number" ng-model="noOfBottles2" min=1>
                             <button ng-click="cal4(noOfBottles2)">Calculate</button>
 
                         </div>
@@ -174,7 +174,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="dropdown">
-                                <input type="number" ng-model="noOfBottlessPerCartoon">
+                                <input type="number" ng-model="noOfBottlessPerCartoon" min=1>
                             </div>
                         </div>
                     </div>
@@ -185,7 +185,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="dropdown">
-                                <input type="number" ng-model="noOfTabletsPerBottle">
+                                <input type="number" ng-model="noOfTabletsPerBottle" min=1>
                                 <button ng-click="cal3(noOfCaroons,noOfBottlessPerCartoon,noOfTabletsPerBottle)">Calculate</button>
                             </div>
                         </div>
